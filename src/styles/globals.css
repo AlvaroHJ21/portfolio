@@ -1,0 +1,106 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.gradient {
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0) 50%,
+    rgba(19, 17, 28, 0.78) 100%
+  );
+}
+
+.btnIcon {
+  transition: filter 0.2s ease;
+}
+
+.btnIcon:hover {
+  filter: drop-shadow(0 0 10px #607fef);
+}
+
+.btn {
+  transition: box-shadow 0.2s ease;
+}
+.input {
+  transition: box-shadow 0.2s ease;
+}
+.my-btn:hover,
+.my-input:hover,
+.my-input:focus {
+  box-shadow: 0px 0px 5px 4px #607fefb0;
+}
+
+.animationLeft {
+  animation: carouselAnimationLeft 60s linear infinite;
+}
+.animationRight {
+  animation: carouselAnimationRight 60s linear infinite;
+}
+
+/* Daisy UI badge */
+
+@layer components {
+  .my-btn {
+    @apply flex items-center justify-center gap-2 px-4 py-2 font-bold rounded-full border-2;
+  }
+
+  .my-btn-primary {
+    @apply bg-main border-transparent text-white;
+  }
+
+  .my-input {
+    @apply px-4 py-3 bg-transparent border-2 rounded-full outline-none border-main text-black dark:text-white;
+  }
+
+  .my-input-sm {
+    @apply px-3 py-2 text-sm;
+  }
+
+  .form-label {
+    @apply block mb-2 text-sm font-medium text-gray-400;
+  }
+
+  /* .badge {
+    @apply inline-block px-2 py-1 text-sm font-bold rounded;
+  }
+
+  .badge-sm {
+    @apply inline-block px-2 py-1 text-xs font-bold rounded;
+  }
+
+  .badge-primary {
+    @apply text-white bg-primary;
+  }
+
+  .badge-outline {
+    @apply border;
+  } */
+
+  html.dark .badge-ghost {
+    @apply text-white bg-background bg-opacity-50;
+  }
+
+  .badge-ghost {
+    @apply text-black bg-slate-100;
+  }
+}
+
+@keyframes carouselAnimationLeft {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-2600px);
+  }
+}
+
+@keyframes carouselAnimationRight {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(2600px);
+  }
+}
