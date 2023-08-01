@@ -1,7 +1,5 @@
-import { Image } from "./Image";
-
 export interface Tecnology {
-  id: number;
+  id?: number;
   name: string;
-  img: Image;
+  image: string;
 }

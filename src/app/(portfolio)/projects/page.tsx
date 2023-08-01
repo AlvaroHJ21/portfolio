@@ -1,34 +1,42 @@
+import prisma from '@/lib/prisma';
 
 export default async function ProjectsPage() {
-
-  console.log("ejecutando en el server");
-
-  const projects = [
-    {
-      id: 1,
-      name: 'Proyecto God',
-      description: 'Esta es una card de un proyecto god',
-      images: ['https://alvarohuaysara.tech/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdthuporgb%2Fimage%2Fupload%2Fv1681274335%2Flarge_delivery_cover_ea5dd9d3e9.png&w=1920&q=75'],
-      categories: [
-        {
-          id: 0,
-          name: 'Página Web / Landing Page',
-        },
-      ],
-      tecnologies: [
-        {
-          id: 1,
-          img: {},
-          name: 'React',
-        },
-        {
-          id: 2,
-          img: {},
-          name: 'NextJS',
-        },
-      ],
+  console.log('ejecutando en el server');
+  const projects = await prisma.project.findMany({
+    include: {
+      categories: true,
+      tecnologies: true,
     },
-  ]
+  });
+
+  // const projects = [
+  //   {
+  //     id: 1,
+  //     name: 'Proyecto God',
+  //     description: 'Esta es una card de un proyecto god',
+  //     images: [
+  //       'https://alvarohuaysara.tech/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdthuporgb%2Fimage%2Fupload%2Fv1681274335%2Flarge_delivery_cover_ea5dd9d3e9.png&w=1920&q=75',
+  //     ],
+  //     categories: [
+  //       {
+  //         id: 0,
+  //         name: 'Página Web / Landing Page',
+  //       },
+  //     ],
+  //     tecnologies: [
+  //       {
+  //         id: 1,
+  //         img: {},
+  //         name: 'React',
+  //       },
+  //       {
+  //         id: 2,
+  //         img: {},
+  //         name: 'NextJS',
+  //       },
+  //     ],
+  //   },
+  // ];
 
   // console.log(projects);
 
@@ -46,30 +54,41 @@ export default async function ProjectsPage() {
             {projects.map((project) => {
               return (
                 <div data-aos="fade-up" key={project.id}>
-                  <p className='text-gray-600 uppercase dark:text-gray-300'>{project.categories[0].name}</p>
-                  <h2 className="mb-4 text-3xl font-bold text-gray-600 dark:text-gray-300">{project.name}</h2>
-                  <div className="grid grid-cols-3 grid-rows-2 gap-4">
+                  <p className="text-gray-600 uppercase dark:text-gray-300">
+                    {project.categories[0].name}
+                  </p>
+                  <h2 className="mb-4 text-3xl font-bold text-gray-600 dark:text-gray-300">
+                    {project.name}
+                  </h2>
+                  <div className="grid grid-cols-3 grid-rows-2 gap-4 mb-4">
                     <picture className="col-span-2 row-span-2 overflow-hidden rounded-lg">
-                      <img
-                        src={project.images[0]}
-                        className="object-cover w-full h-full"
-                        alt=""
-                      />
+                      <img src={project.images[0]} className="object-cover w-full h-full" alt="" />
                     </picture>
                     <picture className="col-span-1 overflow-hidden rounded-lg">
-                      <img
-                        src={project.images[0]}
-                        className="object-cover w-full h-full"
-                        alt=""
-                      />
+                      <img src={project.images[0]} className="object-cover w-full h-full" alt="" />
                     </picture>
                     <picture className="col-span-1 overflow-hidden rounded-lg">
-                      <img
-                        src={project.images[0]}
-                        className="object-cover w-full h-full"
-                        alt=""
-                      />
+                      <img src={project.images[0]} className="object-cover w-full h-full" alt="" />
                     </picture>
+                  </div>
+                  <div className="flex gap-2">
+                    {project.tecnologies.map((tecnology) => {
+                      return (
+                        <span
+                          key={tecnology.id}
+                          className="badge badge-primary badge-outline whitespace-nowrap"
+                        >
+                          {tecnology.name}
+                          {tecnology.image && (
+                            <img
+                              src={tecnology.image}
+                              alt={tecnology.name}
+                              className="w-4 h-4 ml-2"
+                            />
+                          )}
+                        </span>
+                      );
+                    })}
                   </div>
                 </div>
               );

@@ -1,5 +1,5 @@
 'use client';
-import React, { useState, useMemo } from 'react';
+import React, { useState } from 'react';
 import useWSR, { Fetcher } from 'swr';
 
 import Swal from 'sweetalert2';
@@ -18,14 +18,11 @@ export default function CategoriesPage() {
   const [isCreating, setIsCreating] = useState(false);
   const [name, setName] = useState('');
 
-  const { data, error, isLoading, mutate } = useWSR(
-    'http://localhost:3000/api/categories',
-    fetcher
-  );
+  const { data, error, isLoading, mutate } = useWSR('/api/categories', fetcher);
 
   if (isLoading) {
     return (
-      <div className='flex flex-col items-center gap-4'>
+      <div className="flex flex-col items-center gap-4">
         <p>Loading..</p>
         <span className="loading loading-spinner loading-lg"></span>
       </div>
@@ -41,7 +38,7 @@ export default function CategoriesPage() {
         showConfirmButton: false,
       });
 
-      const resp = await fetch('http://localhost:3000/api/categories', {
+      const resp = await fetch('/api/categories', {
         method: 'POST',
         body: JSON.stringify({ name }),
       });
@@ -77,10 +74,12 @@ export default function CategoriesPage() {
           showConfirmButton: false,
         });
 
-        const resp = await fetch(`http://localhost:3000/api/categories/${id}`, {
+        const resp = await fetch(`/api/categories/${id}`, {
           method: 'DELETE',
         });
         const data = await resp.json();
+
+        console.log(data);
 
         Swal.fire('Eliminado!', '', 'success');
 
@@ -144,7 +143,7 @@ export default function CategoriesPage() {
                 <button className="btn btn-info btn-sm">
                   <FaEdit />
                 </button>
-                <button onClick={() => handleDelete(item.id)} className="btn btn-error btn-sm">
+                <button onClick={() => handleDelete(item.id!)} className="btn btn-error btn-sm">
                   <FaTrash />
                 </button>
               </td>

@@ -1,18 +1,22 @@
-export default [
+import { Category } from '@/interfaces/Category';
+
+const categories: Category[] = [
   {
     id: 1,
-    name: "Página Web / Landing Page"
+    name: 'Página Web / Landing Page',
   },
   {
     id: 2,
-    name: "App Web / SPA"
+    name: 'App Web / SPA',
   },
   {
     id: 3,
-    name: "Ecommerce"
+    name: 'Ecommerce',
   },
   {
     id: 4,
-    name: "App Móvil"
+    name: 'App Móvil',
   },
-]
+];
+
+export default categories;

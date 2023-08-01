@@ -43,7 +43,7 @@ export default function Navbar() {
             className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
           >
             {links.map((link) => (
-              <li>
+              <li key={link.name}>
                 <Link href={link.to}>{link.name}</Link>
               </li>
             ))}
@@ -54,7 +54,7 @@ export default function Navbar() {
       <div className="hidden navbar-center lg:flex">
         <ul className="px-1 menu menu-horizontal">
           {links.map((link) => (
-            <li>
+            <li key={link.name}>
               <Link href={link.to}>{link.name}</Link>
             </li>
           ))}
