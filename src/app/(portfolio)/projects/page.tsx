@@ -51,7 +51,7 @@ export default async function ProjectsPage() {
               </h2>
             </div>
 
-            {projects?.map((project) => {
+            {projects.map((project) => {
               return (
                 <div data-aos="fade-up" key={project.id}>
                   <p className="text-gray-600 uppercase dark:text-gray-300">
