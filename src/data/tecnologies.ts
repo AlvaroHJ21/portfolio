@@ -24,7 +24,7 @@ const tecnologies: Tecnology[] = [
   {
     id: 5,
     name: 'Express',
-    image: '/logos/express.svg',
+    image: '/logos/express.png',
   },
   {
     id: 6,
@@ -39,7 +39,7 @@ const tecnologies: Tecnology[] = [
   {
     id: 8,
     name: 'NodeJS',
-    image: '/logos/nodejs.svg',
+    image: '/logos/nodejs.png',
   },
   {
     id: 9,
@@ -54,7 +54,7 @@ const tecnologies: Tecnology[] = [
   {
     id: 11,
     name: 'Nextjs',
-    image: '/logos/nextjs.webp',
+    image: '/logos/nextjs.svg',
   },
   {
     id: 12,

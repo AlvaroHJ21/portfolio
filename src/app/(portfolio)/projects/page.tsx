@@ -1,7 +1,6 @@
 import prisma from '@/lib/prisma';
 
 export default async function ProjectsPage() {
-  console.log('ejecutando en el server');
   const projects = await prisma.project.findMany({
     include: {
       categories: true,
@@ -45,16 +44,16 @@ export default async function ProjectsPage() {
                       return (
                         <span
                           key={tecnology.id}
-                          className="badge badge-primary badge-outline whitespace-nowrap"
+                          className="h-8 badge badge-neutral whitespace-nowrap"
                         >
-                          {tecnology.name}
                           {tecnology.image && (
                             <img
                               src={tecnology.image}
                               alt={tecnology.name}
-                              className="w-4 h-4 ml-2"
+                              className="w-6 h-6 mr-2"
                             />
                           )}
+                          {tecnology.name}
                         </span>
                       );
                     })}

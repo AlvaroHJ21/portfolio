@@ -5,6 +5,7 @@ import ThemeProvider from '@/theme/ThemeProvider';
 import { Navbar } from '@/components/navbar';
 import { Footer } from '@/components/footer';
 import '@/styles/globals.css';
+import Head from 'next/head';
 
 const font = Raleway({
   subsets: ['latin'],
@@ -14,6 +15,9 @@ const font = Raleway({
 export const metadata: Metadata = {
   title: 'Alvaro Huaysara Jauregui',
   description: 'Desarrollador Web Full Stack',
+  icons: {
+    icon: '/icon.svg',
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
