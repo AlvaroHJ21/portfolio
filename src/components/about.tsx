@@ -3,21 +3,14 @@
 import { useEffect } from 'react';
 import Image from 'next/image';
 
-import {
-  AiFillGithub,
-  AiFillLinkedin,
-  AiFillTwitterCircle,
-  AiFillYoutube,
-  AiOutlineArrowRight,
-} from 'react-icons/ai';
+import { BsDownload } from 'react-icons/bs';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
-import networkLinks from '../../data/networkLinks';
-import { LinkButton } from '@/components/button';
-import { BsDownload } from 'react-icons/bs';
+import networkLinks from '@/data/networkLinks';
+import { ButtonLink } from '@/components/ui/button';
 
-export default function About() {
+export const About = () => {
   useEffect(() => {
     AOS.init();
   }, []);
@@ -82,8 +75,8 @@ export default function About() {
                 ))}
               </div>
               <div className="flex gap-4">
-                <LinkButton href="/#contact" text="Contactame" />
-                <LinkButton
+                <ButtonLink href="/#contact" text="Contactame" />
+                <ButtonLink
                   text="Descarga mi CV"
                   href="/pdf/CV-AlvaroHJ.pdf"
                   target="_blank"
@@ -98,6 +91,6 @@ export default function About() {
       </div>
     </section>
   );
-}
+};
 
 // bg-cyan-200

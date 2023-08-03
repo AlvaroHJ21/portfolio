@@ -8,9 +8,9 @@ import Typed from 'typed.js';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
-import LinkButton from '../button/LinkButton';
+import { ButtonLink } from './ui/button';
 
-export default function Hero() {
+export const Hero = () => {
   const typed = useRef<Typed>();
 
   useEffect(() => {
@@ -55,8 +55,8 @@ export default function Hero() {
       </div>
 
       <div data-aos="fade-up" className="flex flex-col gap-4 sm:flex-row">
-        <LinkButton text="Ver proyectos" href="/projects" />
-        <LinkButton
+        <ButtonLink text="Ver proyectos" href="/projects" />
+        <ButtonLink
           text="Descarga mi CV"
           href="/pdf/CV-AlvaroHJ.pdf"
           target="_blank"
@@ -67,4 +67,4 @@ export default function Hero() {
       </div>
     </section>
   );
-}
+};

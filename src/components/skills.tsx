@@ -1,11 +1,10 @@
 'use client';
+import React, { useEffect } from 'react';
+
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
-import { useEffect } from 'react';
 import skills, { Skill } from '@/data/skills';
-
-import React from 'react';
 
 const SkillBlock = ({ skill }: { skill: Skill }) => {
   return (
@@ -38,7 +37,7 @@ const SkillBlock = ({ skill }: { skill: Skill }) => {
   );
 };
 
-export default function Skills() {
+export const Skills = () => {
   useEffect(() => {
     AOS.init();
   }, []);
@@ -62,4 +61,4 @@ export default function Skills() {
       </div>
     </section>
   );
-}
+};

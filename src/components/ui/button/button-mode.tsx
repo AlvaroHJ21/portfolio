@@ -9,7 +9,7 @@ interface Props {
   size?: number;
 }
 
-export default function ButtonMode({ size = 24 }: Props) {
+export const ButtonMode = ({ size = 24 }: Props) => {
   const [mode, setMode] = useState<string>('dark');
   const [mounted, setMounted] = useState(false);
   const { systemTheme, theme, setTheme } = useTheme();
@@ -43,4 +43,4 @@ export default function ButtonMode({ size = 24 }: Props) {
       )}
     </button>
   );
-}
+};

@@ -1,4 +1,5 @@
 'use client';
+import { FormEvent, useState, useRef, useEffect } from 'react';
 
 import { HiOutlineMail } from 'react-icons/hi';
 import { AiOutlineWhatsApp } from 'react-icons/ai';
@@ -6,12 +7,10 @@ import { BsDownload } from 'react-icons/bs';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
-import Input from '../input/Input';
-import Button from '../button/Button';
-import LinkButton from '../button/LinkButton';
-import { FormEvent, useState, useRef, useEffect } from 'react';
+import { Input } from './ui/input/input';
+import { Button, ButtonLink } from './ui/button';
 
-export default function Contact() {
+export const Contact = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
@@ -65,7 +64,7 @@ export default function Contact() {
                 +51 926513695
               </a>
               <div>
-                <LinkButton
+                <ButtonLink
                   text="Descarga mi CV"
                   href="/pdf/CV-AlvaroHJ.pdf"
                   target="_blank"
@@ -125,4 +124,4 @@ export default function Contact() {
       </div>
     </section>
   );
-}
+};

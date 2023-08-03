@@ -9,14 +9,14 @@ interface Props {
   onChange?: (e: ChangeEvent<HTMLTextAreaElement | HTMLInputElement>) => void;
 }
 
-export default function Input({
+export const Input = ({
   placeholder,
   multiline,
   name = '',
   value = '',
   onChange = () => {},
   type,
-}: Props) {
+}: Props) => {
   if (multiline) {
     return (
       <textarea
@@ -39,4 +39,4 @@ export default function Input({
       onChange={onChange}
     />
   );
-}
+};

@@ -6,7 +6,7 @@ interface Props {
   emmitCategory: (category: Category) => void;
 }
 
-export default function CategoriesTab({ categories, selectedCategory, emmitCategory }: Props) {
+export const TabCategories = ({ categories, selectedCategory, emmitCategory }: Props) => {
   function handleClickTag(category: Category) {
     emmitCategory(category);
   }
@@ -28,4 +28,4 @@ export default function CategoriesTab({ categories, selectedCategory, emmitCateg
       })}
     </div>
   );
-}
+};

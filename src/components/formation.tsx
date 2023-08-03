@@ -20,7 +20,7 @@ const work: FormationItem[] = [
   },
 ];
 
-export default function Formation() {
+export const Formation = () => {
   return (
     <section id="formation" className="bg-gray-50 dark:bg-background-light">
       <div className="max-w-[1200px] w-[90%] m-auto py-20">
@@ -52,7 +52,7 @@ export default function Formation() {
       </div>
     </section>
   );
-}
+};
 
 interface Props {
   item: FormationItem;

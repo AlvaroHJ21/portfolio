@@ -1,7 +1,7 @@
-import About from '@/components/about/About';
-import CarouselTecnologies from '@/components/carousel/CarouselTecnologies';
-import Formation from '@/components/formation/Formation';
-import Skills from '@/components/skills/Skills';
+import { About } from '@/components/about';
+import { Carousel } from '@/components/carousel-tecnologies';
+import { Formation } from '@/components/formation';
+import { Skills } from '@/components/skills';
 import React from 'react';
 
 export default function AboutMePage() {
@@ -9,7 +9,7 @@ export default function AboutMePage() {
     <div>
       <About />
       <Skills />
-      <CarouselTecnologies />
+      <Carousel />
       <Formation />
     </div>
   );

@@ -1,7 +1,7 @@
 import { CloudinaryResponse } from '@/interfaces/CloudinaryResponse';
 import axios from 'axios';
 
-const uploadImage = async (file: File) => {
+const uploadImage = async (file?: File) => {
   if (!file) return null;
   try {
     const formData = new FormData();

@@ -9,37 +9,6 @@ export default async function ProjectsPage() {
     },
   });
 
-  // const projects = [
-  //   {
-  //     id: 1,
-  //     name: 'Proyecto God',
-  //     description: 'Esta es una card de un proyecto god',
-  //     images: [
-  //       'https://alvarohuaysara.tech/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdthuporgb%2Fimage%2Fupload%2Fv1681274335%2Flarge_delivery_cover_ea5dd9d3e9.png&w=1920&q=75',
-  //     ],
-  //     categories: [
-  //       {
-  //         id: 0,
-  //         name: 'Página Web / Landing Page',
-  //       },
-  //     ],
-  //     tecnologies: [
-  //       {
-  //         id: 1,
-  //         img: {},
-  //         name: 'React',
-  //       },
-  //       {
-  //         id: 2,
-  //         img: {},
-  //         name: 'NextJS',
-  //       },
-  //     ],
-  //   },
-  // ];
-
-  // console.log(projects);
-
   return (
     <section id="proyects" className="bg-gray-50 dark:bg-background-light">
       <div className="max-w-[1200px] m-auto w-[90%]">

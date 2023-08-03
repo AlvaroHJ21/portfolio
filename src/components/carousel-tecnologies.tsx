@@ -15,7 +15,7 @@ export const CarouselItem = ({ item }: any) => {
   );
 };
 
-export default function Carousel() {
+export const Carousel = () => {
   return (
     <section className="overflow-hidden">
       <div className="py-4">
@@ -39,4 +39,4 @@ export default function Carousel() {
       </div>
     </section>
   );
-}
+};

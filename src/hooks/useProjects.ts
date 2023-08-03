@@ -23,5 +23,15 @@ export const useProjects = () => {
     }
   };
 
-  return { projects, error, isLoading, mutate, startAddProject };
+  const startGetProjectById = async (id: number) => {
+    try {
+      const { data } = await axios.get<ApiResponse<Project>>(api + id);
+      return data.data;
+    } catch (error) {
+      console.log(error);
+      return null;
+    }
+  };
+
+  return { projects, error, isLoading, mutate, startAddProject, startGetProjectById };
 };

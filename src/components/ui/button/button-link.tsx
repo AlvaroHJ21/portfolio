@@ -1,35 +1,41 @@
+import Link from 'next/link';
+
 interface Props {
+  href: string;
   text: string;
+  target?: string;
+  download?: string;
   variant?: Variant;
   suffixIcon?: React.ReactNode;
   prefixIcon?: React.ReactNode;
-  onClick?: () => void;
-  type?: 'button' | 'submit' | 'reset' | undefined;
 }
 
 type Variant = 'filled' | 'outline';
 
-export default function Button({
+export const ButtonLink = ({
+  href,
   text,
+  target,
+  download,
   variant = 'filled',
   suffixIcon,
   prefixIcon,
-  onClick,
-  type,
-}: Props) {
+}: Props) => {
   return (
-    <button
-      onClick={onClick}
-      type={type}
-      className={`flex items-center justify-center gap-2 px-4 py-2 font-bold rounded-full border-2 ${
+    <Link
+      href={href}
+      className={`
+      flex items-center justify-center gap-2 px-4 py-2 font-bold rounded-full border-2 ${
         variant === 'filled'
           ? 'bg-main border-transparent text-white'
           : 'border-main bg-transparent text-main dark:text-white'
-      } btn`}
+      } my-btn`}
+      target={target}
+      download={download}
     >
       {prefixIcon}
       {text}
       {suffixIcon}
-    </button>
+    </Link>
   );
-}
+};

@@ -1,6 +1,6 @@
 'use client';
 
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 
@@ -8,8 +8,7 @@ import { FaArrowLeft, FaTrash } from 'react-icons/fa';
 import { TbPhotoPlus } from 'react-icons/tb';
 import Swal from 'sweetalert2';
 
-import { Option } from 'react-multi-select-component';
-import Multiselect from '@/components/input/Multiselect';
+import { Multiselect, Option } from '@/components/ui/input/multiselect';
 
 import uploadImage from '@/helpers/uploadImage';
 import { useCategories } from '@/hooks/useCategories';
@@ -18,28 +17,60 @@ import { useProjects } from '@/hooks/useProjects';
 import { Project } from '@/interfaces';
 
 interface Image {
-  id: number;
-  file: File;
-  image: string | ArrayBuffer;
+  id?: string;
+  file?: File;
+  image?: string | ArrayBuffer;
+  url?: string;
 }
 
-export default function CreateProjectPage() {
+interface Props {
+  params?: {
+    id: string;
+  };
+}
+
+export default function ProjectFormPage({ params }: Props) {
   const router = useRouter();
 
-  const { startAddProject } = useProjects();
+  const { projects, isLoading, startAddProject } = useProjects();
   const { categories } = useCategories();
   const { tecnologies } = useTecnologies();
 
-  const [formValues, setFormValues] = useState({
-    name: '',
-    description: '',
-  });
+  //
+  const [name, setName] = useState('');
+  const [description, setDescription] = useState('');
   const [selectedCategories, setSelectedCategories] = useState<Option[]>([]);
   const [selectedTecnologies, setSelectedTecnologies] = useState<Option[]>([]);
 
   const inputImageRef = useRef<HTMLInputElement | null>(null);
-  const [currentImage, setCurrentImage] = useState<string | ArrayBuffer | null>(null);
+  const [currentImage, setCurrentImage] = useState<Image | null>(null);
   const [selectedImages, setSelectedImages] = useState<Image[]>([]);
+
+  useEffect(() => {
+    if (projects && params?.id) {
+      const projectFound = projects.find((project) => project.id === Number(params.id));
+      setValuesForm({
+        name: projectFound?.name ?? '',
+        description: projectFound?.description ?? '',
+        selectedImages:
+          projectFound?.images.map((url) => ({
+            id: url,
+            url: url,
+          })) ?? [],
+        selectedCategories:
+          projectFound?.categories.map((category) => ({
+            value: category.id,
+            label: category.name,
+          })) ?? [],
+        selectedTecnologies:
+          projectFound?.tecnologies.map((tecnology) => ({
+            value: tecnology.id,
+            label: tecnology.name,
+          })) ?? [],
+      });
+      // console.log(projectFound);
+    }
+  }, [isLoading]);
 
   const categoryOptions: Option[] =
     categories?.map((category) => ({
@@ -51,6 +82,26 @@ export default function CreateProjectPage() {
       value: tecnology.id,
       label: tecnology.name,
     })) ?? [];
+
+  const setValuesForm = ({
+    name,
+    description,
+    selectedImages,
+    selectedCategories,
+    selectedTecnologies,
+  }: {
+    name: string;
+    description: string;
+    selectedImages: Image[];
+    selectedCategories: Option[];
+    selectedTecnologies: Option[];
+  }) => {
+    setName(name);
+    setDescription(description);
+    setSelectedImages(selectedImages);
+    setSelectedCategories(selectedCategories);
+    setSelectedTecnologies(selectedTecnologies);
+  };
 
   const onSelectImage = () => {
     inputImageRef.current?.click();
@@ -73,7 +124,7 @@ export default function CreateProjectPage() {
       // setCurrentImage(fr.result);
       if (fr.result) {
         // setCurrentImages([...currentImages, fr.result]);
-        const id = Date.now();
+        const id = `${Date.now()}`;
         setSelectedImages([...selectedImages, { id, file, image: fr.result }]);
       }
     };
@@ -81,12 +132,12 @@ export default function CreateProjectPage() {
   };
 
   const onViewImage = (image: Image) => {
-    setCurrentImage(image.image);
+    setCurrentImage(image);
     const dialog = document.getElementById('image_modal') as HTMLDialogElement;
     dialog.showModal();
   };
 
-  const onQuitImage = (id: number) => {
+  const onQuitImage = (id: string) => {
     console.log(id);
     setSelectedImages((prev) => prev.filter((image) => image.id != id));
   };
@@ -94,49 +145,50 @@ export default function CreateProjectPage() {
   const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    const promises = selectedImages.map((image) => uploadImage(image.file));
+    if (params?.id) {
+      //TODO
+      // update
+      // subir las imagenes nuevas (las que tienen file)
+    } else {
+      //create
 
-    const images = await Promise.all(promises);
+      const promises = selectedImages.map((image) => uploadImage(image.file));
 
-    if (images.includes(null)) return;
+      const images = await Promise.all(promises);
 
-    const data: Project = {
-      name: formValues.name,
-      description: formValues.description,
-      images: images as string[],
-      categories: selectedCategories.map((selected) => ({
-        id: selected.value,
-        name: selected.label,
-      })),
-      tecnologies: selectedTecnologies.map((selected) => ({
-        id: selected.value,
-        name: selected.label,
-        image: '',
-      })),
-    };
+      if (images.includes(null)) return;
 
-    Swal.fire({
-      title: 'Espere',
-      text: 'Guardando información',
-      allowOutsideClick: false,
-      showConfirmButton: false,
-      willOpen: () => {
-        Swal.showLoading();
-      },
-    });
+      const data: Project = {
+        name: name,
+        description: description,
+        images: images as string[],
+        categories: selectedCategories.map((selected) => ({
+          id: selected.value,
+          name: selected.label,
+        })),
+        tecnologies: selectedTecnologies.map((selected) => ({
+          id: selected.value,
+          name: selected.label,
+          image: '',
+        })),
+      };
 
-    const resp = await startAddProject(data);
+      Swal.fire({
+        title: 'Espere',
+        text: 'Guardando información',
+        allowOutsideClick: false,
+        showConfirmButton: false,
+        willOpen: () => {
+          Swal.showLoading();
+        },
+      });
 
-    Swal.close();
+      const resp = await startAddProject(data);
+
+      Swal.close();
+    }
 
     router.push('/dashboard/projects');
-  };
-
-  const onChangeFormValue = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormValues({
-      ...formValues,
-      [e.target.name]: e.target.value,
-    });
   };
 
   return (
@@ -145,7 +197,9 @@ export default function CreateProjectPage() {
         <Link href="/dashboard/projects">
           <FaArrowLeft />
         </Link>
-        <h1 className="text-2xl">Nuevo proyecto</h1>
+        <h1 className="text-2xl">
+          {params?.id ? `Editando el proyecto ${params?.id}` : 'Nuevo proyecto'}
+        </h1>
       </div>
       <div className="shadow-xl card bg-base-100">
         <div className="card-body">
@@ -155,9 +209,8 @@ export default function CreateProjectPage() {
                 Nombre
               </label>
               <input
-                name="name"
-                value={formValues.name}
-                onChange={onChangeFormValue}
+                value={name}
+                onChange={(e) => setName(e.target.value)}
                 type="text"
                 className="input input-bordered"
               />
@@ -167,9 +220,8 @@ export default function CreateProjectPage() {
                 Descripción
               </label>
               <textarea
-                name="description"
-                value={formValues.description}
-                onChange={onChangeFormValue}
+                value={description}
+                onChange={(e) => setDescription(e.target.value)}
                 className="textarea textarea-bordered"
               ></textarea>
             </div>
@@ -192,15 +244,15 @@ export default function CreateProjectPage() {
                 {selectedImages.map((image) => (
                   <div key={image.id} className="relative w-28 h-28">
                     <img
-                      src={image.image as string}
+                      src={(image.image as string) || (image.url as string)}
                       onClick={() => onViewImage(image)}
                       className="object-cover w-full h-full rounded-md cursor-pointer"
                       alt="entry"
                     />
                     <button
-                      onClick={() => onQuitImage(image.id)}
+                      onClick={() => onQuitImage(image.id!)}
                       type="button"
-                      className="absolute bottom-2 right-2 btn btn-sm btn-outline btn-error"
+                      className="absolute bottom-1 right-1 btn btn-sm btn-outline btn-error"
                     >
                       <FaTrash />
                     </button>
@@ -246,7 +298,7 @@ export default function CreateProjectPage() {
         <form method="dialog" className="max-w-4xl modal-box">
           {currentImage && (
             <img
-              src={currentImage as string}
+              src={(currentImage.image as string) || currentImage.url}
               className="object-cover w-full h-full rounded-md cursor-pointer"
               alt="entry"
             />

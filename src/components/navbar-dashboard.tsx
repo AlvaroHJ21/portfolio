@@ -1,8 +1,6 @@
-import { ButtonMode } from '@/components/button';
 import Link from 'next/link';
-import React from 'react';
 
-export default function Navbar() {
+export const NavbarDashboard = () => {
   const links = [
     {
       name: 'Proyectos',
@@ -63,4 +61,4 @@ export default function Navbar() {
       <div className="navbar-end"></div>
     </div>
   );
-}
+};

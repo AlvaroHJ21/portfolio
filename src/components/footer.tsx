@@ -4,9 +4,9 @@ import { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
-import networkLinks from '../../data/networkLinks';
+import networkLinks from '@/data/networkLinks';
 
-export default function Footer() {
+export const Footer = () => {
   useEffect(() => {
     AOS.init();
   }, []);
@@ -27,4 +27,4 @@ export default function Footer() {
       </div>
     </footer>
   );
-}
+};

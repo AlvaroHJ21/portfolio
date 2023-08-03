@@ -1,15 +1,15 @@
 'use client';
 
-import Link from 'next/link';
 import { useState } from 'react';
+import Link from 'next/link';
 
 import { AiOutlineClose } from 'react-icons/ai';
 import { HiOutlineMenuAlt3 } from 'react-icons/hi';
 
-import ButtonMode from '../button/ButtonMode';
+import { ButtonMode } from './ui/button/button-mode';
 import navLinks from '@/data/navLinks';
 
-export default function Navbar() {
+export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   function handleClickMenu() {
@@ -94,4 +94,4 @@ export default function Navbar() {
       </div>
     </>
   );
-}
+};
