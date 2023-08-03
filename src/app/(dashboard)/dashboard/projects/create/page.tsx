@@ -32,12 +32,15 @@ interface Props {
 export default function ProjectFormPage({ params }: Props) {
   const router = useRouter();
 
-  const { projects, isLoading, startAddProject } = useProjects();
+  const { projects, isLoading, startAddProject, startUpdateProject } = useProjects();
   const { categories } = useCategories();
   const { tecnologies } = useTecnologies();
 
   //
+  const [url, setUrl] = useState('');
   const [name, setName] = useState('');
+  const [priority, setPriority] = useState(0);
+  const [published, setPublished] = useState(false);
   const [description, setDescription] = useState('');
   const [selectedCategories, setSelectedCategories] = useState<Option[]>([]);
   const [selectedTecnologies, setSelectedTecnologies] = useState<Option[]>([]);
@@ -50,7 +53,10 @@ export default function ProjectFormPage({ params }: Props) {
     if (projects && params?.id) {
       const projectFound = projects.find((project) => project.id === Number(params.id));
       setValuesForm({
+        url: projectFound?.url ?? '',
         name: projectFound?.name ?? '',
+        priority: projectFound?.priority ?? 0,
+        published: projectFound?.published ?? false,
         description: projectFound?.description ?? '',
         selectedImages:
           projectFound?.images.map((url) => ({
@@ -60,12 +66,12 @@ export default function ProjectFormPage({ params }: Props) {
         selectedCategories:
           projectFound?.categories.map((category) => ({
             value: category.id,
-            label: category.name,
+            label: category.name ?? '',
           })) ?? [],
         selectedTecnologies:
           projectFound?.tecnologies.map((tecnology) => ({
             value: tecnology.id,
-            label: tecnology.name,
+            label: tecnology.name ?? '',
           })) ?? [],
       });
       // console.log(projectFound);
@@ -75,28 +81,37 @@ export default function ProjectFormPage({ params }: Props) {
   const categoryOptions: Option[] =
     categories?.map((category) => ({
       value: category.id,
-      label: category.name,
+      label: category.name ?? '',
     })) ?? [];
   const tecnologyOptions: Option[] =
     tecnologies?.map((tecnology) => ({
       value: tecnology.id,
-      label: tecnology.name,
+      label: tecnology.name ?? '',
     })) ?? [];
 
   const setValuesForm = ({
+    url,
     name,
+    priority,
+    published,
     description,
     selectedImages,
     selectedCategories,
     selectedTecnologies,
   }: {
+    url: string;
     name: string;
+    priority: number;
+    published: boolean;
     description: string;
     selectedImages: Image[];
     selectedCategories: Option[];
     selectedTecnologies: Option[];
   }) => {
+    setUrl(url);
     setName(name);
+    setPriority(priority);
+    setPublished(published);
     setDescription(description);
     setSelectedImages(selectedImages);
     setSelectedCategories(selectedCategories);
@@ -146,9 +161,50 @@ export default function ProjectFormPage({ params }: Props) {
     e.preventDefault();
 
     if (params?.id) {
-      //TODO
+      // console.log(selectedImages);
       // update
       // subir las imagenes nuevas (las que tienen file)
+      //TODO: ELiminar las imagenes que no estan en selectedImages pero que estaban en el registro inicial de la base de datos
+      const promises = selectedImages.map((image) => {
+        if (image.file) {
+          return uploadImage(image.file);
+        }
+        return image.url;
+      });
+
+      const images = await Promise.all(promises);
+
+      const data: Project = {
+        id: Number(params.id),
+        url: url,
+        name: name,
+        priority: priority,
+        published: published,
+        description: description,
+        images: images as string[],
+        categories: selectedCategories.map((selected) => ({
+          id: selected.value,
+        })),
+        tecnologies: selectedTecnologies.map((selected) => ({
+          id: selected.value,
+        })),
+      };
+
+      // console.log(data);
+
+      Swal.fire({
+        title: 'Espere',
+        text: 'Guardando información',
+        allowOutsideClick: false,
+        showConfirmButton: false,
+        willOpen: () => {
+          Swal.showLoading();
+        },
+      });
+
+      const resp = await startUpdateProject(data);
+
+      Swal.close();
     } else {
       //create
 
@@ -159,17 +215,17 @@ export default function ProjectFormPage({ params }: Props) {
       if (images.includes(null)) return;
 
       const data: Project = {
+        url: url,
         name: name,
+        priority: priority,
+        published: published,
         description: description,
         images: images as string[],
         categories: selectedCategories.map((selected) => ({
           id: selected.value,
-          name: selected.label,
         })),
         tecnologies: selectedTecnologies.map((selected) => ({
           id: selected.value,
-          name: selected.label,
-          image: '',
         })),
       };
 
@@ -197,9 +253,18 @@ export default function ProjectFormPage({ params }: Props) {
         <Link href="/dashboard/projects">
           <FaArrowLeft />
         </Link>
-        <h1 className="text-2xl">
+        <h1 className="flex-1 text-2xl">
           {params?.id ? `Editando el proyecto ${params?.id}` : 'Nuevo proyecto'}
         </h1>
+        <label className="flex gap-2 cursor-pointer label">
+          <span className="label-text">Publicar</span>
+          <input
+            type="checkbox"
+            checked={published}
+            onChange={(e) => setPublished(e.target.checked)}
+            className="checkbox checkbox-accent"
+          />
+        </label>
       </div>
       <div className="shadow-xl card bg-base-100">
         <div className="card-body">
@@ -225,7 +290,18 @@ export default function ProjectFormPage({ params }: Props) {
                 className="textarea textarea-bordered"
               ></textarea>
             </div>
-
+            <div className="mb-4 form-control">
+              <label htmlFor="" className="label">
+                URL
+              </label>
+              <input
+                value={url}
+                onChange={(e) => setUrl(e.target.value)}
+                type="text"
+                className="input input-bordered"
+                placeholder="http://example.com"
+              />
+            </div>
             {/* Imagenes */}
             <div className="form-control">
               <div className="flex items-center justify-between">
@@ -283,9 +359,21 @@ export default function ProjectFormPage({ params }: Props) {
                 Tecnologías
               </label>
               <Multiselect
-                options={tecnologyOptions}
+                options={tecnologyOptions.sort((a, b) => a.label.localeCompare(b.label))}
                 selected={selectedTecnologies}
                 setSelected={setSelectedTecnologies}
+              />
+            </div>
+            <div className="mb-4 form-control">
+              <label htmlFor="" className="label">
+                Prioridad
+              </label>
+              <input
+                value={priority}
+                onChange={(e) => setPriority(Number(e.target.value))}
+                type="number"
+                className="input input-bordered"
+                min={0}
               />
             </div>
             <button className="btn btn-primary">Guardar</button>

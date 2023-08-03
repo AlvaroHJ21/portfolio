@@ -35,6 +35,7 @@ export const TableProjects = ({ projects }: Props) => {
             <th className="">Descripción</th>
             <th className="">Categorias</th>
             <th className="">Tecnologias</th>
+            <th className="">Publicado</th>
             <th>Acciones</th>
           </tr>
         </thead>
@@ -69,6 +70,13 @@ export const TableProjects = ({ projects }: Props) => {
                     </span>
                   ))}
                 </div>
+              </td>
+              <td className="px-6 py-4">
+                {item.published ? (
+                  <span className="badge badge-success">Publicado</span>
+                ) : (
+                  <span className="badge badge-neutro whitespace-nowrap">No publicado</span>
+                )}
               </td>
               <td className="flex items-center h-[100px] gap-4">
                 <Link href={`/dashboard/projects/edit/${item.id}`} className="btn btn-info btn-sm">

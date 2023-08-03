@@ -23,9 +23,10 @@ export const useProjects = () => {
     }
   };
 
-  const startGetProjectById = async (id: number) => {
+  const startUpdateProject = async (project: Project) => {
     try {
-      const { data } = await axios.get<ApiResponse<Project>>(api + id);
+      const { data } = await axios.put<ApiResponse<Project>>(`${api}/${project.id}`, project);
+      console.log(data);
       return data.data;
     } catch (error) {
       console.log(error);
@@ -33,5 +34,23 @@ export const useProjects = () => {
     }
   };
 
-  return { projects, error, isLoading, mutate, startAddProject, startGetProjectById };
+  const startGetProjectById = async (id: number) => {
+    try {
+      const { data } = await axios.get<ApiResponse<Project>>(`${api}/${id}`);
+      return data.data;
+    } catch (error) {
+      console.log(error);
+      return null;
+    }
+  };
+
+  return {
+    projects,
+    error,
+    isLoading,
+    mutate,
+    startAddProject,
+    startUpdateProject,
+    startGetProjectById,
+  };
 };

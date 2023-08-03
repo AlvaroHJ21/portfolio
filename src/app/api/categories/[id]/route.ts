@@ -17,3 +17,4 @@ export const DELETE = async (request: Request, { params }: any) => {
     return new NextResponse('Database Error', { status: 500 });
   }
 };
+

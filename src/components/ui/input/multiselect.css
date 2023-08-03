@@ -1,10 +1,10 @@
 .my-multiselect .rmsc {
   --rmsc-main: #4285f4;
-  --rmsc-hover: #222222;
+  --rmsc-hover: hsl(var(--b2));
   --rmsc-selected: #1a1a1a;
   --rmsc-border: #cccccc2f;
   --rmsc-gray: #aaa;
-  --rmsc-bg: #212733;
+  --rmsc-bg: hsl(var(--b1));
   --rmsc-p: 10px;
   --rmsc-radius: 4px;
   --rmsc-h: 38px;

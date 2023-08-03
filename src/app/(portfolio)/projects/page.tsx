@@ -1,12 +1,31 @@
 import prisma from '@/lib/prisma';
 
+// import axios from 'axios';
+
 export default async function ProjectsPage() {
   const projects = await prisma.project.findMany({
+    where: {
+      published: true,
+    },
     include: {
       categories: true,
       tecnologies: true,
     },
+    orderBy: {
+      priority: 'desc',
+    },
   });
+
+  // try {
+  //   const resp = await fetch('http://localhost:3000/api/projects', {
+  //     cache: 'no-store',
+  //   });
+  //   const data = await resp.json();
+
+  //   console.log(data);
+  // } catch (error) {
+  //   console.log('error', error);
+  // }
 
   return (
     <section id="proyects" className="bg-gray-50 dark:bg-background-light">
@@ -33,10 +52,18 @@ export default async function ProjectsPage() {
                       <img src={project.images[0]} className="object-cover w-full h-full" alt="" />
                     </picture>
                     <picture className="col-span-1 overflow-hidden rounded-lg">
-                      <img src={project.images[0]} className="object-cover w-full h-full" alt="" />
+                      <img
+                        src={project.images.length > 1 ? project.images[1] : project.images[0]}
+                        className="object-cover w-full h-full"
+                        alt=""
+                      />
                     </picture>
                     <picture className="col-span-1 overflow-hidden rounded-lg">
-                      <img src={project.images[0]} className="object-cover w-full h-full" alt="" />
+                      <img
+                        src={project.images.length > 2 ? project.images[2] : project.images[0]}
+                        className="object-cover w-full h-full"
+                        alt=""
+                      />
                     </picture>
                   </div>
                   <div className="flex gap-2">
@@ -49,7 +76,7 @@ export default async function ProjectsPage() {
                           {tecnology.image && (
                             <img
                               src={tecnology.image}
-                              alt={tecnology.name}
+                              alt={tecnology.name ?? ''}
                               className="w-6 h-6 mr-2"
                             />
                           )}

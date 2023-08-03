@@ -1,0 +1,13 @@
+-- AlterTable
+ALTER TABLE "Category" ALTER COLUMN "name" DROP NOT NULL;
+
+-- AlterTable
+ALTER TABLE "Project" ALTER COLUMN "name" DROP NOT NULL,
+ALTER COLUMN "description" DROP NOT NULL;
+
+-- AlterTable
+ALTER TABLE "Tecnology" ALTER COLUMN "name" DROP NOT NULL,
+ALTER COLUMN "image" DROP NOT NULL;
+
+-- AlterTable
+ALTER TABLE "User" ALTER COLUMN "name" DROP NOT NULL;

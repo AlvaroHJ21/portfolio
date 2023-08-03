@@ -68,7 +68,7 @@ const tecnologies: Tecnology[] = [
   },
   {
     id: 14,
-    name: 'VueUI',
+    name: 'Vue',
     image: '/logos/vue.svg',
   },
   {
