@@ -50,7 +50,8 @@ export const Navbar = () => {
             {navLinks.map((link, index) => (
               <Link
                 key={index}
-                className={`px-4 py-2 transition-all border-b-2 border-b-transparent text-black
+                className={`
+                px-4 py-2 transition-all border-b-2 border-b-transparent text-black
                  hover:border-b-main hover:text-main
                   dark:text-white dark:hover:text-main
                  `}
