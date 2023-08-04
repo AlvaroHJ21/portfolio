@@ -52,7 +52,7 @@ export const TableProjects = ({ projects }: Props) => {
                 />
               </td>
               <td className="px-6 py-4">{item.name}</td>
-              <td className="px-6 py-4">{subDescription(item.description)}</td>
+              <td className="px-6 py-4">{subDescription(item.description ?? '')}</td>
               <td className="px-6 py-4">
                 <div className="flex flex-wrap gap-2">
                   {item.categories.map((category) => (
