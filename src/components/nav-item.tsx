@@ -15,6 +15,7 @@ interface Props {
 }
 
 export const NavItem = ({ path, item }: Props) => {
+  
   const segment = useSelectedLayoutSegment();
 
   const href = path + '/' + item.slug;
