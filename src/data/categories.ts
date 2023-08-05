@@ -3,7 +3,7 @@ import { Category } from '@/interfaces/Category';
 const categories: Category[] = [
   {
     id: 1,
-    name: 'Página Web / Landing Page',
+    name: 'Páginas Web / Landing Pages',
   },
   {
     id: 2,
@@ -11,7 +11,7 @@ const categories: Category[] = [
   },
   {
     id: 3,
-    name: 'Ecommerce',
+    name: 'E-commerce / ERP',
   },
   {
     id: 4,

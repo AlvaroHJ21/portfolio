@@ -1,18 +1,18 @@
 export default [
   {
-    to: '/',
-    name: 'Home',
+    slug: '',
+    text: 'Home',
   },
   {
-    to: '/projects',
-    name: 'Proyectos',
+    slug: 'projects',
+    text: 'Proyectos',
   },
   {
-    to: '/about-me',
-    name: 'Sobre mí',
+    slug: 'about-me',
+    text: 'Sobre mí',
   },
   {
-    to: '/contact',
-    name: 'Contacto',
+    slug: 'contact',
+    text: 'Contacto',
   },
 ];

@@ -4,6 +4,7 @@ import { TbExternalLink } from 'react-icons/tb';
 
 import { TagGroupTecnologies } from '@/components/tag-group-tecnologies';
 import prisma from '@/lib/prisma';
+import { Tecnology } from '@/interfaces';
 
 interface Props {
   params: {
@@ -48,25 +49,43 @@ export default async function ProyectPage({ params }: Props) {
               </div>
               <div>
                 {project?.url && (
-                  <a href={project?.url} target="_blank" className="btn btn-primary">
-                    Demo
-                    <TbExternalLink size={24} />
-                  </a>
+                  <div className="flex items-center gap-2">
+                    {/* Demo */}
+                    <a
+                      href={project?.url}
+                      target="_blank"
+                      className="p-2 text-white border-2 rounded-full bg-main border-main"
+                    >
+                      <TbExternalLink size={20} />
+                    </a>
+                  </div>
                 )}
               </div>
             </div>
-            <div className="grid grid-cols-3 grid-rows-2 gap-4 mb-4">
+            <div className="grid grid-cols-2 grid-rows-2 gap-4 mb-4 md:grid-cols-3">
               <picture className="col-span-2 row-span-2 overflow-hidden rounded-lg">
-                <img src={firstImage} className="object-cover w-full h-full" alt="" />
+                <img
+                  src={firstImage}
+                  className="object-cover w-full h-full transition-transform cursor-pointer hover:scale-110"
+                  alt=""
+                />
               </picture>
               <picture className="col-span-1 overflow-hidden rounded-lg">
-                <img src={secondImage} className="object-cover w-full h-full" alt="" />
+                <img
+                  src={secondImage}
+                  className="object-cover w-full h-full transition-transform cursor-pointer hover:scale-110"
+                  alt=""
+                />
               </picture>
               <picture className="col-span-1 overflow-hidden rounded-lg">
-                <img src={thirdImage} className="object-cover w-full h-full" alt="" />
+                <img
+                  src={thirdImage}
+                  className="object-cover w-full h-full transition-transform cursor-pointer hover:scale-110"
+                  alt=""
+                />
               </picture>
             </div>
-            <TagGroupTecnologies tecnologies={project?.tecnologies ?? []} />
+            <TagGroupTecnologies tecnologies={project?.tecnologies as Tecnology[]} />
             <div>
               <p className="mt-4 text-lg text-gray-600 dark:text-gray-300">
                 {project?.description}
