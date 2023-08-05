@@ -250,7 +250,7 @@ export default function ProjectFormPage({ params }: Props) {
   return (
     <section className="">
       <div className="flex items-center gap-4">
-        <Link href="/dashboard/projects">
+        <Link href="/dashboard/projects" aria-label="Regresar a proyectos">
           <FaArrowLeft />
         </Link>
         <h1 className="flex-1 text-2xl">

@@ -15,7 +15,6 @@ interface Props {
 }
 
 export const NavItem = ({ path, item }: Props) => {
-  
   const segment = useSelectedLayoutSegment();
 
   const href = path + '/' + item.slug;
@@ -34,6 +33,7 @@ export const NavItem = ({ path, item }: Props) => {
           'border-b-transparent text-black dark:text-white': !active,
         }
       )}
+      aria-label={item.text}
     >
       {item.text}
     </Link>

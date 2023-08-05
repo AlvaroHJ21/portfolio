@@ -67,6 +67,7 @@ export default async function ProjectsPage() {
                 <Link
                   href={`/projects/${project.id}`}
                   className="grid grid-cols-2 grid-rows-2 gap-4 mb-4 md:grid-cols-3"
+                  aria-label={`Ver proyecto ${project.name}`}
                 >
                   <picture className="col-span-2 row-span-2 overflow-hidden rounded-lg">
                     <img

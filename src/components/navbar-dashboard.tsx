@@ -42,7 +42,9 @@ export const NavbarDashboard = () => {
           >
             {links.map((link) => (
               <li key={link.name}>
-                <Link href={link.to}>{link.name}</Link>
+                <Link href={link.to} aria-label={link.name}>
+                  {link.name}
+                </Link>
               </li>
             ))}
           </ul>
@@ -53,7 +55,9 @@ export const NavbarDashboard = () => {
         <ul className="px-1 menu menu-horizontal">
           {links.map((link) => (
             <li key={link.name}>
-              <Link href={link.to}>{link.name}</Link>
+              <Link href={link.to} aria-label={link.name}>
+                {link.name}
+              </Link>
             </li>
           ))}
         </ul>

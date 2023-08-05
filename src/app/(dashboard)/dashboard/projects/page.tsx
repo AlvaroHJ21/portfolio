@@ -23,7 +23,11 @@ export default function ProjectPage() {
     <section className="">
       <div className="flex justify-between">
         <h1>Proyectos</h1>
-        <Link href="/dashboard/projects/create" className="capitalize text-primary btn">
+        <Link
+          href="/dashboard/projects/create"
+          className="capitalize text-primary btn"
+          aria-label="Agregar proyecto"
+        >
           <FaPlus />
           Agregar
         </Link>

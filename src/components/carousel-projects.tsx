@@ -53,7 +53,11 @@ export const CarouselProjects = ({
           const { id, images, name } = item;
           return (
             <SwiperSlide className="" key={id}>
-              <Link href={`/projects/${item.id}`} className="flex flex-col my-4 shadow-md">
+              <Link
+                href={`/projects/${item.id}`}
+                className="flex flex-col my-4 shadow-md"
+                aria-label={`Ver proyecto ${name}`}
+              >
                 <picture className="overflow-hidden rounded-md">
                   <img
                     src={images[0]}

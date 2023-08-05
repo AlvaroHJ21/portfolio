@@ -23,7 +23,11 @@ export const Navbar = () => {
         <div className="max-w-[1200px] flex justify-between w-[90%] m-auto item-center">
           {/* Icono */}
           <div className="min-h-[64px] flex items-center justify-end">
-            <Link href="/" className="left-0 px-4 py-2 text-black text-20 dark:text-white">
+            <Link
+              href="/"
+              className="left-0 px-4 py-2 text-black text-20 dark:text-white"
+              aria-label="Ir a Inicio"
+            >
               <span className="font-bold text-main text-[1.8rem]">{'>_'}</span>
               Alvaro<span className="font-black ">HJ</span>
             </Link>

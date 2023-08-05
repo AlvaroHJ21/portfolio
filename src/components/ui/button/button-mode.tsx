@@ -35,6 +35,7 @@ export const ButtonMode = ({ size = 24 }: Props) => {
     <button
       onClick={() => handleToggleMode()}
       className="p-1 text-white border-2 rounded-full bg-main border-main"
+      aria-label="Cambiar modo de color"
     >
       {mode === 'dark' ? (
         <MdSunny size={size} className={mounted ? '' : 'opacity-0'} />

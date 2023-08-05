@@ -32,6 +32,7 @@ export const ButtonLink = ({
       } my-btn`}
       target={target}
       download={download}
+      aria-label={text}
     >
       {prefixIcon}
       {text}

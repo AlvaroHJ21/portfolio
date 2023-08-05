@@ -79,7 +79,11 @@ export const TableProjects = ({ projects }: Props) => {
                 )}
               </td>
               <td className="flex items-center h-[100px] gap-4">
-                <Link href={`/dashboard/projects/edit/${item.id}`} className="btn btn-info btn-sm">
+                <Link
+                  href={`/dashboard/projects/edit/${item.id}`}
+                  className="btn btn-info btn-sm"
+                  aria-label={`Editar proyecto ${item.name}`}
+                >
                   <FaEdit />
                 </Link>
                 <button className="btn btn-error btn-sm">
