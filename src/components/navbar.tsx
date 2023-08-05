@@ -76,7 +76,7 @@ export const Navbar = () => {
             <a
               key={index}
               className={`text-20 font-bold text-white px-4 py-2 text-center rounded-full hover:bg-main `}
-              href={link.slug}
+              href={'/' + link.slug}
             >
               {link.text}
             </a>

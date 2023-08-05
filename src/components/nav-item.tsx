@@ -23,6 +23,8 @@ export const NavItem = ({ path, item }: Props) => {
 
   // console.log({ slug: item.slug, active });
 
+  // console.log(href);
+
   return (
     <Link
       href={href}
