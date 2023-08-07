@@ -58,9 +58,9 @@ export const Hero = () => {
         <ButtonLink text="Ver proyectos" href="/projects" />
         <ButtonLink
           text="Descarga mi CV"
-          href="/pdf/CV-AlvaroHJ.pdf"
+          href="/pdf/cv-alvaro-huaysara-jauregui.pdf"
           target="_blank"
-          download="CV-AlvaroHJ.pdf"
+          download="cv-alvaro-huaysara-jauregui.pdf"
           variant="outline"
           prefixIcon={<BsDownload size={24} />}
         />
