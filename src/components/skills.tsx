@@ -43,7 +43,7 @@ export const Skills = () => {
   }, []);
 
   return (
-    <section id="skills" className="">
+    <section id="skills" className="bg-gray-50 dark:bg-background-light">
       <div className="max-w-[1200px] w-[90%] m-auto min-h-[756px] py-20">
         <div className="flex flex-col items-center justify-center gap-8 md:justify-start item-center">
           <div data-aos="fade-down">

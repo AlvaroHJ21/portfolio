@@ -17,13 +17,13 @@ export const Footer = () => {
         <div data-aos="fade-up">
           <div className="flex gap-8 mb-6 text-gray-600 dark:text-white">
             {networkLinks.map(({ name, url, icon }) => (
-              <a key={name} href={url} className="btnIcon" target="_blank">
+              <a key={name} href={url} className="btnIcon" target="_blank" aria-label={name}>
                 {icon}
               </a>
             ))}
           </div>
         </div>
-        <p className="text-gris"> &copy; Alvaro Huaysara. 2023</p>
+        <p className="text-gray-600 dark:text-gray-400"> &copy; Alvaro Huaysara. 2023</p>
       </div>
     </footer>
   );

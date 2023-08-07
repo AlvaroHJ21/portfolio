@@ -17,7 +17,7 @@ export const About = () => {
 
   return (
     <section id="about-us" className="bg-gray-50 dark:bg-background-light">
-      <div className="max-w-[1200px] w-[90%] m-auto min-h-[756px] py-24">
+      <div className="max-w-[1200px] w-[90%] m-auto min-h-[756px] py-20 grid place-content-center">
         <div className="flex flex-col h-full gap-16 md:flex-row">
           {/* Imagen */}
           <div data-aos="fade-down" className="">
@@ -26,8 +26,8 @@ export const About = () => {
                 className="object-cover transition-transform duration-300 cursor-pointer hover:scale-110"
                 src="/img/my-perfil.webp"
                 alt="perfil"
-                width={480}
-                height={480}
+                width={384}
+                height={384}
               />
             </div>
           </div>

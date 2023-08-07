@@ -29,9 +29,9 @@ export const NavItem = ({ path, item }: Props) => {
     <Link
       href={href}
       className={clsx(
-        'px-4 py-2 transition-all border-b-2  hover:text-main  dark:hover:text-main',
+        'px-4 py-2 transition-all border-b-2  hover:text-main dark:hover:text-[#95AAF4]',
         {
-          'border-b-main text-main dark:text-main': active,
+          'border-b-main text-main dark:text-[#95AAF4]': active,
           'border-b-transparent text-black dark:text-white': !active,
         }
       )}
