@@ -15,8 +15,11 @@ export const useCategories = () => {
 
   const startAddCategory = async (category: Category) => {
     try {
+      
       const { data } = await axios.post<ApiResponse<Category>>(api, category);
+      
       return data.data;
+
     } catch (error) {
       console.log(error);
       return null;
