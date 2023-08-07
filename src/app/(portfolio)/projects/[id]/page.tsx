@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 
 import { TbExternalLink } from 'react-icons/tb';
 
@@ -64,24 +65,30 @@ export default async function ProyectPage({ params }: Props) {
             </div>
             <div className="grid grid-cols-2 grid-rows-2 gap-4 mb-4 md:grid-cols-3">
               <picture className="col-span-2 row-span-2 overflow-hidden rounded-lg">
-                <img
-                  src={firstImage}
+                <Image
+                  src={firstImage!}
                   className="object-cover w-full h-full transition-transform cursor-pointer hover:scale-110"
                   alt=""
+                  width={600}
+                  height={400}
                 />
               </picture>
               <picture className="col-span-1 overflow-hidden rounded-lg">
-                <img
-                  src={secondImage}
+                <Image
+                  src={secondImage!}
                   className="object-cover w-full h-full transition-transform cursor-pointer hover:scale-110"
                   alt=""
+                  width={300}
+                  height={200}
                 />
               </picture>
               <picture className="col-span-1 overflow-hidden rounded-lg">
-                <img
-                  src={thirdImage}
+                <Image
+                  src={thirdImage!}
                   className="object-cover w-full h-full transition-transform cursor-pointer hover:scale-110"
                   alt=""
+                  width={300}
+                  height={200}
                 />
               </picture>
             </div>

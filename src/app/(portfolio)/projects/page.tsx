@@ -1,8 +1,8 @@
-import prisma from '@/lib/prisma';
-
-// import axios from 'axios';
-import { CarouselProjects } from '../../../components/carousel-projects';
 import Link from 'next/link';
+import Image from 'next/image';
+
+import prisma from '@/lib/prisma';
+import { CarouselProjects } from '@/components/carousel-projects';
 import { TagGroupTecnologies } from '@/components/tag-group-tecnologies';
 import { Project, Tecnology, Category } from '@/interfaces';
 
@@ -70,24 +70,30 @@ export default async function ProjectsPage() {
                   aria-label={`Ver proyecto ${project.name}`}
                 >
                   <picture className="col-span-2 row-span-2 overflow-hidden rounded-lg">
-                    <img
+                    <Image
                       src={project.images[0]}
                       className="object-cover w-full h-full transition-transform hover:scale-110"
-                      alt=""
+                      alt={`cover ${project.name}`}
+                      width={600}
+                      height={400}
                     />
                   </picture>
                   <picture className="col-span-1 overflow-hidden rounded-lg">
-                    <img
+                    <Image
                       src={project.images.length > 1 ? project.images[1] : project.images[0]}
                       className="object-cover w-full h-full transition-transform hover:scale-110"
                       alt=""
+                      width={300}
+                      height={200}
                     />
                   </picture>
                   <picture className="col-span-1 overflow-hidden rounded-lg">
-                    <img
+                    <Image
                       src={project.images.length > 2 ? project.images[2] : project.images[0]}
                       className="object-cover w-full h-full transition-transform hover:scale-110"
                       alt=""
+                      width={300}
+                      height={200}
                     />
                   </picture>
                 </Link>

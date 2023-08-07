@@ -1,5 +1,7 @@
 'use client';
 
+import Image from 'next/image';
+
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Autoplay } from 'swiper/modules';
 import 'swiper/css';
@@ -59,12 +61,12 @@ export const CarouselProjects = ({
                 aria-label={`Ver proyecto ${name}`}
               >
                 <picture className="overflow-hidden rounded-md">
-                  <img
+                  <Image
                     src={images[0]}
                     alt={name ?? ''}
                     className="self-start block w-auto transition-transform rounded-md hover:scale-110"
-                    width={200}
-                    height={200}
+                    width={600}
+                    height={400}
                   />
                 </picture>
                 <div className="flex flex-col items-center gap-2 py-3">
