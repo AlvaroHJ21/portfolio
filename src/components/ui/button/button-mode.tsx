@@ -34,7 +34,7 @@ export const ButtonMode = ({ size = 24 }: Props) => {
   return (
     <button
       onClick={() => handleToggleMode()}
-      className="p-1 text-white border-2 rounded-full bg-main border-main"
+      className="p-1 text-white border-2 rounded-full bg-main border-main btnIcon"
       aria-label="Cambiar modo de color"
     >
       {mode === 'dark' ? (

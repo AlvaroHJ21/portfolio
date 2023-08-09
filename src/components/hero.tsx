@@ -8,7 +8,7 @@ import Typed from 'typed.js';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
-import { ButtonLink } from './ui/button';
+import { ButtonLink } from '@/components/ui/button';
 
 export const Hero = () => {
   const typed = useRef<Typed>();

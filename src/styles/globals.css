@@ -2,6 +2,25 @@
 @tailwind components;
 @tailwind utilities;
 
+.texture {
+  overflow-x: hidden;
+}
+.texture::before {
+  position: absolute;
+  content: '';
+  z-index: -1;
+  top: 0%;
+  bottom: 10%;
+  width: 150%;
+  height: 100%;
+  left: -25%;
+  background: url(/img/noise.webp) repeat, linear-gradient(80deg, #607fef 20%, #13111c 100%);
+  background-blend-mode: overlay;
+  -webkit-mask-image: radial-gradient(#13111c80, transparent 60%);
+  mask-image: radial-gradient(#13111c80, transparent 60%);
+  /* background-color: #13111c; */
+}
+
 .gradient {
   background: rgb(0, 0, 0);
   background: linear-gradient(
@@ -13,18 +32,19 @@
 }
 
 .btnIcon {
-  transition: filter 0.2s ease;
+  transition: all 0.2s ease;
 }
 
 .btnIcon:hover {
   filter: drop-shadow(0 0 10px #607fef);
+  box-shadow: 0px 0px 20px #607fefb0;
+  background-color: #607fef5e;
+  border-radius: 50%;
 }
 
-.btn {
-  transition: box-shadow 0.2s ease;
-}
-.input {
-  transition: box-shadow 0.2s ease;
+.my-btn,
+.my-input {
+  transition: all 0.2s ease;
 }
 .my-btn:hover,
 .my-input:hover,

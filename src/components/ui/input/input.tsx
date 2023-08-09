@@ -20,7 +20,7 @@ export const Input = ({
   if (multiline) {
     return (
       <textarea
-        className={`w-full px-4 py-2 bg-transparent border-2 outline-none resize-none rounded-2xl border-main text-black dark:text-white`}
+        className={`w-full px-4 py-2 bg-transparent border-2 outline-none resize-none rounded-2xl border-main text-black dark:text-white my-input`}
         rows={5}
         placeholder={placeholder}
         name={name}
@@ -32,7 +32,7 @@ export const Input = ({
   return (
     <input
       type={type}
-      className={`w-full px-4 py-3 bg-transparent border-2 rounded-full outline-none border-main text-black dark:text-white`}
+      className={`w-full px-4 py-3 bg-transparent border-2 rounded-full outline-none border-main text-black dark:text-white my-input`}
       placeholder={placeholder}
       name={name}
       value={value}

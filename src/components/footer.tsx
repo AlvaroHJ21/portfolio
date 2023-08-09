@@ -12,7 +12,7 @@ export const Footer = () => {
   }, []);
 
   return (
-    <footer className="bg-gray-100 dark:bg-black">
+    <footer className="bg-gray-100 dark:bg-background">
       <div className="flex flex-col items-center gap-4 py-16">
         <div data-aos="fade-up">
           <div className="flex gap-8 mb-6 text-gray-600 dark:text-white">
@@ -23,7 +23,7 @@ export const Footer = () => {
             ))}
           </div>
         </div>
-        <p className="text-gray-600 dark:text-gray-400"> &copy; Alvaro Huaysara. 2023</p>
+        <p className="text-gray-600 dark:text-gray-300"> &copy; 2023 Alvaro Huaysara Jauregui.</p>
       </div>
     </footer>
   );

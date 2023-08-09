@@ -6,6 +6,8 @@ import { TbExternalLink } from 'react-icons/tb';
 import { TagGroupTecnologies } from '@/components/tag-group-tecnologies';
 import prisma from '@/lib/prisma';
 import { Tecnology } from '@/interfaces';
+import { ImageModal } from '@/components/image-modal';
+import { ImageGrid } from '@/components/image-grid';
 
 interface Props {
   params: {
@@ -35,7 +37,7 @@ export default async function ProyectPage({ params }: Props) {
   // console.log({ firstImage, secondImage, thirdImage });
 
   return (
-    <section id="proyects" className="bg-gray-50 dark:bg-background-light">
+    <section id="proyects" className="">
       <div className="max-w-[1200px] m-auto w-[90%]">
         <div className="py-20">
           <div data-aos="fade-up">
@@ -63,7 +65,13 @@ export default async function ProyectPage({ params }: Props) {
                 )}
               </div>
             </div>
-            <div className="grid grid-cols-2 grid-rows-2 gap-4 mb-4 md:grid-cols-3">
+
+            <ImageGrid
+              firstImage={firstImage!}
+              secondImage={secondImage!}
+              thirdImage={thirdImage!}
+            />
+            {/* <div className="grid grid-cols-2 grid-rows-2 gap-4 mb-4 md:grid-cols-3">
               <picture className="col-span-2 row-span-2 overflow-hidden rounded-lg">
                 <Image
                   src={firstImage!}
@@ -91,7 +99,7 @@ export default async function ProyectPage({ params }: Props) {
                   height={200}
                 />
               </picture>
-            </div>
+            </div> */}
             <TagGroupTecnologies tecnologies={project?.tecnologies as Tecnology[]} />
             <div>
               <p className="mt-4 text-lg text-gray-600 dark:text-gray-300">
