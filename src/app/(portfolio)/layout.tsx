@@ -5,7 +5,7 @@ import ThemeProvider from '@/theme/ThemeProvider';
 import { Navbar } from '@/components/navbar';
 import { Footer } from '@/components/footer';
 import '@/styles/globals.css';
-import Head from 'next/head';
+// import Head from 'next/head';
 
 const font = Raleway({
   subsets: ['latin'],
@@ -13,8 +13,8 @@ const font = Raleway({
 });
 
 export const metadata: Metadata = {
-  title: 'Alvaro Huaysara Jauregui',
-  description: 'Desarrollador Web Full Stack',
+  title: 'Alvaro Huaysara Jauregui | Full Stack Web Developer | Systems Engineer',
+  description: 'Alvaro Huaysara Jauregui | Full Stack Web Developer | Systems Engineer',
   icons: {
     icon: '/icon.svg',
   },

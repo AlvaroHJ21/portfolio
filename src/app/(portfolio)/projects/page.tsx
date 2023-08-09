@@ -5,6 +5,11 @@ import prisma from '@/lib/prisma';
 import { CarouselProjects } from '@/components/carousel-projects';
 import { TagGroupTecnologies } from '@/components/tag-group-tecnologies';
 import { Project, Tecnology, Category } from '@/interfaces';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Proyectos | Alvaro Huaysara Jauregui | Full Stack Web Developer | Systems Engineer',
+};
 
 export default async function ProjectsPage() {
   const categories = (await prisma.category.findMany()) as Category[];
