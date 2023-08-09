@@ -131,5 +131,15 @@ const tecnologies: Tecnology[] = [
     name: 'Strapi',
     image: '/logos/strapi.svg',
   },
+  {
+    id: 27,
+    name: 'Codeigniter',
+    image: '/logos/codeigniter.webp',
+  },
+  {
+    id: 28,
+    name: 'Astro',
+    image: '/logos/astro.svg',
+  },
 ];
 export default tecnologies;

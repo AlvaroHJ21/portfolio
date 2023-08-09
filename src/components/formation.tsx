@@ -22,7 +22,7 @@ const work: FormationItem[] = [
 
 export const Formation = () => {
   return (
-    <section id="formation" className="bg-gray-50 dark:bg-background-light">
+    <section id="formation" className="">
       <div className="max-w-[1200px] w-[90%] m-auto py-20">
         <h2
           data-aos="fade-down"

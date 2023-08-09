@@ -31,7 +31,7 @@ export const CarouselProjects = ({
       </h2>
       <Swiper
         modules={[Pagination, Autoplay]}
-        spaceBetween={36}
+        spaceBetween={24}
         // slidesPerView={slidesPerView}
         loop={true}
         autoplay={{
@@ -57,14 +57,14 @@ export const CarouselProjects = ({
             <SwiperSlide className="" key={id}>
               <Link
                 href={`/projects/${item.id}`}
-                className="flex flex-col my-4 shadow-md"
+                className="flex flex-col my-4 overflow-hidden rounded-md shadow-sm"
                 aria-label={`Ver proyecto ${name}`}
               >
-                <picture className="overflow-hidden rounded-md">
+                <picture className="overflow-hidden">
                   <Image
                     src={images[0]}
                     alt={name ?? ''}
-                    className="self-start block w-auto transition-transform rounded-md hover:scale-110"
+                    className="self-start block w-auto transition-transform hover:scale-110"
                     width={600}
                     height={400}
                   />

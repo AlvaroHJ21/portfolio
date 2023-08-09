@@ -1,3 +1,5 @@
+import clsx from 'clsx';
+
 interface Props {
   text: string;
   variant?: Variant;
@@ -8,8 +10,6 @@ interface Props {
 }
 
 type Variant = 'filled' | 'outline';
-
-import React from 'react';
 
 export const Button = ({
   text,
@@ -23,11 +23,18 @@ export const Button = ({
     <button
       onClick={onClick}
       type={type}
-      className={`flex items-center justify-center gap-2 px-4 py-2 font-bold rounded-full border-2 ${
-        variant === 'filled'
-          ? 'bg-main border-transparent text-background'
-          : 'border-main bg-transparent text-main dark:text-white'
-      } my-btn`}
+      // className={`flex items-center justify-center gap-2 px-4 py-2 font-bold rounded-full border-2 ${
+      //   variant === 'filled'
+      //     ? 'bg-main border-transparent text-white dark:text-background'
+      //     : 'border-main bg-transparent text-main dark:text-white'
+      // } my-btn`}
+      className={clsx(
+        'flex items-center justify-center gap-2 px-4 py-2 font-bold rounded-full border-2 my-btn',
+        {
+          'bg-main border-transparent text-white dark:text-background': variant === 'filled',
+          'border-main bg-transparent text-main dark:text-white': variant === 'outline',
+        }
+      )}
     >
       {prefixIcon}
       {text}

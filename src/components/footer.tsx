@@ -12,7 +12,7 @@ export const Footer = () => {
   }, []);
 
   return (
-    <footer className="bg-gray-100 dark:bg-base-400">
+    <footer className="bg-gray-100 dark:bg-black">
       <div className="flex flex-col items-center gap-4 py-16">
         <div data-aos="fade-up">
           <div className="flex gap-8 mb-6 text-gray-600 dark:text-white">

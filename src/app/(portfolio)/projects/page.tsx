@@ -46,7 +46,7 @@ export default async function ProjectsPage() {
   };
 
   return (
-    <section id="proyects" className="bg-gray-50 dark:bg-background-light">
+    <section id="proyects" className="">
       <div className="max-w-[1200px] m-auto w-[90%]">
         <div className="py-20">
           <div className="">

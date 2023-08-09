@@ -16,7 +16,7 @@ export const About = () => {
   }, []);
 
   return (
-    <section id="about-us" className="bg-gray-50 dark:bg-background-light">
+    <section id="about-us" className="">
       <div className="max-w-[1200px] w-[90%] m-auto min-h-[756px] py-20 grid place-content-center">
         <div className="flex flex-col h-full gap-16 md:flex-row">
           {/* Imagen */}

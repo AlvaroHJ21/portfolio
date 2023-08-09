@@ -1,5 +1,5 @@
 import { About } from '@/components/about';
-import { Carousel } from '@/components/carousel-tecnologies';
+import { CarouselTecnologies } from '@/components/carousel-tecnologies';
 import { Formation } from '@/components/formation';
 import { Skills } from '@/components/skills';
 import React from 'react';
@@ -9,7 +9,7 @@ export default function AboutMePage() {
     <div>
       <About />
       <Skills />
-      <Carousel />
+      <CarouselTecnologies />
       <Formation />
     </div>
   );

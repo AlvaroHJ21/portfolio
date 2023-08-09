@@ -15,9 +15,9 @@ export const CarouselItem = ({ item }: any) => {
   );
 };
 
-export const Carousel = () => {
+export const CarouselTecnologies = () => {
   return (
-    <section className="overflow-hidden bg-gray-50 dark:bg-background-light">
+    <section className="overflow-hidden">
       <div className="py-8">
         <div className="flex flex-col gap-4">
           <div className="flex">
