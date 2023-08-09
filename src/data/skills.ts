@@ -1,9 +1,9 @@
 export interface Skill {
-  category: string
+  category: string;
   items: {
-    name: string
-    rating: number
-  }[]
+    name: string;
+    rating: number;
+  }[];
 }
 
 export default [
@@ -68,20 +68,6 @@ export default [
       },
     ],
   },
-
-  {
-    category: 'Movil',
-    items: [
-      {
-        name: 'Dart',
-        rating: 4,
-      },
-      {
-        name: 'Flutter',
-        rating: 4,
-      },
-    ],
-  },
   {
     category: 'Backend',
     items: [
@@ -120,6 +106,19 @@ export default [
       {
         name: 'Docker',
         rating: 3,
+      },
+    ],
+  },
+  {
+    category: 'Movil',
+    items: [
+      {
+        name: 'Dart',
+        rating: 4,
+      },
+      {
+        name: 'Flutter',
+        rating: 4,
       },
     ],
   },
