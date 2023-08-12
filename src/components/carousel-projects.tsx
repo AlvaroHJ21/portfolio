@@ -65,8 +65,8 @@ export const CarouselProjects = ({
                     src={images[0]}
                     alt={name ?? ''}
                     className="self-start block w-auto transition-transform hover:scale-110"
-                    width={600}
-                    height={400}
+                    width={800}
+                    height={500}
                   />
                 </picture>
                 <div className="flex flex-col items-center gap-2 py-3">

@@ -11,11 +11,11 @@ export const metadata: Metadata = {
 
 export default function AboutMePage() {
   return (
-    <div>
+    <>
       <About />
       <Skills />
       <CarouselTecnologies />
       <Formation />
-    </div>
+    </>
   );
 }

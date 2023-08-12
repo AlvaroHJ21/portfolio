@@ -74,8 +74,8 @@ export default async function ProjectsPage() {
                       src={project.images[0]}
                       className="object-cover w-full h-full transition-transform hover:scale-110"
                       alt={`cover ${project.name}`}
-                      width={800}
-                      height={500}
+                      width={1000}
+                      height={800}
                     />
                   </Link>
                   <div className="col-span-2 row-span-2 md:col-span-1">

@@ -26,18 +26,19 @@ export const About = () => {
                 className="object-cover transition-transform duration-300 cursor-pointer hover:scale-110"
                 src="/img/my-perfil.webp"
                 alt="perfil"
-                width={384}
-                height={384}
+                width={400}
+                height={400}
               />
             </div>
           </div>
 
           {/* Texto y cta */}
-          <div data-aos="fade-up" className="flex-1 ">
+          <div data-aos="fade-up" className="flex-1">
             <div className="flex flex-col items-center md:items-start">
               <h2 className="mb-6 font-black text-gray-600 uppercase text-32 dark:text-white">
                 Sobre <span className="text-main">mí</span>
               </h2>
+
               <div className="mb-6 leading-8 text-center text-black md:text-left dark:text-white">
                 <p>
                   ¡Hola! Soy un desarrollador web con experiencia en frontend, backend y desarrollo
@@ -50,22 +51,26 @@ export const About = () => {
                 </p>
               </div>
 
-              <div className="w-full h-px mb-6 bg-gray-600"></div>
+              {/* <div className="w-full h-px mb-6 bg-gray-600"></div> */}
 
-              <div className="flex flex-col gap-4 mb-6 text-gray-600 xl:grid xl:grid-cols-2 dark:text-gray-300">
-                <p>
-                  <span className="font-bold">Nombre: </span>Alvaro Huaysara Jauregui
-                </p>
-                <p>
-                  <span className="font-bold">País: </span>Perú {'🇵🇪'}
-                </p>
-                <p>
-                  <span className="font-bold">Email: </span>alvarohuaysara@gmail.com
-                </p>
-                <p>
-                  <span className="font-bold">Teléfono: </span>+51 926513695
-                </p>
-              </div>
+              <dl className="grid w-full grid-cols-1 gap-4 p-4 mb-6 text-gray-600 border border-gray-500 rounded-md sm:grid-cols-2 md:grid-cols-1 lg:grid-cols-2 dark:text-gray-300 backdrop-blur-md">
+                <div className="flex gap-2">
+                  <dt className="font-bold">Nombre: </dt>
+                  <dd>Alvaro Huaysara Jauregui</dd>
+                </div>
+                <div className="flex gap-2">
+                  <dt className="font-bold">País: </dt>
+                  <dd>Perú {'🇵🇪'}</dd>
+                </div>
+                <div className="flex gap-2">
+                  <dt className="font-bold">Email: </dt>
+                  <dd>alvarohuaysara@gmail.com</dd>
+                </div>
+                <div className="flex gap-2">
+                  <dt className="font-bold">Teléfono: </dt>
+                  <dd>+51 926513695</dd>
+                </div>
+              </dl>
 
               <div className="flex gap-8 mb-6 text-gray-600 dark:text-white">
                 {networkLinks.map(({ name, url, icon }) => (
