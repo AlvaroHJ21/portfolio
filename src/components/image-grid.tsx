@@ -1,8 +1,8 @@
 'use client';
 
 import { useState } from 'react';
-import Image from 'next/image';
 import { ImageModal } from './image-modal';
+import ImageBlur from './image-blur';
 
 interface Props {
   firstImage: string;
@@ -11,7 +11,7 @@ interface Props {
 }
 
 export const ImageGrid = ({ firstImage, secondImage, thirdImage }: Props) => {
-  const [currentImage, setCurrentImage] = useState<string | null>(null);
+  const [currentImage, setCurrentImage] = useState<string>('');
 
   const onSelectImage = (image: string) => {
     setCurrentImage(image);
@@ -28,41 +28,41 @@ export const ImageGrid = ({ firstImage, secondImage, thirdImage }: Props) => {
           onClick={() => onSelectImage(firstImage)}
           className="col-span-2 row-span-2 overflow-hidden rounded-lg"
         >
-          <Image
+          <ImageBlur
             src={firstImage!}
             className="object-cover w-full h-full transition-transform cursor-pointer hover:scale-110"
-            alt=""
-            width={600}
-            height={400}
+            alt="Primera imagen del proyecto"
+            width={800}
+            height={600}
           />
         </picture>
         <picture
           onClick={() => onSelectImage(secondImage)}
           className="col-span-1 overflow-hidden rounded-lg"
         >
-          <Image
+          <ImageBlur
             src={secondImage!}
             className="object-cover w-full h-full transition-transform cursor-pointer hover:scale-110"
-            alt=""
-            width={300}
-            height={200}
+            alt="Segunda imagen del proyecto"
+            width={400}
+            height={300}
           />
         </picture>
         <picture
           onClick={() => onSelectImage(thirdImage)}
           className="col-span-1 overflow-hidden rounded-lg"
         >
-          <Image
+          <ImageBlur
             src={thirdImage!}
             className="object-cover w-full h-full transition-transform cursor-pointer hover:scale-110"
-            alt=""
-            width={300}
-            height={200}
+            alt="Tercera imagen del proyecto"
+            width={400}
+            height={300}
           />
         </picture>
       </div>
 
-      <ImageModal currentImages={[currentImage ?? '']} />
+      <ImageModal currentImages={[currentImage]} />
     </>
   );
 };

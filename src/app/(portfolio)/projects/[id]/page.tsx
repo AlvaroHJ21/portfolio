@@ -1,12 +1,10 @@
 import React from 'react';
-import Image from 'next/image';
 
 import { TbExternalLink } from 'react-icons/tb';
 
-import { TagGroupTecnologies } from '@/components/tag-group-tecnologies';
 import prisma from '@/lib/prisma';
 import { Tecnology } from '@/interfaces';
-import { ImageModal } from '@/components/image-modal';
+import { TagGroupTecnologies } from '@/components/tag-group-tecnologies';
 import { ImageGrid } from '@/components/image-grid';
 
 interface Props {

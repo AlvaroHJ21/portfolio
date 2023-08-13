@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import Image from 'next/image';
 
 import prisma from '@/lib/prisma';
 import { CarouselProjects } from '@/components/carousel-projects';
@@ -7,6 +6,7 @@ import { TagGroupTecnologies } from '@/components/tag-group-tecnologies';
 import { Project, Tecnology, Category } from '@/interfaces';
 import { Metadata } from 'next';
 import { BsArrowRightShort } from 'react-icons/bs';
+import ImageBlur from '@/components/image-blur';
 
 export const metadata: Metadata = {
   title: 'Proyectos | Alvaro Huaysara Jauregui | Full Stack Web Developer | Systems Engineer',
@@ -63,19 +63,17 @@ export default async function ProjectsPage() {
             </div>
             {/* Project Top */}
             <div data-aos="fade-up">
-              <div className="mb-10">
+              <div className="mb-20">
                 <div className="grid grid-cols-2 grid-rows-2 gap-6 mb-4 md:grid-cols-3">
                   <Link
                     href={`/projects/${project.id}`}
                     aria-label={`Ver proyecto ${project.name}`}
                     className="col-span-2 row-span-2 overflow-hidden rounded-lg"
                   >
-                    <Image
+                    <ImageBlur
                       src={project.images[0]}
+                      alt={`Cover del proyecto ${project.name}`}
                       className="object-cover w-full h-full transition-transform hover:scale-110"
-                      alt={`cover ${project.name}`}
-                      width={1000}
-                      height={800}
                     />
                   </Link>
                   <div className="col-span-2 row-span-2 md:col-span-1">
@@ -85,7 +83,11 @@ export default async function ProjectsPage() {
                     <h2 className="mb-4 text-3xl font-bold text-gray-600 dark:text-gray-300">
                       {project.name}
                     </h2>
-                    <p className="mb-4">{project.description}</p>
+                    <p className="mb-4">
+                      {project.description?.length ?? 0 > 200
+                        ? project.description?.slice(0, 200) + '...'
+                        : project.description}
+                    </p>
                     <Link
                       href={`/projects/${project.id}`}
                       aria-label={`Ver proyecto ${project.name}`}
@@ -100,7 +102,7 @@ export default async function ProjectsPage() {
               </div>
             </div>
 
-            <div className="space-y-8">
+            <div className="space-y-10">
               <CarouselProjects
                 category={getCategoryById(1)!}
                 projects={getProjectsByCategory(getCategoryById(1)!)}

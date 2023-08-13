@@ -10,6 +10,7 @@ import 'swiper/css/pagination';
 import Link from 'next/link';
 import { TagGroupTecnologies } from './tag-group-tecnologies';
 import { Category, Project } from '@/interfaces';
+import ImageBlur from './image-blur';
 
 interface Props {
   category: Category;
@@ -61,9 +62,9 @@ export const CarouselProjects = ({
                 aria-label={`Ver proyecto ${name}`}
               >
                 <picture className="overflow-hidden">
-                  <Image
+                  <ImageBlur
                     src={images[0]}
-                    alt={name ?? ''}
+                    alt={name ?? 'imagen'}
                     className="self-start block w-auto transition-transform hover:scale-110"
                     width={800}
                     height={500}

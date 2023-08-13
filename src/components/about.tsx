@@ -9,6 +9,7 @@ import 'aos/dist/aos.css';
 
 import networkLinks from '@/data/networkLinks';
 import { ButtonLink } from '@/components/ui/button';
+import ImageBlur from './image-blur';
 
 export const About = () => {
   useEffect(() => {
@@ -22,7 +23,7 @@ export const About = () => {
           {/* Imagen */}
           <div data-aos="fade-down" className="">
             <div className="m-auto w-60 xl:w-auto lg:w-96">
-              <Image
+              <ImageBlur
                 className="object-cover transition-transform duration-300 cursor-pointer hover:scale-110"
                 src="/img/my-perfil.webp"
                 alt="perfil"
@@ -39,7 +40,7 @@ export const About = () => {
                 Sobre <span className="text-main">mí</span>
               </h2>
 
-              <div className="mb-6 leading-8 text-center text-black md:text-left dark:text-white">
+              <div className="max-w-lg mb-6 leading-8 text-center text-black md:text-left dark:text-white">
                 <p>
                   ¡Hola! Soy un desarrollador web con experiencia en frontend, backend y desarrollo
                   móvil. Me apasiona crear soluciones tecnológicas innovadoras y eficientes. Mi
@@ -53,7 +54,7 @@ export const About = () => {
 
               {/* <div className="w-full h-px mb-6 bg-gray-600"></div> */}
 
-              <dl className="grid w-full grid-cols-1 gap-4 p-4 mb-6 text-gray-600 border border-gray-500 rounded-md sm:grid-cols-2 md:grid-cols-1 lg:grid-cols-2 dark:text-gray-300 backdrop-blur-md">
+              <dl className="grid grid-cols-1 gap-2 px-8 py-6 mb-6 text-gray-600 border border-gray-500 rounded-md dark:text-gray-300 backdrop-blur-md">
                 <div className="flex gap-2">
                   <dt className="font-bold">Nombre: </dt>
                   <dd>Alvaro Huaysara Jauregui</dd>
@@ -72,13 +73,14 @@ export const About = () => {
                 </div>
               </dl>
 
-              <div className="flex gap-8 mb-6 text-gray-600 dark:text-white">
+              {/* <div className="flex gap-8 mb-6 text-gray-600 dark:text-white">
                 {networkLinks.map(({ name, url, icon }) => (
                   <a key={name} href={url} className="btnIcon" target="_blank">
                     {icon}
                   </a>
                 ))}
-              </div>
+              </div> */}
+
               <div className="flex gap-4">
                 <ButtonLink href="/#contact" text="Contáctame" />
                 <ButtonLink
