@@ -3,7 +3,8 @@
 @tailwind utilities;
 
 .texture {
-  overflow-x: hidden;
+  position: relative;
+  overflow: hidden;
 }
 .texture::before {
   position: absolute;
@@ -12,7 +13,7 @@
   top: 0%;
   bottom: 10%;
   width: 150%;
-  height: 100%;
+  /* height: 100%; */
   left: -25%;
   background: url(/img/noise.webp) repeat, linear-gradient(80deg, #607fef 20%, #13111c 100%);
   background-blend-mode: overlay;

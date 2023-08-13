@@ -80,7 +80,7 @@ export const About = () => {
                 ))}
               </div>
               <div className="flex gap-4">
-                <ButtonLink href="/#contact" text="Contactame" />
+                <ButtonLink href="/#contact" text="Contáctame" />
                 <ButtonLink
                   text="Descarga mi CV"
                   href="/pdf/CV-AlvaroHJ.pdf"

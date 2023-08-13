@@ -91,7 +91,7 @@ export const Navbar = () => {
             </a>
           ))}
           <div className="p-2">
-            <ButtonMode size={32} />
+            <ButtonMode iconSize={32} />
           </div>
         </div>
       </div>

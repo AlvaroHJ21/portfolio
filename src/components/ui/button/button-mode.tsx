@@ -6,10 +6,10 @@ import { useState, useEffect } from 'react';
 import { MdDarkMode, MdSunny } from 'react-icons/md';
 
 interface Props {
-  size?: number;
+  iconSize?: number;
 }
 
-export const ButtonMode = ({ size = 24 }: Props) => {
+export const ButtonMode = ({ iconSize = 24 }: Props) => {
   const [mode, setMode] = useState<string>('dark');
   const [mounted, setMounted] = useState(false);
   const { systemTheme, theme, setTheme } = useTheme();
@@ -34,13 +34,13 @@ export const ButtonMode = ({ size = 24 }: Props) => {
   return (
     <button
       onClick={() => handleToggleMode()}
-      className="p-1 text-white border-2 rounded-full bg-main border-main btnIcon"
+      className="grid w-12 h-12 text-white border-2 rounded-full place-content-center bg-main border-main btnIcon"
       aria-label="Cambiar modo de color"
     >
       {mode === 'dark' ? (
-        <MdSunny size={size} className={mounted ? '' : 'opacity-0'} />
+        <MdSunny size={iconSize} className={mounted ? '' : 'opacity-0'} />
       ) : (
-        <MdDarkMode size={size} className={mounted ? '' : 'opacity-0'} />
+        <MdDarkMode size={iconSize} className={mounted ? '' : 'opacity-0'} />
       )}
     </button>
   );
