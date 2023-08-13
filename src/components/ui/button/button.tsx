@@ -7,6 +7,7 @@ interface Props {
   prefixIcon?: React.ReactNode;
   onClick?: () => void;
   type?: 'button' | 'submit' | 'reset' | undefined;
+  className?: string;
 }
 
 type Variant = 'filled' | 'outline';
@@ -18,17 +19,14 @@ export const Button = ({
   prefixIcon,
   onClick,
   type,
+  className,
 }: Props) => {
   return (
     <button
       onClick={onClick}
       type={type}
-      // className={`flex items-center justify-center gap-2 px-4 py-2 font-bold rounded-full border-2 ${
-      //   variant === 'filled'
-      //     ? 'bg-main border-transparent text-white dark:text-background'
-      //     : 'border-main bg-transparent text-main dark:text-white'
-      // } my-btn`}
       className={clsx(
+        className,
         'flex items-center justify-center gap-2 px-4 py-2 font-bold rounded-full border-2 my-btn',
         {
           'bg-main border-transparent text-white dark:text-background': variant === 'filled',

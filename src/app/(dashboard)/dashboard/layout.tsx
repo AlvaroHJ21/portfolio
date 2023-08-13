@@ -4,6 +4,7 @@ import { Raleway } from 'next/font/google';
 import ThemeProvider from '@/theme/ThemeProvider';
 import { NavbarDashboard } from '@/components/navbar-dashboard';
 import '@/styles/globals.css';
+import AuthProvider from '@/providers/AuthProvider';
 
 const font = Raleway({
   subsets: ['latin'],
@@ -19,10 +20,18 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
   return (
     <html lang="en">
       <body className={`${font.className}`}>
-        <ThemeProvider>
-          <NavbarDashboard />
-          <div className="w-[90%] max-w-[1200px] py-10 m-auto">{children}</div>
-        </ThemeProvider>
+        <AuthProvider>
+          <ThemeProvider>
+            <NavbarDashboard />
+            <div className="w-[90%] max-w-[1200px] py-10 m-auto">{
+            
+            
+            
+            children
+            
+            }</div>
+          </ThemeProvider>
+        </AuthProvider>
       </body>
     </html>
   );

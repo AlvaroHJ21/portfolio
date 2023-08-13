@@ -3,7 +3,7 @@ import React from 'react';
 
 export const Logo = () => {
   return (
-    <div className="min-h-[64px] flex items-center justify-end">
+    <div className="">
       <Link
         href="/"
         className="left-0 py-2 text-black text-20 dark:text-white"

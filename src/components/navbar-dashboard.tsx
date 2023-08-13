@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { ButtonLogout } from './ui/button/button-logout';
 
 export const NavbarDashboard = () => {
   const links = [
@@ -49,7 +50,9 @@ export const NavbarDashboard = () => {
             ))}
           </ul>
         </div>
-        <a className="text-xl normal-case btn btn-ghost">Admin</a>
+        <a href="/" className="text-xl normal-case btn btn-ghost">
+          Admin
+        </a>
       </div>
       <div className="hidden navbar-center lg:flex">
         <ul className="px-1 menu menu-horizontal">
@@ -62,7 +65,9 @@ export const NavbarDashboard = () => {
           ))}
         </ul>
       </div>
-      <div className="navbar-end"></div>
+      <div className="navbar-end">
+        <ButtonLogout />
+      </div>
     </div>
   );
 };
