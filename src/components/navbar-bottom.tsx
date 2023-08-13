@@ -1,8 +1,11 @@
 import React from 'react';
 import Link from 'next/link';
-import { FaBook, FaHome, FaPhone, FaUser } from 'react-icons/fa';
+
+import { FaBook, FaHome, FaUser } from 'react-icons/fa';
+import { MdMail } from 'react-icons/md';
 import clsx from 'clsx';
-import { ButtonMode } from './ui/button';
+
+import { ButtonMode } from '@/components/ui/button';
 
 export const NavbarBottom = () => {
   const iconSize = 16;
@@ -13,19 +16,19 @@ export const NavbarBottom = () => {
       icon: <FaHome size={iconSize} />,
     },
     {
-      href: '/about-me',
-      label: 'About',
-      icon: <FaUser size={iconSize} />,
-    },
-    {
       href: '/projects',
       label: 'Portfolio',
       icon: <FaBook size={iconSize} />,
     },
     {
+      href: '/about-me',
+      label: 'About',
+      icon: <FaUser size={iconSize} />,
+    },
+    {
       href: '/contact',
       label: 'Contact',
-      icon: <FaPhone size={iconSize} />,
+      icon: <MdMail size={iconSize} />,
     },
   ];
 
