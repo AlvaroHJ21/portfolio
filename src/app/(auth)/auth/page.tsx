@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { signIn } from 'next-auth/react';
 import { Logo } from '@/components/logo';
-import { Button, ButtonMode } from '@/components/ui/button';
+import { Button, ButtonMode } from '@/components/button';
 
 export default function LoginPage() {
   const [username, setUsername] = useState('');

@@ -1,21 +1,10 @@
-'use client';
-
-import { useEffect } from 'react';
-import Image from 'next/image';
-
 import { BsDownload } from 'react-icons/bs';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
 
 import networkLinks from '@/data/networkLinks';
-import { ButtonLink } from '@/components/ui/button';
-import ImageBlur from './image-blur';
+import { ButtonLink } from '@/components/button';
+import { ImageBlur } from '@/components/image/image-blur';
 
 export const About = () => {
-  useEffect(() => {
-    AOS.init();
-  }, []);
-
   return (
     <section id="about-us" className="">
       <div className="max-w-[1200px] w-[90%] m-auto min-h-[756px] py-20 grid place-content-center relative">
@@ -29,6 +18,7 @@ export const About = () => {
                 alt="perfil"
                 width={400}
                 height={400}
+                priority
               />
             </div>
           </div>
@@ -51,8 +41,6 @@ export const About = () => {
                   en el lugar correcto. ¡Explora mi portafolio y ponte en contacto conmigo!
                 </p>
               </div>
-
-              {/* <div className="w-full h-px mb-6 bg-gray-600"></div> */}
 
               <dl className="grid grid-cols-1 gap-2 px-8 py-6 mb-6 text-gray-600 border border-gray-500 rounded-md dark:text-gray-300 backdrop-blur-md">
                 <div className="flex gap-2">
@@ -95,7 +83,6 @@ export const About = () => {
             </div>
           </div>
         </div>
-
         <div className="absolute left-0 flex flex-col items-center gap-4 dark:text-gray-500 bottom-12">
           <ul className="flex flex-col gap-1">
             {networkLinks.map((link) => (

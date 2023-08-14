@@ -1,9 +1,3 @@
-'use client';
-import React, { useEffect } from 'react';
-
-import AOS from 'aos';
-import 'aos/dist/aos.css';
-
 import skills, { Skill } from '@/data/skills';
 
 const SkillBlock = ({ skill }: { skill: Skill }) => {
@@ -38,10 +32,6 @@ const SkillBlock = ({ skill }: { skill: Skill }) => {
 };
 
 export const Skills = () => {
-  useEffect(() => {
-    AOS.init();
-  }, []);
-
   return (
     <section id="skills" className="">
       <div className="max-w-[1200px] w-[90%] m-auto min-h-[756px] py-20">

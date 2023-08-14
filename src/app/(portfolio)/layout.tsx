@@ -1,12 +1,10 @@
 import type { Metadata } from 'next';
 import { Raleway } from 'next/font/google';
 
-import ThemeProvider from '@/theme/ThemeProvider';
-import { Navbar } from '@/components/navbar';
-import { Footer } from '@/components/footer';
-import { NavbarBottom } from '@/components/navbar-bottom';
+import ThemeProvider from '@/providers/ThemeProvider';
+import { Footer } from '@/containers/footer/footer';
+import { NavbarBottom } from '@/components/nav';
 import '@/styles/globals.css';
-// import Head from 'next/head';
 
 const font = Raleway({
   subsets: ['latin'],

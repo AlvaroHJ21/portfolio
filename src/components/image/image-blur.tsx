@@ -2,7 +2,7 @@
 
 import clsx from 'clsx';
 import Image from 'next/image';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 interface Props {
   src: string;
@@ -10,18 +10,26 @@ interface Props {
   width?: number;
   height?: number;
   className?: string;
+  priority?: boolean;
 }
 
-export default function ImageBlur({ src, alt, width = 1000, height = 800, className }: Props) {
+export const ImageBlur = ({
+  src,
+  alt,
+  width = 800,
+  height = 600,
+  priority = false,
+  className,
+}: Props) => {
   const [isLoading, setLoading] = useState(true);
-  const [mounted, setMounted] = useState(false);
+  // const [mounted, setMounted] = useState(false);
 
-  useEffect(() => {
-    setMounted(true);
-  }, []);
+  // useEffect(() => {
+  //   setMounted(true);
+  // }, []);
 
-  if (!mounted)
-    return <div className={`w-[${width}px] h-[${height}px] bg-gray-200 animate-pulse`}></div>;
+  // if (!mounted)
+  //   return <div className={`w-[${width}px] h-[${height}px] bg-gray-200 animate-pulse`}></div>;
 
   return (
     <Image
@@ -38,6 +46,7 @@ export default function ImageBlur({ src, alt, width = 1000, height = 800, classN
         className
       )}
       onLoadingComplete={() => setLoading(false)}
+      priority={priority}
     />
   );
-}
+};

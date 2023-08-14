@@ -8,13 +8,13 @@ import { FaArrowLeft, FaTrash } from 'react-icons/fa';
 import { TbPhotoPlus } from 'react-icons/tb';
 import Swal from 'sweetalert2';
 
-import { Multiselect, Option } from '@/components/ui/input/multiselect';
 
 import uploadImage from '@/helpers/uploadImage';
 import { useCategories } from '@/hooks/useCategories';
 import { useTecnologies } from '@/hooks/useTecnologies';
 import { useProjects } from '@/hooks/useProjects';
 import { Project } from '@/interfaces';
+import { Multiselect, Option } from '@/components/input';
 
 interface Image {
   id?: string;

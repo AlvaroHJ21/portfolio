@@ -1,9 +1,5 @@
-import { Hero } from '@/components/hero';
+import { Hero } from '@/containers/hero';
 
 export default function Home() {
-  return (
-    <main className="">
-      <Hero />
-    </main>
-  );
+  return <Hero />;
 }

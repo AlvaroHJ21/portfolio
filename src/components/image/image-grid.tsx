@@ -1,8 +1,8 @@
 'use client';
 
 import { useState } from 'react';
-import { ImageModal } from './image-modal';
-import ImageBlur from './image-blur';
+import { ImageModal } from '@/components/image';
+import Image from 'next/image';
 
 interface Props {
   firstImage: string;
@@ -28,7 +28,7 @@ export const ImageGrid = ({ firstImage, secondImage, thirdImage }: Props) => {
           onClick={() => onSelectImage(firstImage)}
           className="col-span-2 row-span-2 overflow-hidden rounded-lg"
         >
-          <ImageBlur
+          <Image
             src={firstImage!}
             className="object-cover w-full h-full transition-transform cursor-pointer hover:scale-110"
             alt="Primera imagen del proyecto"
@@ -40,7 +40,7 @@ export const ImageGrid = ({ firstImage, secondImage, thirdImage }: Props) => {
           onClick={() => onSelectImage(secondImage)}
           className="col-span-1 overflow-hidden rounded-lg"
         >
-          <ImageBlur
+          <Image
             src={secondImage!}
             className="object-cover w-full h-full transition-transform cursor-pointer hover:scale-110"
             alt="Segunda imagen del proyecto"
@@ -52,7 +52,7 @@ export const ImageGrid = ({ firstImage, secondImage, thirdImage }: Props) => {
           onClick={() => onSelectImage(thirdImage)}
           className="col-span-1 overflow-hidden rounded-lg"
         >
-          <ImageBlur
+          <Image
             src={thirdImage!}
             className="object-cover w-full h-full transition-transform cursor-pointer hover:scale-110"
             alt="Tercera imagen del proyecto"

@@ -1,16 +1,14 @@
 'use client';
 
-import Image from 'next/image';
-
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
 
 import Link from 'next/link';
-import { TagGroupTecnologies } from './tag-group-tecnologies';
+import { TagGroupTecnologies } from '../tag/tag-group';
 import { Category, Project } from '@/interfaces';
-import ImageBlur from './image-blur';
+import { ImageBlur } from '../image';
 
 interface Props {
   category: Category;

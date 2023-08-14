@@ -1,25 +1,20 @@
 'use client';
-import { FormEvent, useState, useRef, useEffect } from 'react';
+import { FormEvent, useState, useRef } from 'react';
 
 import { HiOutlineMail } from 'react-icons/hi';
 import { AiOutlineWhatsApp } from 'react-icons/ai';
 import { BsDownload } from 'react-icons/bs';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+// import 'aos/dist/aos.css';
 
-import { Input } from '@/components/ui/input/input';
-import { Button, ButtonLink } from '@/components/ui/button';
+import { Button, ButtonLink } from '@/components/button';
+import { Input } from '@/components/input/input';
 
-export default function Contact() {
+export const Contact = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
 
   const buttonMailto = useRef<HTMLAnchorElement>(null);
-
-  useEffect(() => {
-    AOS.init();
-  }, []);
 
   function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -124,4 +119,4 @@ export default function Contact() {
       </div>
     </section>
   );
-}
+};

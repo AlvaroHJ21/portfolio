@@ -5,7 +5,7 @@ import { FaBook, FaHome, FaUser } from 'react-icons/fa';
 import { MdMail } from 'react-icons/md';
 import clsx from 'clsx';
 
-import { ButtonMode } from '@/components/ui/button';
+import { ButtonMode } from '@/components/button';
 
 export const NavbarBottom = () => {
   const iconSize = 16;

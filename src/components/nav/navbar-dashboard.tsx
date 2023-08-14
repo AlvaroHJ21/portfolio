@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { ButtonLogout } from './ui/button/button-logout';
+import { ButtonLogout } from '../button';
 
 export const NavbarDashboard = () => {
   const links = [

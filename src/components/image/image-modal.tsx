@@ -1,5 +1,5 @@
 import React from 'react';
-import ImageBlur from './image-blur';
+import { ImageBlur } from './';
 
 interface Props {
   currentImages: string[];
