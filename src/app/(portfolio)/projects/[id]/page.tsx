@@ -6,6 +6,32 @@ import prisma from '@/lib/prisma';
 import { Tecnology } from '@/interfaces';
 import { TagGroupTecnologies } from '@/components/tag-group-tecnologies';
 import { ImageGrid } from '@/components/image-grid';
+import { Project } from '@prisma/client';
+
+export async function generateStaticParams() {
+  const projects = (await prisma.project.findMany({})) as Project[];
+
+  return projects.map((project) => {
+    return {
+      id: project.id.toString(),
+    };
+  });
+}
+
+async function getProject(id: string) {
+  console.log(`creando proyecto: ${id}`);
+  const project = await prisma.project.findUnique({
+    where: {
+      id: Number(id),
+    },
+    include: {
+      categories: true,
+      tecnologies: true,
+    },
+  });
+
+  return project;
+}
 
 interface Props {
   params: {
@@ -14,15 +40,7 @@ interface Props {
 }
 
 export default async function ProyectPage({ params }: Props) {
-  const project = await prisma.project.findUnique({
-    where: {
-      id: Number(params.id),
-    },
-    include: {
-      categories: true,
-      tecnologies: true,
-    },
-  });
+  const project = await getProject(params.id);
 
   const firstImage = project?.images[0];
 
