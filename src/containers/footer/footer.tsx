@@ -13,7 +13,7 @@ export const Footer = () => {
   }, []);
 
   return (
-    <footer className="bg-gray-100 dark:bg-background">
+    <footer className="bg-gray-50 dark:bg-background">
       <div className="flex flex-col items-center gap-4 pt-16 pb-32">
         <div className='mb-8'>
           <Logo />

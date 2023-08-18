@@ -134,7 +134,7 @@ const tecnologies: Tecnology[] = [
   {
     id: 27,
     name: 'Codeigniter',
-    image: '/logos/codeigniter.webp',
+    image: '/logos/codeigniter.svg',
   },
   {
     id: 28,

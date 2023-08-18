@@ -27,6 +27,8 @@ export const TagGroupTecnologies = ({ tecnologies, sm = false }: Props) => {
                   'w-4 h-4': sm,
                   'w-6 h-6': !sm,
                 })}
+                width={sm ? 16 : 24}
+                height={sm ? 16 : 24}
               />
             )}
             {tecnology.name}

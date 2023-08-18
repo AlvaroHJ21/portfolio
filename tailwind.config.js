@@ -40,15 +40,36 @@ module.exports = {
     },
   },
   daisyui: {
+    // theme: [
+    //   {
+    //     mytheme: {
+    //       primary: '#607FEF',
+    //     },
+    //   },
+    // ],
     themes: [
       {
-        dark: {
-          ...require('daisyui/src/theming/themes')['[data-theme=dark]'],
+        // dark: {
+        //   ...require('daisyui/src/theming/themes')['[data-theme=dark]'],
+        //   primary: '#607FEF',
+        //   background: '#13111C',
+        // },
+        light: {
+          ...require('daisyui/src/theming/themes')['[data-theme=light]'],
           primary: '#607FEF',
-          background: '#13111C',
         },
       },
+      // {
+      //   light: {
+      //     ...require('daisyui/src/theming/themes')['[data-theme=light]'],
+      //     primary: 'red',
+      //     secondary: 'red',
+      //     success: 'red',
+      //     background: '#FFF',
+      //   },
+      // },
     ],
+    base: false,
   },
   darkMode: 'class',
   plugins: [require('daisyui')],

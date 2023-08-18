@@ -19,7 +19,7 @@ export const metadata: Metadata = {
 export default function DashboardLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className={`${font.className}`}>
+      <body className={`${font.className} bg-background text-gray-300`}>
         <AuthProvider>
           <ThemeProvider>
             <NavbarDashboard />

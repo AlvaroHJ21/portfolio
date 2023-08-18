@@ -6,11 +6,15 @@ const listItems2 = tecnologies.map((item) => item.image);
 export const CarouselItem = ({ item }: any) => {
   return (
     <div className="flex items-center px-20 py-6 transition-transform bg-gray-300 rounded-lg group dark:bg-gray-800 hover:scale-125 hover:shadow-md">
-      <img
-        className="h-12 max-w-[120px] grayscale group-hover:grayscale-0"
-        src={item}
-        alt={`logo ${item}`}
-      />
+      <div className="w-12 h-12">
+        <img
+          className="h-full max-w-full max-h-full grayscale group-hover:grayscale-0"
+          src={item}
+          alt={`logo ${item}`}
+          width={48}
+          height={48}
+        />
+      </div>
     </div>
   );
 };

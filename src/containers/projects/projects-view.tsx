@@ -46,6 +46,7 @@ export const ProjectsView = ({ categories, projects }: Props) => {
                     src={project.images[0]}
                     alt={`Cover del proyecto ${project.name}`}
                     className="object-cover w-full h-full transition-transform hover:scale-110"
+                    priority
                   />
                 </Link>
                 <div className="col-span-2 row-span-2 md:col-span-1">

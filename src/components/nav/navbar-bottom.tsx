@@ -12,22 +12,22 @@ export const NavbarBottom = () => {
   const links = [
     {
       href: '/',
-      label: 'Home',
+      label: 'Inicio',
       icon: <FaHome size={iconSize} />,
     },
     {
       href: '/projects',
-      label: 'Portfolio',
+      label: 'Proyectos',
       icon: <FaBook size={iconSize} />,
     },
     {
       href: '/about-me',
-      label: 'About',
+      label: 'Sobre mí',
       icon: <FaUser size={iconSize} />,
     },
     {
       href: '/contact',
-      label: 'Contact',
+      label: 'Contacto',
       icon: <MdMail size={iconSize} />,
     },
   ];
@@ -40,7 +40,8 @@ export const NavbarBottom = () => {
           return (
             <li
               key={link.label}
-              className={clsx('w-12 h-12 overflow-hidden rounded-full  transition-colors', {
+              data-tip={link.label}
+              className={clsx('tooltip w-12 h-12 rounded-full  transition-colors', {
                 'bg-primary text-black': active,
                 'text-gray-600 hover:bg-white hover:bg-opacity-50 dark:hover:bg-background dark:hover:bg-opacity-25 dark:text-gray-300':
                   !active,

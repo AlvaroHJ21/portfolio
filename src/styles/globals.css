@@ -6,21 +6,51 @@
   position: relative;
   overflow: hidden;
 }
-.texture::before {
+
+html.dark .texture::before {
   position: absolute;
   content: '';
   z-index: -1;
   top: 0%;
   bottom: 10%;
   width: 150%;
-  /* height: 100%; */
   left: -25%;
-  background: url(/img/noise.webp) repeat, linear-gradient(80deg, #607fef 20%, #13111c 100%);
+  background: url(/img/noise.webp) repeat, linear-gradient(90deg, #607fef 20%, #13111c 100%);
   background-blend-mode: overlay;
   -webkit-mask-image: radial-gradient(#13111c80, transparent 60%);
   mask-image: radial-gradient(#13111c80, transparent 60%);
-  /* background-color: #13111c; */
 }
+
+html.light .texture::before {
+  position: absolute;
+  content: '';
+  z-index: -1;
+  top: 0%;
+  bottom: 10%;
+  width: 150%;
+  height: 100%;
+  left: -25%;
+  background: url(/img/noise.webp) repeat, linear-gradient(90deg, #607fef 20%, #ffffff 100%);
+
+  background-blend-mode: overlay;
+  -webkit-mask-image: radial-gradient(#13111c80, transparent 60%);
+  mask-image: radial-gradient(#13111c80, transparent 60%);
+}
+
+/* .texture::before {
+  position: absolute;
+  content: '';
+  z-index: -1;
+  top: 0%;
+  bottom: 10%;
+  width: 150%;
+  height: 100%;
+  left: -25%;
+  background: url(/img/noise.webp) repeat, linear-gradient(80deg, #607fef 20%, #ffffff 100%);
+  background-blend-mode: overlay;
+  -webkit-mask-image: radial-gradient(#ffffff, transparent 60%);
+  mask-image: radial-gradient(#ffffff, transparent 60%);
+} */
 
 .gradient {
   background: rgb(0, 0, 0);
@@ -58,6 +88,11 @@
 }
 .animationRight {
   animation: carouselAnimationRight 60s linear infinite;
+}
+
+.tooltip:hover:after,
+.tooltip:hover:before {
+  transition-delay: 500ms;
 }
 
 /* Daisy UI badge */

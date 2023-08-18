@@ -6,6 +6,7 @@ import { ButtonLink } from '@/components/button';
 import networkLinks from '@/data/networkLinks';
 import Link from 'next/link';
 import { TextTypeAnimate } from '../../components/text';
+import { IconLineGroup } from '@/components/nav/icon-line-group';
 
 export const Hero = () => {
   return (
@@ -48,26 +49,12 @@ export const Hero = () => {
         />
       </div>
 
-      <div className="absolute left-0 flex-col items-center hidden gap-4 sm:flex dark:text-gray-500 bottom-12">
-        <ul className="flex flex-col gap-1">
-          {networkLinks.map((link) => (
-            <li
-              key={link.name}
-              className="transition-colors scale-50 hover:text-black dark:hover:text-white"
-            >
-              <a href={link.url} target="_blank" aria-label={link.name}>
-                {link.icon}
-              </a>
-            </li>
-          ))}
-        </ul>
-        <div className="w-px h-10 bg-current"></div>
-      </div>
+      <IconLineGroup />
 
       <div className="absolute right-0 hidden sm:block bottom-28">
         <Link
           href="/contact"
-          className="inline-block text-sm transition-colors rotate-90 hover:text-black dark:hover:text-white"
+          className="inline-block text-sm text-gray-400 transition-colors rotate-90 hover:text-black dark:hover:text-white"
         >
           contáctame
         </Link>
