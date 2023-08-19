@@ -94,7 +94,9 @@ html.light .texture::before {
 .tooltip:hover:before {
   transition-delay: 500ms;
 }
-
+.tooltip:before {
+  background-color: #13111c;
+}
 /* Daisy UI badge */
 
 @layer components {

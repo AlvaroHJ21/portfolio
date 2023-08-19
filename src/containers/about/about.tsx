@@ -62,7 +62,7 @@ export const About = () => {
               </dl>
 
               <div className="flex gap-4">
-                <ButtonLink href="/#contact" text="Contáctame" />
+                <ButtonLink href="/contact" text="Contáctame" />
                 <ButtonLink
                   text="Descarga mi CV"
                   href="/pdf/cv-alvaro-huaysara-jauregui.pdf"
