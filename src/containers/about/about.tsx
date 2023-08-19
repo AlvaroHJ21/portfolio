@@ -11,14 +11,13 @@ export const About = () => {
         <div className="flex flex-col h-full gap-16 md:flex-row">
           {/* Imagen */}
           <div data-aos="fade-down" className="">
-            <div className="m-auto w-60 xl:w-auto lg:w-96">
+            <div className="max-w-md m-auto w-60 lg:w-96">
               <ImageBlur
-                className="object-cover transition-transform duration-300 cursor-pointer hover:scale-110"
+                className="object-cover max-w-full transition-transform duration-300 cursor-pointer hover:scale-110"
                 src="/img/my-perfil.webp"
                 alt="perfil"
-                width={400}
-                height={400}
-                priority
+                width={384}
+                height={430}
               />
             </div>
           </div>
@@ -73,9 +72,9 @@ export const About = () => {
                 <ButtonLink href="/#contact" text="Contáctame" />
                 <ButtonLink
                   text="Descarga mi CV"
-                  href="/pdf/CV-AlvaroHJ.pdf"
+                  href="/pdf/cv-alvaro-huaysara-jauregui.pdf"
                   target="_blank"
-                  download="CV-AlvaroHJ.pdf"
+                  download="cv-alvaro-huaysara-jauregui.pdf"
                   variant="outline"
                   prefixIcon={<BsDownload size={24} />}
                 />
@@ -83,7 +82,7 @@ export const About = () => {
             </div>
           </div>
         </div>
-        <div className="absolute left-0 flex flex-col items-center gap-4 dark:text-gray-500 bottom-12">
+        <div className="absolute left-0 flex-col items-center hidden gap-4 md:flex dark:text-gray-500 bottom-12">
           <ul className="flex flex-col gap-1">
             {networkLinks.map((link) => (
               <li

@@ -21,9 +21,9 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className=''>
+    <html lang="en" className="">
       <body className={`${font.className} bg-gray-50 dark:bg-background`}>
-        <ThemeProvider>
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           {/* <Navbar /> */}
           <NavbarBottom />
           <div className="texture">{children}</div>

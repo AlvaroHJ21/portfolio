@@ -21,7 +21,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
     <html lang="en">
       <body className={`${font.className} bg-background text-gray-300`}>
         <AuthProvider>
-          <ThemeProvider>
+          <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
             <NavbarDashboard />
             <div className="w-[90%] max-w-[1200px] py-10 m-auto">{
             

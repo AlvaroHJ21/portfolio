@@ -34,45 +34,45 @@ export const ProjectsView = ({ categories, projects }: Props) => {
             </h2>
           </div>
           {/* Project Top */}
-          <div data-aos="fade-up">
-            <div className="mb-20">
-              <div className="grid grid-cols-2 grid-rows-2 gap-6 mb-4 md:grid-cols-3">
+          <div className="mb-20">
+            <div className="grid grid-cols-2 grid-rows-2 gap-6 mb-4 md:grid-cols-3">
+              <Link
+                href={`/projects/${project.id}`}
+                aria-label={`Ver proyecto ${project.name}`}
+                className="col-span-2 row-span-2 overflow-hidden rounded-lg"
+              >
+                <ImageBlur
+                  src={project.images[0]}
+                  alt={`Cover del proyecto ${project.name}`}
+                  className="object-cover w-full h-full transition-transform hover:scale-110"
+                  priority
+                  width={800}
+                  height={600}
+                />
+              </Link>
+              <div className="col-span-2 row-span-2 md:col-span-1">
+                <p className="text-gray-600 uppercase dark:text-gray-300">
+                  {project.categories[0].name}
+                </p>
+                <h2 className="mb-4 text-3xl font-bold text-gray-600 dark:text-gray-300">
+                  {project.name}
+                </h2>
+                <p className="mb-4">
+                  {project.description?.length ?? 0 > 200
+                    ? project.description?.slice(0, 200) + '...'
+                    : project.description}
+                </p>
                 <Link
                   href={`/projects/${project.id}`}
                   aria-label={`Ver proyecto ${project.name}`}
-                  className="col-span-2 row-span-2 overflow-hidden rounded-lg"
+                  className="max-w-[100px] hover:text-primary underline text-20 flex items-center"
                 >
-                  <ImageBlur
-                    src={project.images[0]}
-                    alt={`Cover del proyecto ${project.name}`}
-                    className="object-cover w-full h-full transition-transform hover:scale-110"
-                    priority
-                  />
+                  Ver más
+                  <BsArrowRightShort />
                 </Link>
-                <div className="col-span-2 row-span-2 md:col-span-1">
-                  <p className="text-gray-600 uppercase dark:text-gray-300">
-                    {project.categories[0].name}
-                  </p>
-                  <h2 className="mb-4 text-3xl font-bold text-gray-600 dark:text-gray-300">
-                    {project.name}
-                  </h2>
-                  <p className="mb-4">
-                    {project.description?.length ?? 0 > 200
-                      ? project.description?.slice(0, 200) + '...'
-                      : project.description}
-                  </p>
-                  <Link
-                    href={`/projects/${project.id}`}
-                    aria-label={`Ver proyecto ${project.name}`}
-                    className="max-w-[100px] hover:text-primary underline text-20 flex items-center"
-                  >
-                    Ver más
-                    <BsArrowRightShort />
-                  </Link>
-                </div>
               </div>
-              <TagGroupTecnologies tecnologies={project.tecnologies as Tecnology[]} />
             </div>
+            <TagGroupTecnologies tecnologies={project.tecnologies as Tecnology[]} />
           </div>
 
           <div className="space-y-10">

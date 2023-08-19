@@ -10,8 +10,8 @@ export const ImageBlur = (props: ComponentProps<typeof Image>) => {
     <Image
       {...props}
       className={clsx(props.className, 'object-cover', {
-        'scale-110 blur-2xl grayscale': isLoading,
-        'scale-100 blur-0 grayscale-0': !isLoading,
+        'blur-2xl': isLoading,
+        'blur-0': !isLoading,
       })}
       onLoadingComplete={() => setLoading(false)}
     />

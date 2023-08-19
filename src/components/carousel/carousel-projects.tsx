@@ -23,6 +23,26 @@ export const CarouselProjects = ({
   slidesPerView = 2,
   reverseDirection = false,
 }: Props) => {
+  const imageSize: {
+    [key: number]: {
+      w: number;
+      h: number;
+    };
+  } = {
+    1: {
+      w: 500,
+      h: 400,
+    },
+    2: {
+      w: 600,
+      h: 400,
+    },
+    3: {
+      w: 400,
+      h: 300,
+    },
+  };
+
   return (
     <div className="w-full max-w-full">
       <h2 className="mb-6 overflow-auto text-2xl text-gray-600 dark:text-gray-300">
@@ -64,8 +84,9 @@ export const CarouselProjects = ({
                     src={images[0]}
                     alt={name ?? 'imagen'}
                     className="self-start block w-auto transition-transform hover:scale-110"
-                    width={800}
-                    height={500}
+                    width={imageSize[slidesPerView].w}
+                    height={imageSize[slidesPerView].h}
+                    priority
                   />
                 </picture>
                 <div className="flex flex-col items-center gap-2 py-3">
