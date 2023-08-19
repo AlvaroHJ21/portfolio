@@ -3,6 +3,7 @@ import { BsDownload } from 'react-icons/bs';
 import networkLinks from '@/data/networkLinks';
 import { ButtonLink } from '@/components/button';
 import { ImageBlur } from '@/components/image/image-blur';
+import { IconLineGroup } from '@/components/nav/icon-line-group';
 
 export const About = () => {
   return (
@@ -60,14 +61,6 @@ export const About = () => {
                 </div>
               </dl>
 
-              {/* <div className="flex gap-8 mb-6 text-gray-600 dark:text-white">
-                {networkLinks.map(({ name, url, icon }) => (
-                  <a key={name} href={url} className="btnIcon" target="_blank">
-                    {icon}
-                  </a>
-                ))}
-              </div> */}
-
               <div className="flex gap-4">
                 <ButtonLink href="/#contact" text="Contáctame" />
                 <ButtonLink
@@ -82,21 +75,7 @@ export const About = () => {
             </div>
           </div>
         </div>
-        <div className="absolute left-0 flex-col items-center hidden gap-4 md:flex dark:text-gray-500 bottom-12">
-          <ul className="flex flex-col gap-1">
-            {networkLinks.map((link) => (
-              <li
-                key={link.name}
-                className="transition-colors scale-50 hover:text-black dark:hover:text-white"
-              >
-                <a href={link.url} target="_blank" aria-label={link.name}>
-                  {link.icon}
-                </a>
-              </li>
-            ))}
-          </ul>
-          <div className="w-px h-10 bg-current"></div>
-        </div>
+        <IconLineGroup />
       </div>
     </section>
   );
