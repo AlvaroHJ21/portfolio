@@ -25,7 +25,7 @@ export const ProjectsView = ({ categories, projects }: Props) => {
     });
   };
   return (
-    <section id="proyects" className="">
+    <section id="projects" className="texture">
       <div className="max-w-[1200px] m-auto w-[90%]">
         <div className="py-20">
           <div data-aos="fade-down">

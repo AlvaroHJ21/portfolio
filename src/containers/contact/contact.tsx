@@ -28,7 +28,7 @@ export const Contact = () => {
   }
 
   return (
-    <section id="contact" className="">
+    <section id="contact" className="texture">
       <div className="max-w-[1200px] w-[90%] m-auto flex flex-col justify-center py-20 min-h-[756px]">
         <div data-aos="fade-down">
           <h2 className="mb-8 font-black text-center uppercase text-main text-32 dark:text-white">

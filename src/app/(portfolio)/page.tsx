@@ -1,5 +1,15 @@
 import { Hero } from '@/containers/hero';
+import ProjectsPage from './projects/page';
+import AboutMePage from './about-me/page';
+import ContactPage from './contact/page';
 
 export default function Home() {
-  return <Hero />;
+  return (
+    <>
+      <Hero />
+      <ProjectsPage />
+      <AboutMePage />
+      <ContactPage />
+    </>
+  );
 }

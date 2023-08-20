@@ -10,28 +10,27 @@ import clsx from 'clsx';
 import { ButtonMode } from '@/components/button';
 
 export const NavbarBottom = () => {
-  
   const pathname = usePathname();
 
   const iconSize = 16;
   const links = [
     {
-      href: '/',
+      href: '/#home',
       label: 'Inicio',
       icon: <FaHome size={iconSize} />,
     },
     {
-      href: '/projects',
+      href: '/#projects',
       label: 'Proyectos',
       icon: <FaBook size={iconSize} />,
     },
     {
-      href: '/about-me',
+      href: '/#about-me',
       label: 'Sobre mí',
       icon: <FaUser size={iconSize} />,
     },
     {
-      href: '/contact',
+      href: '/#contact',
       label: 'Contacto',
       icon: <MdMail size={iconSize} />,
     },
