@@ -31,15 +31,15 @@ export const CarouselProjects = ({
   } = {
     1: {
       w: 500,
-      h: 400,
+      h: 500,
     },
     2: {
       w: 600,
-      h: 400,
+      h: 600,
     },
     3: {
       w: 400,
-      h: 300,
+      h: 400,
     },
   };
 
@@ -50,7 +50,7 @@ export const CarouselProjects = ({
       </h2>
       <Swiper
         modules={[Pagination, Autoplay]}
-        spaceBetween={24}
+        spaceBetween={16}
         // slidesPerView={slidesPerView}
         loop={true}
         autoplay={{
@@ -76,14 +76,14 @@ export const CarouselProjects = ({
             <SwiperSlide className="" key={id}>
               <Link
                 href={`/projects/${item.id}`}
-                className="flex flex-col my-4 overflow-hidden rounded-md shadow-sm"
+                className="flex flex-col my-4 overflow-hidden"
                 aria-label={`Ver proyecto ${name}`}
               >
-                <picture className="overflow-hidden">
+                <picture className="overflow-hidden rounded-md aspect-[4/3]">
                   <ImageBlur
                     src={images[0]}
                     alt={name ?? 'imagen'}
-                    className="self-start block w-auto transition-transform hover:scale-110"
+                    className="self-start block w-full h-full transition-transform hover:scale-110"
                     width={imageSize[slidesPerView].w}
                     height={imageSize[slidesPerView].h}
                     priority

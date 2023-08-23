@@ -65,7 +65,7 @@ export const ProjectsView = ({ categories, projects }: Props) => {
                 <Link
                   href={`/projects/${project.id}`}
                   aria-label={`Ver proyecto ${project.name}`}
-                  className="max-w-[100px] hover:text-primary underline text-20 flex items-center"
+                  className="max-w-[100px] hover:text-primary underline text-20 flex items-center text-sm"
                 >
                   Ver más
                   <BsArrowRightShort />
@@ -77,15 +77,15 @@ export const ProjectsView = ({ categories, projects }: Props) => {
 
           <div className="space-y-10">
             <CarouselProjects
+              category={getCategoryById(2)!}
+              projects={getProjectsByCategory(getCategoryById(2)!)}
+              slidesPerView={3}
+              reverseDirection={true}
+            />
+            <CarouselProjects
               category={getCategoryById(1)!}
               projects={getProjectsByCategory(getCategoryById(1)!)}
               slidesPerView={3}
-            />
-            <CarouselProjects
-              category={getCategoryById(2)!}
-              projects={getProjectsByCategory(getCategoryById(2)!)}
-              slidesPerView={2}
-              reverseDirection={true}
             />
             <CarouselProjects
               category={getCategoryById(3)!}

@@ -141,5 +141,10 @@ const tecnologies: Tecnology[] = [
     name: 'Astro',
     image: '/logos/astro.svg',
   },
+  {
+    id: 29,
+    name: 'Typescript',
+    image: '/logos/typescript.svg',
+  },
 ];
 export default tecnologies;

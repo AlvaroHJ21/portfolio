@@ -16,6 +16,8 @@ export const ImageModal = ({ currentImages }: Props) => {
               key={idx}
               src={image}
               className="w-full h-full rounded-md cursor-pointer"
+              width={1000}
+              height={600}
               alt="entry"
             />
           );
