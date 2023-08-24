@@ -5,6 +5,8 @@ import ThemeProvider from '@/providers/ThemeProvider';
 import { Footer } from '@/containers/footer/footer';
 import { NavbarBottom } from '@/components/nav';
 import '@/styles/globals.css';
+import { MagicCursor } from '@/components/cursor/magic-cursor';
+import { CursorProvider } from '@/components/cursor/CursorContext';
 
 const font = Raleway({
   subsets: ['latin'],
@@ -22,13 +24,17 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className={`${font.className} bg-gray-50 dark:bg-background`}>
+      <body className={`${font.className} bg-gray-50 dark:bg-background selection:bg-primary selection:text-white`}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          {/* <Navbar /> */}
-          <NavbarBottom />
-          {/* <div className="texture">{children}</div> */}
-          {children}
-          <Footer />
+          <CursorProvider>
+            {/* <Navbar /> */}
+            <NavbarBottom />
+            {/* <div className="texture">{children}</div> */}
+            {children}
+            <Footer />
+
+            <MagicCursor />
+          </CursorProvider>
         </ThemeProvider>
       </body>
     </html>

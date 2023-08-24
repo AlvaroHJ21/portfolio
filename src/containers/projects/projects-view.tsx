@@ -1,3 +1,5 @@
+'use client';
+
 import Link from 'next/link';
 
 import { BsArrowRightShort } from 'react-icons/bs';
@@ -6,6 +8,7 @@ import { ImageBlur } from '@/components/image';
 import { CarouselProjects } from '@/components/carousel';
 import { TagGroupTecnologies } from '@/components/tag';
 import { Category, Project, Tecnology } from '@/interfaces';
+import { useCursor } from '@/components/cursor/CursorContext';
 
 interface Props {
   projects: Project[];
@@ -13,6 +16,8 @@ interface Props {
 }
 
 export const ProjectsView = ({ categories, projects }: Props) => {
+  const { setConfig } = useCursor();
+
   const project = projects[0];
 
   const getCategoryById = (id: number) => {
@@ -37,6 +42,15 @@ export const ProjectsView = ({ categories, projects }: Props) => {
           <div className="mb-20">
             <div className="grid grid-cols-2 grid-rows-2 gap-6 mb-4 md:grid-cols-3">
               <Link
+                onMouseEnter={() =>
+                  setConfig({
+                    size: 'medium',
+                    background: 'blur',
+                    content: '[VER MÁS]',
+                  })
+                }
+                onClick={() => setConfig(null)}
+                onMouseLeave={() => setConfig(null)}
                 href={`/projects/${project.id}`}
                 aria-label={`Ver proyecto ${project.name}`}
                 className="col-span-2 row-span-2 overflow-hidden rounded-lg"

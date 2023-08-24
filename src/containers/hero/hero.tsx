@@ -1,21 +1,30 @@
+'use client';
 import { BsDownload } from 'react-icons/bs';
-// import AOS from 'aos';
-// import 'aos/dist/aos.css';
-
 import { ButtonLink } from '@/components/button';
-import networkLinks from '@/data/networkLinks';
 import Link from 'next/link';
 import { TextTypeAnimate } from '../../components/text';
 import { IconLineGroup } from '@/components/nav/icon-line-group';
+import { useCursor } from '@/components/cursor/CursorContext';
 
 export const Hero = () => {
+  const { setConfig } = useCursor();
+
   return (
     <main id="home" className="texture">
       <div className="relative w-[90%] h-screen m-auto flex flex-col items-center justify-center gap-8 text-center">
         <div className="flex flex-col items-center gap-2 texts">
           <div data-aos="zoom-out-down" className="mb-6">
             <p className="mb-4 text-gray-600 font-regular text-32 dark:text-white">Hola, soy</p>
-            <h1 className="text-5xl font-black font-raleway md:text-6xl text-main">
+            <h1
+              onMouseEnter={() =>
+                setConfig({
+                  size: 'large',
+                  background: 'opacity',
+                })
+              }
+              onMouseLeave={() => setConfig(null)}
+              className="text-5xl font-black font-raleway md:text-6xl text-main"
+            >
               Alvaro Huaysara
             </h1>
           </div>

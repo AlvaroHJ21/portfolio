@@ -7,7 +7,7 @@ interface Props {
 
 export const ImageModal = ({ currentImages }: Props) => {
   return (
-    <dialog id="image_modal" className="modal">
+    <dialog id="image_modal" className="!z-10 modal">
       <form method="dialog" className="max-w-5xl p-0 modal-box">
         {currentImages.map((image, idx) => {
           if (image.length === 0) return null;

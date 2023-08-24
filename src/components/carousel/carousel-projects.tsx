@@ -9,6 +9,7 @@ import Link from 'next/link';
 import { TagGroupTecnologies } from '../tag/tag-group';
 import { Category, Project } from '@/interfaces';
 import { ImageBlur } from '../image';
+import { useCursor } from '../cursor/CursorContext';
 
 interface Props {
   category: Category;
@@ -42,6 +43,8 @@ export const CarouselProjects = ({
       h: 400,
     },
   };
+
+  const { setConfig } = useCursor();
 
   return (
     <div className="w-full max-w-full">
@@ -78,8 +81,19 @@ export const CarouselProjects = ({
                 href={`/projects/${item.id}`}
                 className="flex flex-col my-4 overflow-hidden"
                 aria-label={`Ver proyecto ${name}`}
+                onClick={() => setConfig(null)}
               >
-                <picture className="overflow-hidden rounded-md aspect-[4/3]">
+                <picture
+                  onMouseEnter={() =>
+                    setConfig({
+                      size: 'medium',
+                      background: 'blur',
+                      content: '[VER MÁS]',
+                    })
+                  }
+                  onMouseLeave={() => setConfig(null)}
+                  className="overflow-hidden rounded-md aspect-[4/3]"
+                >
                   <ImageBlur
                     src={images[0]}
                     alt={name ?? 'imagen'}

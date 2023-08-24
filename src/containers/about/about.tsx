@@ -1,6 +1,5 @@
 import { BsDownload } from 'react-icons/bs';
 
-import networkLinks from '@/data/networkLinks';
 import { ButtonLink } from '@/components/button';
 import { ImageBlur } from '@/components/image/image-blur';
 import { IconLineGroup } from '@/components/nav/icon-line-group';
@@ -14,7 +13,7 @@ export const About = () => {
           <div data-aos="fade-down" className="">
             <div className="max-w-md m-auto w-60 lg:w-96">
               <ImageBlur
-                className="object-cover max-w-full transition-transform duration-300 cursor-pointer hover:scale-110"
+                className="object-cover max-w-full"
                 src="/img/my-perfil.webp"
                 alt="perfil"
                 width={384}

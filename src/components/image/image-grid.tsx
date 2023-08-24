@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { ImageModal } from '@/components/image';
 import Image from 'next/image';
+import { useCursor } from '../cursor/CursorContext';
 
 interface Props {
   firstImage: string;
@@ -12,6 +13,8 @@ interface Props {
 
 export const ImageGrid = ({ firstImage, secondImage, thirdImage }: Props) => {
   const [currentImage, setCurrentImage] = useState<string>('');
+
+  const { setConfig } = useCursor();
 
   const onSelectImage = (image: string) => {
     setCurrentImage(image);
@@ -25,6 +28,14 @@ export const ImageGrid = ({ firstImage, secondImage, thirdImage }: Props) => {
     <>
       <div className="grid grid-cols-2 grid-rows-2 gap-4 mb-4 md:grid-cols-3">
         <picture
+          onMouseEnter={() =>
+            setConfig({
+              background: 'blur',
+              size: 'medium',
+              content: 'Ver',
+            })
+          }
+          onMouseLeave={() => setConfig(null)}
           onClick={() => onSelectImage(firstImage)}
           className="col-span-2 row-span-2 overflow-hidden rounded-lg"
         >
@@ -37,6 +48,14 @@ export const ImageGrid = ({ firstImage, secondImage, thirdImage }: Props) => {
           />
         </picture>
         <picture
+          onMouseEnter={() =>
+            setConfig({
+              background: 'blur',
+              size: 'medium',
+              content: 'Ver',
+            })
+          }
+          onMouseLeave={() => setConfig(null)}
           onClick={() => onSelectImage(secondImage)}
           className="col-span-1 overflow-hidden rounded-lg"
         >
@@ -49,6 +68,14 @@ export const ImageGrid = ({ firstImage, secondImage, thirdImage }: Props) => {
           />
         </picture>
         <picture
+          onMouseEnter={() =>
+            setConfig({
+              background: 'blur',
+              size: 'medium',
+              content: 'Ver',
+            })
+          }
+          onMouseLeave={() => setConfig(null)}
           onClick={() => onSelectImage(thirdImage)}
           className="col-span-1 overflow-hidden rounded-lg"
         >
