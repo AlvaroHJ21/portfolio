@@ -14,7 +14,7 @@ interface Props {
 export const ImageGrid = ({ firstImage, secondImage, thirdImage }: Props) => {
   const [currentImage, setCurrentImage] = useState<string>('');
 
-  const { setConfig } = useCursor();
+  const { setMouseConfig } = useCursor();
 
   const onSelectImage = (image: string) => {
     setCurrentImage(image);
@@ -29,13 +29,13 @@ export const ImageGrid = ({ firstImage, secondImage, thirdImage }: Props) => {
       <div className="grid grid-cols-2 grid-rows-2 gap-4 mb-4 md:grid-cols-3">
         <picture
           onMouseEnter={() =>
-            setConfig({
+            setMouseConfig({
               background: 'blur',
               size: 'medium',
               content: 'Ver',
             })
           }
-          onMouseLeave={() => setConfig(null)}
+          onMouseLeave={() => setMouseConfig(null)}
           onClick={() => onSelectImage(firstImage)}
           className="col-span-2 row-span-2 overflow-hidden rounded-lg"
         >
@@ -49,13 +49,13 @@ export const ImageGrid = ({ firstImage, secondImage, thirdImage }: Props) => {
         </picture>
         <picture
           onMouseEnter={() =>
-            setConfig({
+            setMouseConfig({
               background: 'blur',
               size: 'medium',
               content: 'Ver',
             })
           }
-          onMouseLeave={() => setConfig(null)}
+          onMouseLeave={() => setMouseConfig(null)}
           onClick={() => onSelectImage(secondImage)}
           className="col-span-1 overflow-hidden rounded-lg"
         >
@@ -69,13 +69,13 @@ export const ImageGrid = ({ firstImage, secondImage, thirdImage }: Props) => {
         </picture>
         <picture
           onMouseEnter={() =>
-            setConfig({
+            setMouseConfig({
               background: 'blur',
               size: 'medium',
               content: 'Ver',
             })
           }
-          onMouseLeave={() => setConfig(null)}
+          onMouseLeave={() => setMouseConfig(null)}
           onClick={() => onSelectImage(thirdImage)}
           className="col-span-1 overflow-hidden rounded-lg"
         >

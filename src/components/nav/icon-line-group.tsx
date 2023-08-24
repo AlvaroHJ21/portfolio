@@ -5,7 +5,7 @@ import React from 'react';
 import { useCursor } from '../cursor/CursorContext';
 
 export const IconLineGroup = () => {
-  const { setConfig } = useCursor();
+  const { setMouseConfig } = useCursor();
 
   return (
     <div className="absolute left-0 flex-col items-center hidden gap-4 text-gray-400 sm:flex dark:text-gray-500 bottom-12">
@@ -13,12 +13,12 @@ export const IconLineGroup = () => {
         {networkLinks.map((link) => (
           <li
             onMouseEnter={() =>
-              setConfig({
+              setMouseConfig({
                 background: 'solid',
                 size: 'none',
               })
             }
-            onMouseLeave={() => setConfig(null)}
+            onMouseLeave={() => setMouseConfig(null)}
             key={link.name}
             className="transition-colors scale-50 hover:text-black dark:hover:text-white"
           >

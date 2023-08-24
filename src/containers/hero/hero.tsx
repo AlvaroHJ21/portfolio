@@ -7,7 +7,7 @@ import { IconLineGroup } from '@/components/nav/icon-line-group';
 import { useCursor } from '@/components/cursor/CursorContext';
 
 export const Hero = () => {
-  const { setConfig } = useCursor();
+  const { setMouseConfig } = useCursor();
 
   return (
     <main id="home" className="texture">
@@ -17,12 +17,12 @@ export const Hero = () => {
             <p className="mb-4 text-gray-600 font-regular text-32 dark:text-white">Hola, soy</p>
             <h1
               onMouseEnter={() =>
-                setConfig({
+                setMouseConfig({
                   size: 'large',
                   background: 'opacity',
                 })
               }
-              onMouseLeave={() => setConfig(null)}
+              onMouseLeave={() => setMouseConfig(null)}
               className="text-5xl font-black font-raleway md:text-6xl text-main"
             >
               Alvaro Huaysara
@@ -45,7 +45,7 @@ export const Hero = () => {
         </div>
 
         <div className="flex flex-col gap-4 sm:flex-row">
-          <ButtonLink text="Ver proyectos" href="/projects" />
+          <ButtonLink text="Ver proyectos" href="/#projects" />
           <ButtonLink
             text="Descarga mi CV"
             href="/pdf/cv-alvaro-huaysara-jauregui.pdf"

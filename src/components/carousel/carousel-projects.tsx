@@ -5,11 +5,8 @@ import { Pagination, Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
 
-import Link from 'next/link';
-import { TagGroupTecnologies } from '../tag/tag-group';
 import { Category, Project } from '@/interfaces';
-import { ImageBlur } from '../image';
-import { useCursor } from '../cursor/CursorContext';
+import { CarouselProjectItem } from '@/components/carousel/carousel-project-item';
 
 interface Props {
   category: Category;
@@ -44,8 +41,6 @@ export const CarouselProjects = ({
     },
   };
 
-  const { setConfig } = useCursor();
-
   return (
     <div className="w-full max-w-full">
       <h2 className="mb-6 overflow-auto text-2xl text-gray-600 dark:text-gray-300">
@@ -71,44 +66,16 @@ export const CarouselProjects = ({
             slidesPerView: slidesPerView,
           },
         }}
-        pagination={{ clickable: true }}
+        // pagination={{ clickable: true }}
       >
         {projects.map((item) => {
-          const { id, images, name } = item;
           return (
-            <SwiperSlide className="" key={id}>
-              <Link
-                href={`/projects/${item.id}`}
-                className="flex flex-col my-4 overflow-hidden"
-                aria-label={`Ver proyecto ${name}`}
-                onClick={() => setConfig(null)}
-              >
-                <picture
-                  onMouseEnter={() =>
-                    setConfig({
-                      size: 'medium',
-                      background: 'blur',
-                      content: '[VER MÁS]',
-                    })
-                  }
-                  onMouseLeave={() => setConfig(null)}
-                  className="overflow-hidden rounded-md aspect-[4/3]"
-                >
-                  <ImageBlur
-                    src={images[0]}
-                    alt={name ?? 'imagen'}
-                    className="self-start block w-full h-full transition-transform hover:scale-110"
-                    width={imageSize[slidesPerView].w}
-                    height={imageSize[slidesPerView].h}
-                    priority
-                  />
-                </picture>
-                <div className="flex flex-col items-center gap-2 py-3">
-                  <p className="text-background dark:text-white text-20">{name}</p>
-                  <TagGroupTecnologies tecnologies={item.tecnologies} sm />
-                </div>
-              </Link>
-              <div className="h-4"></div>
+            <SwiperSlide className="" key={item.id}>
+              <CarouselProjectItem
+                item={item}
+                imageWidth={imageSize[slidesPerView].w}
+                imageHeight={imageSize[slidesPerView].h}
+              />
             </SwiperSlide>
           );
         })}

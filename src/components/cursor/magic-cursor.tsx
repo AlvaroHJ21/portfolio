@@ -8,7 +8,7 @@ import { useCursor } from './CursorContext';
 export const MagicCursor = () => {
   const cursor = useRef(null);
 
-  const { config } = useCursor();
+  const { mouseConfig: config } = useCursor();
 
   const moveMouse = (event: MouseEvent) => {
     gsap.to(cursor.current, {

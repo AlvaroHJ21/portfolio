@@ -16,7 +16,7 @@ interface Props {
 }
 
 export const ProjectsView = ({ categories, projects }: Props) => {
-  const { setConfig } = useCursor();
+  const { setMouseConfig } = useCursor();
 
   const project = projects[0];
 
@@ -43,14 +43,14 @@ export const ProjectsView = ({ categories, projects }: Props) => {
             <div className="grid grid-cols-2 grid-rows-2 gap-6 mb-4 md:grid-cols-3">
               <Link
                 onMouseEnter={() =>
-                  setConfig({
+                  setMouseConfig({
                     size: 'medium',
                     background: 'blur',
                     content: '[VER MÁS]',
                   })
                 }
-                onClick={() => setConfig(null)}
-                onMouseLeave={() => setConfig(null)}
+                onClick={() => setMouseConfig(null)}
+                onMouseLeave={() => setMouseConfig(null)}
                 href={`/projects/${project.id}`}
                 aria-label={`Ver proyecto ${project.name}`}
                 className="col-span-2 row-span-2 overflow-hidden rounded-lg"
@@ -89,7 +89,7 @@ export const ProjectsView = ({ categories, projects }: Props) => {
             <TagGroupTecnologies tecnologies={project.tecnologies as Tecnology[]} />
           </div>
 
-          <div className="space-y-10">
+          <div className="space-y-6">
             <CarouselProjects
               category={getCategoryById(2)!}
               projects={getProjectsByCategory(getCategoryById(2)!)}
