@@ -146,5 +146,20 @@ const tecnologies: Tecnology[] = [
     name: 'Typescript',
     image: '/logos/typescript.svg',
   },
+  {
+    id: 30,
+    name: 'Prisma',
+    image: '/logos/prisma.svg',
+  },
+  {
+    id: 31,
+    name: 'Socket.IO',
+    image: '/logos/socket.svg',
+  },
+  {
+    id: 32,
+    name: 'Zustand',
+    image: '/logos/zustand.png',
+  },
 ];
 export default tecnologies;
