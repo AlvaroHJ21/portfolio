@@ -3,7 +3,7 @@ import { Metadata } from 'next';
 import prisma from '@/lib/prisma';
 
 import { Project, Category } from '@/interfaces';
-import { ProjectsView } from '@/containers/projects';
+import { ProjectsListView } from '@/components/projects';
 
 export const metadata: Metadata = {
   title: 'Proyectos | Alvaro Huaysara Jauregui | Full Stack Web Developer | Systems Engineer',
@@ -25,5 +25,5 @@ export default async function ProjectsPage() {
     },
   })) as Project[];
 
-  return <ProjectsView categories={categories} projects={projects} />;
+  return <ProjectsListView categories={categories} projects={projects} />;
 }

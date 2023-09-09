@@ -1,4 +1,3 @@
-import React from 'react';
 import ProjectFormPage from '../../create/page';
 
 export default ProjectFormPage;

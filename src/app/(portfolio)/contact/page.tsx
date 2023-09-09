@@ -1,4 +1,4 @@
-import { Contact } from '@/containers/contact';
+import { Contact } from '@/components/contact';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {

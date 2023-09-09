@@ -14,7 +14,7 @@ import { useCategories } from '@/hooks/useCategories';
 import { useTecnologies } from '@/hooks/useTecnologies';
 import { useProjects } from '@/hooks/useProjects';
 import { Project } from '@/interfaces';
-import { Multiselect, Option } from '@/components/input';
+import { Multiselect, Option } from '@/components/ui';
 
 interface Image {
   id?: string;

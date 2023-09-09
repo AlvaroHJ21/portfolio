@@ -1,12 +1,11 @@
 import type { Metadata } from 'next';
 import { Raleway } from 'next/font/google';
 
-import ThemeProvider from '@/providers/ThemeProvider';
-import { Footer } from '@/containers/footer/footer';
-import { NavbarBottom } from '@/components/nav';
+import { AnimationsProvider, ThemeProvider } from '@/providers';
+import { Footer } from '@/components/footer';
+import { NavbarBottom } from '@/components/shared';
+import { Cursor, CursorProvider } from '@/components/ui';
 import '@/styles/globals.css';
-import { MagicCursor } from '@/components/cursor/magic-cursor';
-import { CursorProvider } from '@/components/cursor/CursorContext';
 
 const font = Raleway({
   subsets: ['latin'],
@@ -24,17 +23,21 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className={`${font.className} bg-gray-50 dark:bg-background selection:bg-primary selection:text-white`}>
+      <body
+        className={`${font.className} bg-gray-50 dark:bg-background selection:bg-primary selection:text-white`}
+      >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <CursorProvider>
-            {/* <Navbar /> */}
-            <NavbarBottom />
-            {/* <div className="texture">{children}</div> */}
-            {children}
-            <Footer />
+          <AnimationsProvider>
+            <CursorProvider>
+              {/* <Navbar /> */}
+              <NavbarBottom />
+              {/* <div className="texture">{children}</div> */}
+              {children}
+              <Footer />
 
-            <MagicCursor />
-          </CursorProvider>
+              <Cursor />
+            </CursorProvider>
+          </AnimationsProvider>
         </ThemeProvider>
       </body>
     </html>

@@ -1,10 +1,9 @@
 import type { Metadata } from 'next';
 import { Raleway } from 'next/font/google';
 
-import ThemeProvider from '@/providers/ThemeProvider';
+import {AuthProvider, ThemeProvider} from '@/providers';
+import { NavbarDashboard } from '@/components/shared';
 import '@/styles/globals.css';
-import AuthProvider from '@/providers/AuthProvider';
-import { NavbarDashboard } from '@/components/nav';
 
 const font = Raleway({
   subsets: ['latin'],
