@@ -11,7 +11,7 @@ interface Props {
   projects: Project[];
 }
 
-export const TableProjects = ({ projects }: Props) => {
+export const ProjectsTable = ({ projects }: Props) => {
   const [currentImages, setCurrentImages] = useState<string[]>([]);
 
   const onViewImages = (images: string[]) => {

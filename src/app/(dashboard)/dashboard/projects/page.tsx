@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { FaPlus } from 'react-icons/fa';
 
 import { useProjects } from '@/hooks/useProjects';
-import { TableProjects } from '@/containers/projects/projects-table';
+import { ProjectsTable } from '@/components/projects';
 
 export default function ProjectPage() {
   const { projects, isLoading } = useProjects();
@@ -32,7 +32,7 @@ export default function ProjectPage() {
           Agregar
         </Link>
       </div>
-      <TableProjects projects={projects ?? []} />
+      <ProjectsTable projects={projects ?? []} />
     </section>
   );
 }
