@@ -1,10 +1,10 @@
 import prisma from '@/lib/prisma';
-import { Project as PrismaProject } from '@prisma/client';
+import { projects as PrismaProject } from '@prisma/client';
 import { Project } from '@/interfaces';
 import { ProjectView } from '@/containers/projects/project-view';
 
 export async function generateStaticParams() {
-  const projects = (await prisma.project.findMany({})) as PrismaProject[];
+  const projects = (await prisma.projects.findMany({})) as PrismaProject[];
 
   return projects.map((project) => {
     return {
@@ -14,7 +14,7 @@ export async function generateStaticParams() {
 }
 
 async function getProject(id: string) {
-  const project = await prisma.project.findUnique({
+  const project = await prisma.projects.findUnique({
     where: {
       id: Number(id),
     },

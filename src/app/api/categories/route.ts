@@ -4,7 +4,7 @@ import prisma from '@/lib/prisma';
 export async function GET(request: Request) {
   return NextResponse.json({
     ok: true,
-    data: await prisma.category.findMany(),
+    data: await prisma.categories.findMany(),
   });
 }
 
@@ -19,7 +19,7 @@ export async function POST(request: Request) {
       });
     }
 
-    const category = await prisma.category.create({
+    const category = await prisma.categories.create({
       data: {
         name,
       },

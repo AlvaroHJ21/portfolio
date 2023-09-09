@@ -10,9 +10,9 @@ export const metadata: Metadata = {
 };
 
 export default async function ProjectsPage() {
-  const categories = (await prisma.category.findMany()) as Category[];
+  const categories = (await prisma.categories.findMany()) as Category[];
 
-  const projects = (await prisma.project.findMany({
+  const projects = (await prisma.projects.findMany({
     where: {
       published: true,
     },

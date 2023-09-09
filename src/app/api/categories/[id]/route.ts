@@ -4,7 +4,7 @@ import prisma from '@/lib/prisma';
 export const DELETE = async (request: Request, { params }: any) => {
   const { id } = params;
   try {
-    await prisma.category.delete({
+    await prisma.categories.delete({
       where: {
         id: Number(id),
       },

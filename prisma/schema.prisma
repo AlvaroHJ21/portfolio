@@ -6,38 +6,39 @@ generator client {
 }
 
 datasource db {
-  provider = "postgresql"
-  url      = env("DATABASE_URL")
+  provider  = "postgresql"
+  url       = env("POSTGRES_PRISMA_URL") // uses connection pooling
+  directUrl = env("POSTGRES_URL_NON_POOLING") // uses a direct connection
 }
 
-model User {
-  id       Int    @id @default(autoincrement())
+model users {
+  id       Int     @id @default(autoincrement())
   name     String?
-  email    String @unique
+  email    String  @unique
   password String
 }
 
-model Project {
-  id          Int         @id @default(autoincrement())
+model projects {
+  id          Int           @id @default(autoincrement())
   name        String?
   description String?
   url         String?
   images      String[]
-  categories  Category[]
-  tecnologies Tecnology[]
-  priority    Int         @default(0)
-  published   Boolean     @default(false)
+  categories  categories[]
+  tecnologies tecnologies[]
+  priority    Int           @default(0)
+  published   Boolean       @default(false)
 }
 
-model Category {
-  id       Int       @id @default(autoincrement())
+model categories {
+  id       Int        @id @default(autoincrement())
   name     String?
-  projects Project[]
+  projects projects[]
 }
 
-model Tecnology {
-  id       Int       @id @default(autoincrement())
+model tecnologies {
+  id       Int        @id @default(autoincrement())
   name     String?
   image    String?
-  projects Project[]
+  projects projects[]
 }

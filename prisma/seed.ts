@@ -5,9 +5,9 @@ import tecnologies from '../src/data/tecnologies';
 const prisma = new PrismaClient();
 
 async function main() {
-  await prisma.user.deleteMany();
+  await prisma.users.deleteMany();
   
-  await prisma.user.create({
+  await prisma.users.create({
     data: {
       email: 'alvarohuaysara@gmail',
       name: 'Alvaro',
@@ -15,16 +15,16 @@ async function main() {
     },
   });
 
-  await prisma.category.deleteMany();
-  await prisma.category.createMany({
+  await prisma.categories.deleteMany();
+  await prisma.categories.createMany({
     data: categories.map((category) => {
       delete category.id;
       return category;
     }),
   });
 
-  await prisma.tecnology.deleteMany();
-  await prisma.tecnology.createMany({
+  await prisma.tecnologies.deleteMany();
+  await prisma.tecnologies.createMany({
     data: tecnologies.map((tecnology) => {
       delete tecnology.id;
       return tecnology;

@@ -5,7 +5,7 @@ import { Project } from '@/interfaces';
 export async function GET(request: Request, { params }: { params: { id: string } }) {
   return NextResponse.json({
     ok: true,
-    data: await prisma.project.findUnique({
+    data: await prisma.projects.findUnique({
       where: {
         id: Number(params.id),
       },
@@ -34,7 +34,7 @@ export async function PUT(request: Request, { params }: { params: { id: string }
     // console.log(id);
     // console.log({ name, description, url, categories, tecnologies, images });
 
-    const projectFound = await prisma.project.findUnique({
+    const projectFound = await prisma.projects.findUnique({
       where: {
         id: Number(id),
       },
@@ -50,7 +50,7 @@ export async function PUT(request: Request, { params }: { params: { id: string }
         error: 'Project not found',
       });
 
-    await prisma.project.update({
+    await prisma.projects.update({
       where: { id: Number(id) },
       data: {
         categories: {
@@ -64,7 +64,7 @@ export async function PUT(request: Request, { params }: { params: { id: string }
 
     return NextResponse.json({
       ok: true,
-      data: await prisma.project.update({
+      data: await prisma.projects.update({
         where: {
           id: Number(id),
         },

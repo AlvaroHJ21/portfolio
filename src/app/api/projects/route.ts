@@ -8,7 +8,7 @@ export async function GET(request: Request) {
   // console.log(order);
   return NextResponse.json({
     ok: true,
-    data: await prisma.project.findMany({
+    data: await prisma.projects.findMany({
       include: {
         categories: true,
         tecnologies: true,
@@ -35,7 +35,7 @@ export async function POST(request: Request) {
       published,
     }: Project = await request.json();
 
-    const project = await prisma.project.create({
+    const project = await prisma.projects.create({
       data: {
         url,
         name,
