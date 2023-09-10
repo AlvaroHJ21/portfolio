@@ -1,30 +1,26 @@
+import { ComponentProps } from 'react';
 import Link from 'next/link';
 import clsx from 'clsx';
 
-interface Props {
-  href: string;
-  text: string;
-  target?: string;
+interface Props extends ComponentProps<typeof Link> {
+  children: React.ReactNode;
   download?: string;
   variant?: Variant;
-  suffixIcon?: React.ReactNode;
-  prefixIcon?: React.ReactNode;
+  startIcon?: React.ReactNode;
+  endIcon?: React.ReactNode;
 }
 
 type Variant = 'filled' | 'outline';
 
 export const ButtonLink = ({
-  href,
-  text,
-  target,
-  download,
+  children,
   variant = 'filled',
-  suffixIcon,
-  prefixIcon,
+  startIcon,
+  endIcon,
+  ...props
 }: Props) => {
   return (
     <Link
-      href={href}
       className={clsx(
         'flex items-center justify-center gap-2 px-4 py-2 font-bold rounded-full border-2 my-btn',
         {
@@ -32,13 +28,11 @@ export const ButtonLink = ({
           'border-main bg-transparent text-main dark:text-white': variant === 'outline',
         }
       )}
-      target={target}
-      download={download}
-      aria-label={text}
+      {...props}
     >
-      {prefixIcon}
-      {text}
-      {suffixIcon}
+      {startIcon}
+      {children}
+      {endIcon}
     </Link>
   );
 };

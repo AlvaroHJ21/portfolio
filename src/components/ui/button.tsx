@@ -1,30 +1,26 @@
 import clsx from 'clsx';
+import { ButtonHTMLAttributes } from 'react';
 
-interface Props {
-  text: string;
+interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
+  children: React.ReactNode;
   variant?: Variant;
-  suffixIcon?: React.ReactNode;
-  prefixIcon?: React.ReactNode;
-  onClick?: () => void;
-  type?: 'button' | 'submit' | 'reset' | undefined;
+  endIcon?: React.ReactNode;
+  startIcon?: React.ReactNode;
   className?: string;
 }
 
 type Variant = 'filled' | 'outline';
 
 export const Button = ({
-  text,
+  children,
   variant = 'filled',
-  suffixIcon,
-  prefixIcon,
-  onClick,
-  type,
+  startIcon,
+  endIcon,
   className,
+  ...props
 }: Props) => {
   return (
     <button
-      onClick={onClick}
-      type={type}
       className={clsx(
         className,
         'flex items-center justify-center gap-2 px-4 py-2 font-bold rounded-full border-2 my-btn',
@@ -33,10 +29,11 @@ export const Button = ({
           'border-main bg-transparent text-main dark:text-white': variant === 'outline',
         }
       )}
+      {...props}
     >
-      {prefixIcon}
-      {text}
-      {suffixIcon}
+      {startIcon}
+      {children}
+      {endIcon}
     </button>
   );
 };

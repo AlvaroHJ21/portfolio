@@ -1,5 +1,6 @@
-import { skills } from '@/data';
+import { skills, tecnologies } from '@/data';
 import { Skill } from '@/interfaces';
+import { CarouselTecnologies } from '.';
 
 const SkillBlock = ({ skill }: { skill: Skill }) => {
   return (
@@ -50,6 +51,8 @@ export const Skills = () => {
           </div>
         </div>
       </div>
+      <CarouselTecnologies items={tecnologies} direction="left" />
+      <CarouselTecnologies items={tecnologies} direction="right" />
     </section>
   );
 };

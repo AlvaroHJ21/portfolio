@@ -9,10 +9,11 @@ import { InputHTMLAttributes } from 'react';
 //   onChange?: (e: ChangeEvent<HTMLTextAreaElement | HTMLInputElement>) => void;
 // }
 
-export const InputText = ({
-  multiline = false,
-  ...props
-}: InputHTMLAttributes<HTMLTextAreaElement | HTMLInputElement> & { multiline?: boolean }) => {
+interface Props extends InputHTMLAttributes<HTMLTextAreaElement | HTMLInputElement> {
+  multiline?: boolean;
+}
+
+export const InputText = ({ multiline = false, ...props }: Props) => {
   if (multiline) {
     return (
       <textarea
@@ -26,11 +27,6 @@ export const InputText = ({
     <input
       className={`w-full px-4 py-3 bg-transparent border-2 rounded-full outline-none border-main text-black dark:text-white my-input`}
       {...props}
-
-      // placeholder={placeholder}
-      // name={name}
-      // value={value}
-      // onChange={onChange}
     />
   );
 };

@@ -1,10 +1,11 @@
 import Link from 'next/link';
 
-import { BsChevronLeft } from 'react-icons/bs';
-import { TbExternalLink } from 'react-icons/tb';
+import { FaArrowLeft } from 'react-icons/fa';
 
-import { ImageGrid, TagGroupTecnologies } from '@/components/ui';
+import { CustomLink, TagGroupTecnologies } from '@/components/ui';
+import { ImageGrid } from '@/components/ui/image-grid';
 import { Project, Tecnology } from '@/interfaces';
+import { LinkViewDemo } from '../ui/link-view-demo';
 
 interface Props {
   project: Project;
@@ -25,21 +26,18 @@ export const ProjectsDetailsView = ({ project }: Props) => {
         <div className="py-10">
           <div data-aos="fade-up">
             <div className="flex justify-between mb-4">
-              <Link
-                href="/#projects"
-                className="p-2 text-white border-2 rounded-full bg-main border-main"
-              >
-                <BsChevronLeft size={20} />
-              </Link>
+              <CustomLink href="/#projects" startIcon={<FaArrowLeft size={14} />}>
+                Volver
+              </CustomLink>
               <div className="flex items-center gap-2">
                 {/* Demo */}
-                <a
+                {/* <a
                   href={project?.url}
                   target="_blank"
                   className="p-2 text-white border-2 rounded-full bg-main border-main"
                 >
                   <TbExternalLink size={20} />
-                </a>
+                </a> */}
               </div>
             </div>
             <div className="mb-4">
@@ -51,11 +49,15 @@ export const ProjectsDetailsView = ({ project }: Props) => {
               </h2>
             </div>
 
-            <ImageGrid
-              firstImage={firstImage!}
-              secondImage={secondImage!}
-              thirdImage={thirdImage!}
-            />
+            <div className="relative">
+              <ImageGrid
+                firstImage={firstImage!}
+                secondImage={secondImage!}
+                thirdImage={thirdImage!}
+              />
+
+              <LinkViewDemo url={project.url ?? ''} />
+            </div>
             <TagGroupTecnologies tecnologies={project?.tecnologies as Tecnology[]} />
             <div>
               <p className="mt-4 text-lg text-gray-600 dark:text-gray-300">

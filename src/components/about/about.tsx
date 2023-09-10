@@ -1,6 +1,6 @@
 import { BsDownload } from 'react-icons/bs';
 
-import { ButtonLink } from '@/components/ui';
+import { ButtonDownloadCv, ButtonLink } from '@/components/ui';
 import { ImageBlur } from '@/components/ui/image-blur';
 import { NetworksLinksVertical } from '@/components/shared/network-links-vertical';
 
@@ -61,15 +61,8 @@ export const About = () => {
               </dl>
 
               <div className="flex gap-4">
-                <ButtonLink href="/contact" text="Contáctame" />
-                <ButtonLink
-                  text="Descarga mi CV"
-                  href="/pdf/cv-alvaro-huaysara-jauregui.pdf"
-                  target="_blank"
-                  download="cv-alvaro-huaysara-jauregui.pdf"
-                  variant="outline"
-                  prefixIcon={<BsDownload size={24} />}
-                />
+                <ButtonLink href="/contact">Contáctame</ButtonLink>
+                <ButtonDownloadCv />
               </div>
             </div>
           </div>

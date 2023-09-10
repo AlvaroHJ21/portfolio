@@ -18,14 +18,15 @@ export const ProjectsCarouselItem = ({
 
   const handleMouseEnterImage = () => {
     setMouseConfig({
-      size: 'medium',
-      background: 'blur',
+      variant: 'focus-content',
       content: '[ VER MÁS ]',
     });
   };
 
   const handleMouseLeaveImage = () => {
-    setMouseConfig(null);
+    setMouseConfig({
+      variant: 'default',
+    });
   };
 
   // const handleMouseEnter = () => {
@@ -65,7 +66,7 @@ export const ProjectsCarouselItem = ({
         href={`/projects/${item.id}`}
         className="flex flex-col my-4 overflow-hidden"
         aria-label={`Ver proyecto ${name}`}
-        onClick={() => setMouseConfig(null)}
+        onClick={() => setMouseConfig({ variant: 'default' })}
       >
         <picture
           onMouseEnter={handleMouseEnterImage}

@@ -30,12 +30,11 @@ export const ImageGrid = ({ firstImage, secondImage, thirdImage }: Props) => {
         <picture
           onMouseEnter={() =>
             setMouseConfig({
-              background: 'blur',
-              size: 'medium',
+              variant: 'focus-content',
               content: 'Ver',
             })
           }
-          onMouseLeave={() => setMouseConfig(null)}
+          onMouseLeave={() => setMouseConfig({ variant: 'default' })}
           onClick={() => onSelectImage(firstImage)}
           className="col-span-2 row-span-2 overflow-hidden rounded-lg"
         >
@@ -50,12 +49,11 @@ export const ImageGrid = ({ firstImage, secondImage, thirdImage }: Props) => {
         <picture
           onMouseEnter={() =>
             setMouseConfig({
-              background: 'blur',
-              size: 'medium',
+              variant: 'focus-content',
               content: 'Ver',
             })
           }
-          onMouseLeave={() => setMouseConfig(null)}
+          onMouseLeave={() => setMouseConfig({ variant: 'default' })}
           onClick={() => onSelectImage(secondImage)}
           className="col-span-1 overflow-hidden rounded-lg"
         >
@@ -70,12 +68,11 @@ export const ImageGrid = ({ firstImage, secondImage, thirdImage }: Props) => {
         <picture
           onMouseEnter={() =>
             setMouseConfig({
-              background: 'blur',
-              size: 'medium',
+              variant: 'focus-content',
               content: 'Ver',
             })
           }
-          onMouseLeave={() => setMouseConfig(null)}
+          onMouseLeave={() => setMouseConfig({ variant: 'default' })}
           onClick={() => onSelectImage(thirdImage)}
           className="col-span-1 overflow-hidden rounded-lg"
         >

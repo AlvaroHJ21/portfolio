@@ -2,10 +2,10 @@
 
 import Link from 'next/link';
 
-import { BsArrowRightShort } from 'react-icons/bs';
+import { FaArrowRight } from 'react-icons/fa';
 
 import { ProjectsCarousel } from './projects-carousel';
-import { ImageBlur, TagGroupTecnologies, useCursor } from '@/components/ui';
+import { CustomLink, ImageBlur, TagGroupTecnologies, useCursor } from '@/components/ui';
 import { Category, Project, Tecnology } from '@/interfaces';
 
 interface Props {
@@ -42,13 +42,12 @@ export const ProjectsListView = ({ categories, projects }: Props) => {
               <Link
                 onMouseEnter={() =>
                   setMouseConfig({
-                    size: 'medium',
-                    background: 'blur',
+                    variant: 'focus-content',
                     content: '[VER MÁS]',
                   })
                 }
-                onClick={() => setMouseConfig(null)}
-                onMouseLeave={() => setMouseConfig(null)}
+                onClick={() => setMouseConfig({ variant: 'default' })}
+                onMouseLeave={() => setMouseConfig({ variant: 'default' })}
                 href={`/projects/${project.id}`}
                 aria-label={`Ver proyecto ${project.name}`}
                 className="col-span-2 row-span-2 overflow-hidden rounded-lg"
@@ -74,14 +73,13 @@ export const ProjectsListView = ({ categories, projects }: Props) => {
                     ? project.description?.slice(0, 200) + '...'
                     : project.description}
                 </p>
-                <Link
+                <CustomLink
                   href={`/projects/${project.id}`}
                   aria-label={`Ver proyecto ${project.name}`}
-                  className="max-w-[100px] hover:text-primary underline text-20 flex items-center text-sm"
+                  endIcon={<FaArrowRight size={14} />}
                 >
                   Ver más
-                  <BsArrowRightShort />
-                </Link>
+                </CustomLink>
               </div>
             </div>
             <TagGroupTecnologies tecnologies={project.tecnologies as Tecnology[]} />

@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 import { BsDownload } from 'react-icons/bs';
 
-import { ButtonLink, TextTypeAnimate, useCursor } from '@/components/ui';
+import { ButtonDownloadCv, ButtonLink, TextTypeAnimate, useCursor } from '@/components/ui';
 import { NetworksLinksVertical } from '@/components/shared';
 
 export const Hero = () => {
@@ -18,11 +18,10 @@ export const Hero = () => {
             <h1
               onMouseEnter={() =>
                 setMouseConfig({
-                  size: 'large',
-                  background: 'opacity',
+                  variant: 'zoom-transparent',
                 })
               }
-              onMouseLeave={() => setMouseConfig(null)}
+              onMouseLeave={() => setMouseConfig({ variant: 'default' })}
               className="text-5xl font-black font-raleway md:text-6xl text-main"
             >
               Alvaro Huaysara
@@ -45,15 +44,8 @@ export const Hero = () => {
         </div>
 
         <div className="flex flex-col gap-4 sm:flex-row">
-          <ButtonLink text="Ver proyectos" href="/#projects" />
-          <ButtonLink
-            text="Descarga mi CV"
-            href="/pdf/cv-alvaro-huaysara-jauregui.pdf"
-            target="_blank"
-            download="cv-alvaro-huaysara-jauregui.pdf"
-            variant="outline"
-            prefixIcon={<BsDownload size={24} />}
-          />
+          <ButtonLink href="/#projects">Ver proyectos</ButtonLink>
+          <ButtonDownloadCv />
         </div>
 
         <NetworksLinksVertical />

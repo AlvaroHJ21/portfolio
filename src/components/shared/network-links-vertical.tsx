@@ -14,11 +14,10 @@ export const NetworksLinksVertical = () => {
           <li
             onMouseEnter={() =>
               setMouseConfig({
-                background: 'solid',
-                size: 'none',
+                variant: 'invisible',
               })
             }
-            onMouseLeave={() => setMouseConfig(null)}
+            onMouseLeave={() => setMouseConfig({ variant: 'default' })}
             key={link.name}
             className="transition-colors scale-50 hover:text-black dark:hover:text-white"
           >

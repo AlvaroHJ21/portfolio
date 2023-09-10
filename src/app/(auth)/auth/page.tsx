@@ -61,7 +61,7 @@ export default function LoginPage() {
           {/* <button className="w-full px-4 py-2 font-medium text-white duration-150 rounded-lg bg-primary hover:bg-indigo-500 active:bg-indigo-600">
             Sign in
           </button> */}
-          <Button text="Sig in" className='w-full' />
+          <Button className="w-full">Sig in</Button>
         </form>
       </div>
     </main>

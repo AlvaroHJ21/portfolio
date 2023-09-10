@@ -6,7 +6,7 @@ import { AiOutlineWhatsApp } from 'react-icons/ai';
 import { BsDownload } from 'react-icons/bs';
 // import 'aos/dist/aos.css';
 
-import { Button, ButtonLink, InputText } from '@/components/ui';
+import { Button, ButtonDownloadCv, InputText } from '@/components/ui';
 
 export const Contact = () => {
   const [name, setName] = useState('');
@@ -58,14 +58,7 @@ export const Contact = () => {
                 +51 926513695
               </a>
               <div>
-                <ButtonLink
-                  text="Descarga mi CV"
-                  href="/pdf/cv-alvaro-huaysara-jauregui.pdf"
-                  target="_blank"
-                  download="cv-alvaro-huaysara-jauregui.pdf"
-                  variant="outline"
-                  prefixIcon={<BsDownload size={24} />}
-                />
+                <ButtonDownloadCv />
               </div>
             </div>
           </div>
@@ -109,7 +102,7 @@ export const Contact = () => {
               </div>
 
               <div data-aos="fade-up" className="flex flex-col">
-                <Button type="submit" text="Enviar" />
+                <Button>Enviar</Button>
               </div>
             </form>
             <a ref={buttonMailto} href="#" className="hidden"></a>
