@@ -13,11 +13,11 @@ export const About = () => {
           <div data-aos="fade-down" className="">
             <div className="max-w-md m-auto w-60 lg:w-96">
               <ImageBlur
-                className="object-cover max-w-full"
-                src="/img/my-perfil.webp"
+                className="object-cover max-w-full rounded-lg"
+                src="/img/perfil.png"
                 alt="perfil"
-                width={384}
-                height={430}
+                width={640}
+                height={700}
               />
             </div>
           </div>
