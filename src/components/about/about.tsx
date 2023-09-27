@@ -30,14 +30,15 @@ export const About = () => {
               </h2>
 
               <div className="max-w-lg mb-6 leading-8 text-center text-black md:text-left dark:text-white">
-                <p>
+                <p className='mb-4'>
                   ¡Hola! Soy un desarrollador web con experiencia en frontend, backend y desarrollo
                   móvil. Me apasiona crear soluciones tecnológicas innovadoras y eficientes. Mi
                   enfoque es siempre centrado en el usuario y en la calidad del código.
                 </p>
                 <p>
-                  Si buscas un desarrollador web confiable, creativo y orientado a resultados, estás
-                  en el lugar correcto. ¡Explora mi portafolio y ponte en contacto conmigo!
+                  Durante mi carrera, he tenido la oportunidad de trabajar en una variedad de
+                  proyectos emocionantes que me han permitido perfeccionar mis habilidades técnicas
+                  y aprender a colaborar eficazmente en equipos multidisciplinarios.
                 </p>
               </div>
 

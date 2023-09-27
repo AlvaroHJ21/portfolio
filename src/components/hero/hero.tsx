@@ -35,11 +35,16 @@ export const Hero = () => {
                 strings={['Frontend', 'Backend', 'Móvil']}
               />
             </h2>
-            <p className="font-regular leading-[1.8] text-black max-w-[520px] text-16 dark:text-white">
-              Apasionado por crear soluciones tecnológicas innovadoras y eficientes para mejorar la
+            <p className="font-regular leading-[1.8] text-black max-w-[720px] dark:text-white mb-4">
+              {/* Apasionado por crear soluciones tecnológicas innovadoras y eficientes para mejorar la
               experiencia del usuario. ¡Explora mi portafolio y contáctame para hablar sobre tus
-              proyectos!
+              proyectos! */}
+              Apasionado por crear soluciones web innovadoras. Experto en tecnologías front-end y
+              back-end, estoy comprometido con la calidad, la usabilidad y la eficiencia en cada
+              proyecto. Siempre en busca de nuevos desafíos y oportunidades para aprender y crecer
+              en el mundo del desarrollo web.
             </p>
+            <p className='font-semibold'>¡Explora mi portafolio y ponte en contácto conmigo!</p>
           </div>
         </div>
 
