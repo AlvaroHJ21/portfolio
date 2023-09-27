@@ -8,8 +8,8 @@ export const AnimationsProvider = ({ children }: any) => {
     const ctx = gsap.context(() => {
       gsap.registerPlugin(ScrollTrigger);
 
-      const arrayFadeUp = gsap.utils.toArray<HTMLElement>("[data-aos='fade-up']");
-      const arrayFadeDown = gsap.utils.toArray<HTMLElement>("[data-aos='fade-down']");
+      const arrayFadeUp = gsap.utils.toArray<HTMLElement>("[data-animation='fade-up']");
+      const arrayFadeDown = gsap.utils.toArray<HTMLElement>("[data-animation='fade-down']");
 
       arrayFadeUp.forEach((element) => {
         const tl = gsap.timeline();

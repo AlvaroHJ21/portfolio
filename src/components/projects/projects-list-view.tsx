@@ -31,7 +31,7 @@ export const ProjectsListView = ({ categories, projects }: Props) => {
     <section id="projects" className="texture">
       <div className="max-w-[1200px] m-auto w-[90%]">
         <div className="py-20">
-          <div data-aos="fade-down">
+          <div data-animation="fade-down">
             <h2 className="mb-8 font-black text-center text-gray-600 uppercase text-32 dark:text-white">
               Mis <span className="text-main">proyectos</span>
             </h2>

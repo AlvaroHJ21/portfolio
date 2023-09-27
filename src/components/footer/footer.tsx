@@ -8,7 +8,7 @@ export const Footer = () => {
         <div className="mb-8">
           <Logo />
         </div>
-        <div data-aos="fade-up">
+        <div data-animation="fade-up">
           <div className="flex gap-8 mb-6 text-gray-600 dark:text-white">
             {networkLinks.map(({ name, url, icon }) => (
               <a key={name} href={url} className="btnIcon" target="_blank" aria-label={name}>

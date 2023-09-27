@@ -13,7 +13,7 @@ export const Hero = () => {
     <main id="home" className="texture">
       <div className="relative w-[90%] h-screen m-auto flex flex-col items-center justify-center gap-8 text-center">
         <div className="flex flex-col items-center gap-2 texts">
-          <div data-aos="zoom-out-down" className="mb-6">
+          <div data-animation="zoom-out-down" className="mb-6">
             <p className="mb-4 text-gray-600 font-regular text-32 dark:text-white">Hola, soy</p>
             <h1
               onMouseEnter={() =>
@@ -27,7 +27,7 @@ export const Hero = () => {
               Alvaro Huaysara
             </h1>
           </div>
-          <div data-aos="zoom-out-up">
+          <div data-animation="zoom-out-up">
             <h2 className="mb-6 text-3xl font-bold text-gray-600 font-raleway dark:text-white">
               Desarrollador{' '}
               <TextTypeAnimate

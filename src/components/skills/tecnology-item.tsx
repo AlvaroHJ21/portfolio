@@ -5,7 +5,10 @@ export const TecnologyItem = ({ item }: { item: { logo: string; name: string } }
   const { setMouseConfig } = useCursor();
   return (
     <li
-      onMouseOver={() => setMouseConfig({ variant: 'focus-content', content: item.name.toUpperCase() })}
+      data-animation="fade-up"
+      onMouseOver={() =>
+        setMouseConfig({ variant: 'focus-content', content: item.name.toUpperCase() })
+      }
       onMouseOut={() => setMouseConfig({ variant: 'default' })}
       className="grid w-20 h-20 bg-white bg-opacity-50 rounded-full dark:bg-primary dark:bg-opacity-25 place-content-center"
     >

@@ -10,7 +10,7 @@ export const About = () => {
       <div className="max-w-[1200px] w-[90%] m-auto min-h-[756px] py-20 grid place-content-center relative">
         <div className="flex flex-col h-full gap-16 md:flex-row">
           {/* Imagen */}
-          <div data-aos="fade-down" className="">
+          <div data-animation="fade-down" className="">
             <div className="max-w-md m-auto w-60 lg:w-96">
               <ImageBlur
                 className="object-cover max-w-full rounded-lg"
@@ -23,7 +23,7 @@ export const About = () => {
           </div>
 
           {/* Texto y cta */}
-          <div data-aos="fade-up" className="flex-1">
+          <div data-animation="fade-up" className="flex-1">
             <div className="flex flex-col items-center md:items-start">
               <h2 className="mb-6 font-black text-gray-600 uppercase text-32 dark:text-white">
                 Sobre <span className="text-main">mí</span>

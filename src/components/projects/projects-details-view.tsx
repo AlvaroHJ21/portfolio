@@ -24,7 +24,7 @@ export const ProjectsDetailsView = ({ project }: Props) => {
     <section id="proyects" className="texture">
       <div className="max-w-[1200px] m-auto w-[90%]">
         <div className="py-10">
-          <div data-aos="fade-up">
+          <div data-animation="fade-up">
             <div className="flex justify-between mb-4">
               <CustomLink href="/#projects" startIcon={<FaArrowLeft size={14} />}>
                 Volver

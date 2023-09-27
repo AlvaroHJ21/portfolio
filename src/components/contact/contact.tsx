@@ -29,7 +29,7 @@ export const Contact = () => {
   return (
     <section id="contact" className="texture">
       <div className="max-w-[1200px] w-[90%] m-auto flex flex-col justify-center py-20 min-h-[756px]">
-        <div data-aos="fade-down">
+        <div data-animation="fade-down">
           <h2 className="mb-8 font-black text-center uppercase text-main text-32 dark:text-white">
             Contáctame
           </h2>
@@ -38,14 +38,14 @@ export const Contact = () => {
         <div className="flex flex-col gap-12 md:justify-center md:flex-row md:gap-12">
           {/* Texts */}
           <div
-            data-aos="fade-up"
+            data-animation="fade-up"
             className="space-y-4 md:flex md:flex-col md:justify-between md:max-w-sm"
           >
             <p className="text-center text-black md:text-left dark:text-white">
               No dudes en contactarme si necesitas un desarrollador con experiencia para llevar tu
               proyecto digital al siguiente nivel.
             </p>
-            <div data-aos="fade-up" className="flex flex-col gap-4">
+            <div data-animation="fade-up" className="flex flex-col gap-4">
               <a
                 href="mailto:alvarohuaysara@gmail.com"
                 className="flex gap-2 text-black dark:text-white"
@@ -66,7 +66,7 @@ export const Contact = () => {
           {/* Form */}
           <div className="w-full md:max-w-lg">
             <form onSubmit={handleSubmit} action="" className="flex flex-col gap-4">
-              <div data-aos="fade-up">
+              <div data-animation="fade-up">
                 <label className="block mb-2 ml-2 text-black dark:text-white" htmlFor="name">
                   Nombre
                 </label>
@@ -77,7 +77,7 @@ export const Contact = () => {
                   onChange={(e) => setName(e.target.value)}
                 />
               </div>
-              <div data-aos="fade-up">
+              <div data-animation="fade-up">
                 <label className="block mb-2 ml-2 text-black dark:text-white" htmlFor="name">
                   Email
                 </label>
@@ -88,7 +88,7 @@ export const Contact = () => {
                   onChange={(e) => setEmail(e.target.value)}
                 />
               </div>
-              <div data-aos="fade-up">
+              <div data-animation="fade-up">
                 <label className="block mb-2 ml-2 text-black dark:text-white" htmlFor="name">
                   Mensaje
                 </label>
@@ -101,7 +101,7 @@ export const Contact = () => {
                 />
               </div>
 
-              <div data-aos="fade-up" className="flex flex-col">
+              <div data-animation="fade-up" className="flex flex-col">
                 <Button>Enviar</Button>
               </div>
             </form>

@@ -10,7 +10,7 @@ const SkillBlock = ({ skill }: { skill: Skill }) => {
       </h3>
       <div className="flex flex-col gap-2">
         {skill.items.map((skill, index) => (
-          <div data-aos="fade-up" data-aos-offset="80" className="flex justify-between" key={index}>
+          <div data-animation="fade-up" data-animation-offset="80" className="flex justify-between" key={index}>
             <p className="text-black dark:text-white">{skill.name}</p>
             <div className="flex gap-2">
               {[...Array(skill.rating)].map((i, index) => (
@@ -38,7 +38,7 @@ export const SkillsOld = () => {
     <section id="skills" className="">
       <div className="max-w-[1200px] w-[90%] m-auto min-h-[756px] py-20">
         <div className="flex flex-col items-center justify-center gap-8 md:justify-start item-center">
-          <div data-aos="fade-down">
+          <div data-animation="fade-down">
             <h2 className="font-black text-gray-600 uppercase text-32 dark:text-white">
               Mis <span className="text-main">habilidades</span>
             </h2>
