@@ -118,7 +118,7 @@ export default [
         logo: '/logos/nestjs.svg',
       },
       {
-        name: 'Laravel 9',
+        name: 'Laravel',
         rating: 4,
         logo: '/logos/laravel.svg',
       },
