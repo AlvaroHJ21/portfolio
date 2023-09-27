@@ -1,37 +1,6 @@
-import { skills, tecnologies } from '@/data';
-import { Skill } from '@/interfaces';
-import { CarouselTecnologies } from '.';
-
-const SkillBlock = ({ skill }: { skill: Skill }) => {
-  return (
-    <div className="w-full">
-      <h3 className="mb-4 font-black text-center text-gray-600 text-20 dark:text-white">
-        {skill.category}
-      </h3>
-      <div className="flex flex-col gap-2">
-        {skill.items.map((skill, index) => (
-          <div data-aos="fade-up" data-aos-offset="80" className="flex justify-between" key={index}>
-            <p className="text-black dark:text-white">{skill.name}</p>
-            <div className="flex gap-2">
-              {[...Array(skill.rating)].map((i, index) => (
-                <div
-                  key={index}
-                  className="w-4 h-4 border-2 rounded-full bg-main border-main"
-                ></div>
-              ))}
-              {[...Array(6 - skill.rating)].map((i, index) => (
-                <div
-                  key={index}
-                  className="w-4 h-4 bg-transparent border-2 rounded-full border-main"
-                ></div>
-              ))}
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-};
+import React from 'react';
+import { skills } from '@/data';
+import { TecnologyItem } from './tecnology-item';
 
 export const Skills = () => {
   return (
@@ -44,15 +13,24 @@ export const Skills = () => {
             </h2>
           </div>
 
-          <div className="flex flex-col w-full gap-8 md:grid md:grid-cols-2">
-            {skills.map((skill, index) => (
-              <SkillBlock key={index} skill={skill} />
-            ))}
+          <div className="grid gap-24 md:grid-cols-2">
+            {skills.map((block) => {
+              return (
+                <div key={block.category}>
+                  <h3 className="mb-4 text-2xl font-black text-gray-600 text-20 dark:text-white">
+                    {block.category}
+                  </h3>
+                  <ul className="grid grid-cols-4 gap-8">
+                    {block.items.map((item, index) => (
+                      <TecnologyItem key={item.name} item={item} />
+                    ))}
+                  </ul>
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>
-      <CarouselTecnologies items={tecnologies} direction="left" />
-      <CarouselTecnologies items={tecnologies} direction="right" />
     </section>
   );
 };
