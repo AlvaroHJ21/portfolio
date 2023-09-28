@@ -120,7 +120,7 @@ export default [
       {
         name: 'Laravel',
         rating: 4,
-        logo: '/logos/laravel.svg',
+        logo: '/logos/laravelx.svg',
       },
       {
         name: 'MySQL',
