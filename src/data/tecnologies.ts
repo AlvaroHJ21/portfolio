@@ -79,7 +79,7 @@ const tecnologies: Tecnology[] = [
   {
     id: 16,
     name: 'Laravel',
-    image: '/logos/Laravel.svg',
+    image: '/logos/laravel.svg',
   },
   {
     id: 17,
