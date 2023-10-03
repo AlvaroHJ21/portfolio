@@ -51,30 +51,30 @@ export const Formation = () => {
       <div className="max-w-[1200px] w-[90%] m-auto py-20">
         <h2
           data-animation="fade-down"
-          className="mb-8 font-black text-center text-gray-600 uppercase text-32 dark:text-white"
+          className="mb-10 font-black text-center text-gray-600 uppercase text-32 dark:text-white"
         >
           MI <span className="text-main">FORMACIÓN</span>
         </h2>
-        <div className="flex flex-col gap-8 md:justify-between">
+        <div className="">
           {/* experiencia laboral */}
-          <div className="">
-            <h3 className="mb-4 font-bold text-main text-20">Experiencia Laboral</h3>
-            <div className="space-y-12">
+          <section className="flex flex-col gap-10 mb-20 lg:flex-row">
+            <h3 className="mb-4 font-bold uppercase text-20 w-[15rem]">Experiencia</h3>
+            <div className="flex-1 space-y-12">
               {work.map((item, index) => (
                 <Card key={index} item={item} />
               ))}
             </div>
-          </div>
+          </section>
 
           {/* educación */}
-          <div>
-            <h3 className="mb-4 font-bold text-main text-20">Educación</h3>
-            <div className="space-y-12">
+          <section className="flex flex-col gap-10 lg:flex-row">
+            <h3 className="mb-4 font-bold uppercase text-20 w-[15rem]">Educación</h3>
+            <div className="flex-1 space-y-12">
               {education.map((item, index) => (
                 <Card key={index} item={item} />
               ))}
             </div>
-          </div>
+          </section>
         </div>
       </div>
     </section>
@@ -90,22 +90,13 @@ export function Card({ item }: Props) {
   return (
     <div data-animation="fade-up">
       <div className="flex flex-col justify-end gap-4 md:flex:row">
-        <div className={clsx({ 'md:w-1/3': item.funciones, 'md:w-full': !item.funciones })}>
-          <h4 className="font-bold uppercase">{puesto}</h4>
-          <div className="flex gap-8">
-            <p>{institucion}</p>
-            {/* {item.logo && (
-              <img
-                src={item.logo.src}
-                alt={item.institucion}
-                width={item.logo.width}
-                height={100}
-              />
-            )} */}
-          </div>
-          <span className="italic">{fecha}</span>
+        <div className="flex flex-wrap justify-between">
+          <h4 className="font-bold">{puesto}</h4>
+          <span className="text-sm text-gray-400">{fecha}</span>
         </div>
-
+        <div className="flex gap-8">
+          <p className="font-semibold text-primary">{institucion}</p>
+        </div>
         {item.funciones && <p>Funciones: </p>}
         <ul className="ml-6 list-disc">
           {item.funciones?.map((funcion, index) => {
