@@ -1,0 +1,79 @@
+import { categories, tecnologies } from '@/data';
+import { ProjectsCard } from './projects-card';
+import { Project } from '@/interfaces';
+
+interface Props {
+  projects: Project[];
+}
+
+import React from 'react';
+
+export const Filters = () => {
+  return (
+    <div className="flex justify-end gap-2 mb-4">
+      {/* Category */}
+      <div>
+        <label htmlFor="category" className="label">
+          Categoría
+        </label>
+        <select name="category" id="category" className="p-4 outline-none dark:bg-background-light">
+          <option value={-1}>Todos</option>
+          {categories.map((category) => (
+            <option value={category.id} key={category.id}>
+              {category.name}
+            </option>
+          ))}
+        </select>
+      </div>
+      {/* Tecnology */}
+      <div>
+        <label htmlFor="tecnology" className="label">
+          Tecnología
+        </label>
+        <select
+          name="tecnology"
+          id="tecnology"
+          className="p-4 outline-none dark:bg-background-light"
+        >
+          <option value={-1}>Todos</option>
+          {tecnologies.map((tecnology) => (
+            <option value={tecnology.id} key={tecnology.id}>
+              {tecnology.name}
+            </option>
+          ))}
+        </select>
+      </div>
+    </div>
+  );
+};
+
+export const ProjectsGrid = ({ projects }: Props) => {
+  const filteredProjects = projects;
+  return (
+    <section className="texture">
+      <div className="max-w-[1200px] m-auto w-[90%]">
+        <h2 data-animation="fade-down" className="mb-10 font-black text-center uppercase text-32">
+          Mis <span className="text-primary">proyectos</span>
+        </h2>
+
+        {/* Results */}
+        <div className="grid grid-cols-3 gap-4">
+          {filteredProjects.map((project, idx) => {
+            if (idx === 0) {
+              return (
+                <div className="col-span-2 row-span-2" key={project.id}>
+                  <ProjectsCard project={project} large />
+                </div>
+              );
+            }
+            return (
+              <div key={project.id}>
+                <ProjectsCard project={project} />
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
+};
