@@ -24,7 +24,7 @@ export const ProjectsCard = ({ project, large = false }: Props) => {
         onMouseLeave={() => setMouseConfig({ variant: 'default' })}
         className={clsx('relative overflow-hidden rounded-lg', {
           'flex-1': large,
-          'h-64': !large,
+          'aspect-[4/3]': !large,
         })}
       >
         <span className="absolute z-10 px-2 py-1 text-xs text-white rounded-full bg-primary top-2 right-2">
@@ -35,11 +35,11 @@ export const ProjectsCard = ({ project, large = false }: Props) => {
           alt={name ?? ''}
           className="block object-cover w-full h-full transition-transform hover:scale-105"
           width={large ? 800 : 400}
-          height={large ? 600 : 300}
+          height={large ? 600 : 400}
         />
       </Link>
       <h3 className="my-2 text-xl">{name}</h3>
-      {large && <p className="mb-4 line-clamp-3">{description}</p>}
+      {large && <p className="hidden mb-4 md:auto md:line-clamp-3">{description}</p>}
       <div className="h-14">
         <TagGroupTecnologies tecnologies={tecnologies} sm />
       </div>

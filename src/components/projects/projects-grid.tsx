@@ -7,6 +7,7 @@ interface Props {
 }
 
 import React from 'react';
+import { ImageBlur } from '../ui';
 
 export const Filters = () => {
   return (
@@ -50,18 +51,18 @@ export const Filters = () => {
 export const ProjectsGrid = ({ projects }: Props) => {
   const filteredProjects = projects;
   return (
-    <section id='projects' className="texture">
+    <section id="projects" className="texture">
       <div className="max-w-[1200px] m-auto w-[90%]">
         <h2 data-animation="fade-down" className="my-10 font-black text-center uppercase text-32">
           Mis <span className="text-primary">proyectos</span>
         </h2>
 
         {/* Results */}
-        <div className="grid grid-cols-3 gap-4">
+        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
           {filteredProjects.map((project, idx) => {
             if (idx === 0) {
               return (
-                <div className="col-span-2 row-span-2" key={project.id}>
+                <div className="sm:col-span-2 sm:row-span-2" key={project.id}>
                   <ProjectsCard project={project} large />
                 </div>
               );
