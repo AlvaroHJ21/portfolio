@@ -7,11 +7,16 @@ import { NetworksLinksVertical } from '@/components/shared/network-links-vertica
 export const About = () => {
   return (
     <section id="about-me">
-      <div className="max-w-[1200px] w-[90%] m-auto min-h-[756px] py-20 grid place-content-center relative">
-        <div className="flex flex-col h-full gap-16 md:flex-row">
+      <div className="max-w-[1200px] w-[90%] m-auto min-h-[756px] relative border border-transparent">
+        <h2 className="my-10 font-black text-center text-gray-600 uppercase text-32 dark:text-white">
+          Sobre <span className="text-main">mí</span>
+        </h2>
+
+        <div className="flex flex-col h-full gap-12 md:flex-row md:justify-center">
           {/* Imagen */}
-          <div data-animation="fade-down" className="">
-            <div className="max-w-md m-auto w-60 lg:w-96">
+          <div data-animation="fade-up" className="">
+            <div className="relative max-w-md m-auto w-60 lg:w-96 group/image">
+              <div className="absolute inset-0 z-0 transition-transform rounded-lg bg-opacity-40 bg-primary -rotate-6 group-hover/image:rotate-0"></div>
               <ImageBlur
                 className="object-cover max-w-full rounded-lg"
                 src="/img/perfil.png"
@@ -23,14 +28,10 @@ export const About = () => {
           </div>
 
           {/* Texto y cta */}
-          <div data-animation="fade-up" className="flex-1">
+          <div className="">
             <div className="flex flex-col items-center md:items-start">
-              <h2 className="mb-6 font-black text-gray-600 uppercase text-32 dark:text-white">
-                Sobre <span className="text-main">mí</span>
-              </h2>
-
-              <div className="max-w-lg mb-6 leading-8 text-center text-black md:text-left dark:text-white">
-                <p className='mb-4'>
+              <div className="max-w-md mb-6 leading-8 text-center text-black md:text-left dark:text-white">
+                <p className="mb-4">
                   ¡Hola! Soy un desarrollador web con experiencia en frontend, backend y desarrollo
                   móvil. Me apasiona crear soluciones tecnológicas innovadoras y eficientes. Mi
                   enfoque es siempre centrado en el usuario y en la calidad del código.
