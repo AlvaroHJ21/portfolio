@@ -16,6 +16,7 @@ export const useProjects = () => {
   const startAddProject = async (project: Project) => {
     try {
       const { data } = await axios.post<ApiResponse<Project>>(api, project);
+      console.log(data);
       return data.data;
     } catch (error) {
       console.log(error);

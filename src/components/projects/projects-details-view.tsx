@@ -56,7 +56,7 @@ export const ProjectsDetailsView = ({ project }: Props) => {
                 thirdImage={thirdImage!}
               />
 
-              <LinkViewDemo url={project.url ?? ''} />
+              {project.url && <LinkViewDemo url={project.url!} />}
             </div>
             <TagGroupTecnologies tecnologies={project?.tecnologies as Tecnology[]} />
             <div>
