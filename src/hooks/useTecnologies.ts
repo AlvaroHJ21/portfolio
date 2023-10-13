@@ -1,10 +1,10 @@
-import axios from 'axios';
 import useWSR, { Fetcher } from 'swr';
 
 import { ApiResponse, Tecnology } from '@/interfaces';
+import http from '@/lib/http';
 
 const fetcher: Fetcher<Tecnology[], string> = async (url) => {
-  const { data } = await axios.get<ApiResponse<Tecnology[]>>(url);
+  const { data } = await http.get<ApiResponse<Tecnology[]>>(url);
   return data.data;
 };
 

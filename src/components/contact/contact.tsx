@@ -71,6 +71,7 @@ export const Contact = () => {
                   Nombre
                 </label>
                 <InputText
+                  id="name"
                   type="text"
                   placeholder="John Doe"
                   value={name}
@@ -78,10 +79,11 @@ export const Contact = () => {
                 />
               </div>
               <div data-animation="fade-up">
-                <label className="block mb-2 ml-2 text-black dark:text-white" htmlFor="name">
+                <label className="block mb-2 ml-2 text-black dark:text-white" htmlFor="email">
                   Email
                 </label>
                 <InputText
+                  id="email"
                   type="email"
                   placeholder="johndoe@gmail.com"
                   value={email}
@@ -89,10 +91,11 @@ export const Contact = () => {
                 />
               </div>
               <div data-animation="fade-up">
-                <label className="block mb-2 ml-2 text-black dark:text-white" htmlFor="name">
+                <label className="block mb-2 ml-2 text-black dark:text-white" htmlFor="message">
                   Mensaje
                 </label>
                 <InputText
+                  id="message"
                   type="text"
                   placeholder="Me gustaría consultarte..."
                   multiline

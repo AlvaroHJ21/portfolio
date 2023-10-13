@@ -1,10 +1,10 @@
-import axios from 'axios';
 import useWSR, { Fetcher } from 'swr';
 
 import { ApiResponse, Project } from '@/interfaces';
+import http from '@/lib/http';
 
 const fetcher: Fetcher<Project[], string> = async (url) => {
-  const { data } = await axios.get<ApiResponse<Project[]>>(url);
+  const { data } = await http.get<ApiResponse<Project[]>>(url);
   return data.data;
 };
 
@@ -15,7 +15,7 @@ export const useProjects = () => {
 
   const startAddProject = async (project: Project) => {
     try {
-      const { data } = await axios.post<ApiResponse<Project>>(api, project);
+      const { data } = await http.post<ApiResponse<Project>>(api, project);
       console.log(data);
       return data.data;
     } catch (error) {
@@ -26,7 +26,7 @@ export const useProjects = () => {
 
   const startUpdateProject = async (project: Project) => {
     try {
-      const { data } = await axios.put<ApiResponse<Project>>(`${api}/${project.id}`, project);
+      const { data } = await http.put<ApiResponse<Project>>(`${api}/${project.id}`, project);
       console.log(data);
       return data.data;
     } catch (error) {
@@ -37,7 +37,7 @@ export const useProjects = () => {
 
   const startGetProjectById = async (id: number) => {
     try {
-      const { data } = await axios.get<ApiResponse<Project>>(`${api}/${id}`);
+      const { data } = await http.get<ApiResponse<Project>>(`${api}/${id}`);
       return data.data;
     } catch (error) {
       console.log(error);
