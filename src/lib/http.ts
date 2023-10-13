@@ -1,7 +1,11 @@
 const http = {
-  async get<T>(url: string, params?: {}): Promise<{ data: T }> {
-    const paramsResquest = new URLSearchParams(params);
-    const resp = await fetch(url + paramsResquest);
+  async get<T>(url: string): Promise<{ data: T }> {
+    // const paramsResquest = new URLSearchParams(options?.params);
+
+    const resp = await fetch(url);
+    // {
+    //   cache: 'no-store',
+    // }
     const dataResponse: T = await resp.json();
     return { data: dataResponse };
   },
