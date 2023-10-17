@@ -38,12 +38,14 @@ export const Contact = () => {
 
         <div className="flex flex-col gap-12 md:justify-center md:flex-row md:gap-12">
           {/* Texts */}
-          <FadeUp className="space-y-4 md:flex md:flex-col md:justify-between md:max-w-sm">
-            <p className="text-center text-black md:text-left dark:text-white">
-              No dudes en contactarme si necesitas un desarrollador con experiencia para llevar tu
-              proyecto digital al siguiente nivel.
-            </p>
-            <div className="flex flex-col gap-4">
+          <div className="space-y-4 md:flex md:flex-col md:justify-between md:max-w-sm">
+            <FadeUp>
+              <p className="text-center text-black md:text-left dark:text-white">
+                No dudes en contactarme si necesitas un desarrollador con experiencia para llevar tu
+                proyecto digital al siguiente nivel.
+              </p>
+            </FadeUp>
+            <FadeUp className="flex flex-col gap-4">
               <a
                 href="mailto:alvarohuaysara@gmail.com"
                 className="flex gap-2 text-black dark:text-white"
@@ -58,8 +60,8 @@ export const Contact = () => {
               <div>
                 <ButtonDownloadCv />
               </div>
-            </div>
-          </FadeUp>
+            </FadeUp>
+          </div>
 
           {/* Form */}
           <div className="w-full md:max-w-lg">

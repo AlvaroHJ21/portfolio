@@ -24,7 +24,7 @@ export default async function ProjectsPage() {
 
   // const projects = await getProjects();
 
-  console.log('obteniendo proyectos...');
+  // console.log('obteniendo proyectos...');
   const projects = (await prisma.projects.findMany({
     where: {
       published: true,

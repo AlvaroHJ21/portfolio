@@ -12,11 +12,19 @@ export const ZoomOutDown = (props: React.HTMLAttributes<HTMLDivElement>) => {
     const ctx = gsap.context(() => {
       const tl = gsap.timeline();
 
-      tl.from(elementRef.current, {
-        y: -100,
-        opacity: 0,
-        scale: 1.5,
-      });
+      tl.fromTo(
+        elementRef.current,
+        {
+          y: -50,
+          opacity: 0,
+          scale: 1.2,
+        },
+        {
+          y: 0,
+          opacity: 1,
+          scale: 1,
+        }
+      );
     });
 
     return () => {
