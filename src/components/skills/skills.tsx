@@ -20,11 +20,11 @@ export const Skills = () => {
                   <h3 className="mb-4 text-2xl font-black text-gray-600 text-20 dark:text-white">
                     {block.category}
                   </h3>
-                  <ul className="grid grid-cols-4 gap-8">
+                  <div className="grid grid-cols-4 gap-8">
                     {block.items.map((item, index) => (
                       <TecnologyItem key={item.name} item={item} />
                     ))}
-                  </ul>
+                  </div>
                 </div>
               );
             })}
