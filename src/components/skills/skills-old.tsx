@@ -12,8 +12,6 @@ const SkillBlock = ({ skill }: { skill: Skill }) => {
       <div className="flex flex-col gap-2">
         {skill.items.map((skill, index) => (
           <div
-            data-animation="fade-up"
-            data-animation-offset="80"
             className="flex justify-between"
             key={index}
           >

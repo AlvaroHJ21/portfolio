@@ -1,10 +1,9 @@
 'use client';
 import Link from 'next/link';
 
-import { BsDownload } from 'react-icons/bs';
-
 import { ButtonDownloadCv, ButtonLink, TextTypeAnimate, useCursor } from '@/components/ui';
 import { NetworksLinksVertical } from '@/components/shared';
+import { ZoomOutDown, ZoomOutUp } from '@/components/animation';
 
 export const Hero = () => {
   const { setMouseConfig } = useCursor();
@@ -13,8 +12,8 @@ export const Hero = () => {
     <main id="home" className="texture">
       <div className="relative w-[90%] h-screen m-auto flex flex-col items-center justify-center gap-8 text-center">
         <div className="flex flex-col items-center gap-2 texts">
-          <div data-animation="zoom-out-down" className="mb-6">
-            <p className="mb-4 text-gray-600 font-regular text-32 dark:text-white">Hola, soy</p>
+          <p className="mb-4 text-gray-600 font-regular text-32 dark:text-white">Hola, soy</p>
+          <ZoomOutDown className="mb-6">
             <h1
               onMouseEnter={() =>
                 setMouseConfig({
@@ -26,8 +25,8 @@ export const Hero = () => {
             >
               Alvaro Huaysara
             </h1>
-          </div>
-          <div data-animation="zoom-out-up">
+          </ZoomOutDown>
+          <ZoomOutUp>
             <h2 className="mb-6 text-3xl font-bold text-gray-600 font-raleway dark:text-white">
               Desarrollador{' '}
               <TextTypeAnimate
@@ -36,16 +35,13 @@ export const Hero = () => {
               />
             </h2>
             <p className="font-regular leading-[1.8] text-black max-w-[720px] dark:text-white mb-4">
-              {/* Apasionado por crear soluciones tecnológicas innovadoras y eficientes para mejorar la
-              experiencia del usuario. ¡Explora mi portafolio y contáctame para hablar sobre tus
-              proyectos! */}
               Apasionado por crear soluciones web innovadoras. Experto en tecnologías front-end y
               back-end, estoy comprometido con la calidad, la usabilidad y la eficiencia en cada
               proyecto. Siempre en busca de nuevos desafíos y oportunidades para aprender y crecer
               en el mundo del desarrollo web.
             </p>
-            <p className='font-semibold'>¡Explora mi portafolio y ponte en contácto conmigo!</p>
-          </div>
+            <p className="font-semibold">¡Explora mi portafolio y ponte en contácto conmigo!</p>
+          </ZoomOutUp>
         </div>
 
         <div className="flex flex-col gap-4 sm:flex-row">

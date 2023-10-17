@@ -16,7 +16,7 @@ export const TabCategories = ({ categories, selectedCategory, emmitCategory }: P
         const selected = selectedCategory.name === category.name;
 
         return (
-          <div data-animation="fade-up" data-animation-duration={500 + 200 * index} key={category.name}>
+          <div key={category.name}>
             <button
               onClick={() => handleClickTag(category)}
               className={`badge ${selected ? 'badge-primary' : 'badge-ghost'} `}
