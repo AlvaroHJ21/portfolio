@@ -1,6 +1,7 @@
 import { skills, tecnologies } from '@/data';
 import { Skill } from '@/interfaces';
 import { CarouselTecnologies } from '.';
+import { FadeDown } from '@/components/animation/fade-down';
 
 const SkillBlock = ({ skill }: { skill: Skill }) => {
   return (
@@ -10,7 +11,12 @@ const SkillBlock = ({ skill }: { skill: Skill }) => {
       </h3>
       <div className="flex flex-col gap-2">
         {skill.items.map((skill, index) => (
-          <div data-animation="fade-up" data-animation-offset="80" className="flex justify-between" key={index}>
+          <div
+            data-animation="fade-up"
+            data-animation-offset="80"
+            className="flex justify-between"
+            key={index}
+          >
             <p className="text-black dark:text-white">{skill.name}</p>
             <div className="flex gap-2">
               {[...Array(skill.rating)].map((i, index) => (
@@ -38,11 +44,11 @@ export const SkillsOld = () => {
     <section id="skills" className="">
       <div className="max-w-[1200px] w-[90%] m-auto min-h-[756px] py-20">
         <div className="flex flex-col items-center justify-center gap-8 md:justify-start item-center">
-          <div data-animation="fade-down">
+          <FadeDown>
             <h2 className="font-black text-gray-600 uppercase text-32 dark:text-white">
               Mis <span className="text-main">habilidades</span>
             </h2>
-          </div>
+          </FadeDown>
 
           <div className="flex flex-col w-full gap-8 md:grid md:grid-cols-2">
             {skills.map((skill, index) => (

@@ -1,4 +1,5 @@
-import clsx from 'clsx';
+import { FadeUp } from '@/components/animation/fade-up';
+import { FadeDown } from '@/components/animation/fade-down';
 
 interface FormationItem {
   institucion: string;
@@ -49,12 +50,11 @@ export const Formation = () => {
   return (
     <section id="formation" className="">
       <div className="max-w-[1200px] w-[90%] m-auto py-20">
-        <h2
-          data-animation="fade-down"
-          className="mb-10 font-black text-center text-gray-600 uppercase text-32 dark:text-white"
-        >
-          MI <span className="text-main">FORMACIÓN</span>
-        </h2>
+        <FadeDown>
+          <h2 className="mb-10 font-black text-center text-gray-600 uppercase text-32 dark:text-white">
+            MI <span className="text-main">FORMACIÓN</span>
+          </h2>
+        </FadeDown>
         <div className="">
           {/* experiencia laboral */}
           <section className="flex flex-col gap-10 mb-20 lg:flex-row">
@@ -88,7 +88,7 @@ interface Props {
 export function Card({ item }: Props) {
   const { institucion, puesto, fecha } = item;
   return (
-    <div data-animation="fade-up">
+    <FadeUp>
       <div className="flex flex-col justify-end gap-4 md:flex:row">
         <div className="flex flex-wrap justify-between">
           <h4 className="font-bold">{puesto}</h4>
@@ -108,6 +108,6 @@ export function Card({ item }: Props) {
           })}
         </ul>
       </div>
-    </div>
+    </FadeUp>
   );
 }

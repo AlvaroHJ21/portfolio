@@ -1,11 +1,10 @@
-import Link from 'next/link';
-
 import { FaArrowLeft } from 'react-icons/fa';
 
 import { CustomLink, TagGroupTecnologies } from '@/components/ui';
 import { ImageGrid } from '@/components/ui/image-grid';
 import { Project, Tecnology } from '@/interfaces';
 import { LinkViewDemo } from '../ui/link-view-demo';
+import { FadeUp } from '@/components/animation/fade-up';
 
 interface Props {
   project: Project;
@@ -24,7 +23,7 @@ export const ProjectsDetailsView = ({ project }: Props) => {
     <section id="proyects" className="texture">
       <div className="max-w-[1200px] m-auto w-[90%]">
         <div className="py-10">
-          <div data-animation="fade-up">
+          <FadeUp>
             <div className="flex justify-between mb-4">
               <CustomLink href="/#projects" startIcon={<FaArrowLeft size={14} />}>
                 Volver
@@ -64,7 +63,7 @@ export const ProjectsDetailsView = ({ project }: Props) => {
                 {project?.description}
               </p>
             </div>
-          </div>
+          </FadeUp>
         </div>
       </div>
     </section>

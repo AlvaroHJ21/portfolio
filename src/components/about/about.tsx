@@ -1,20 +1,21 @@
-import { BsDownload } from 'react-icons/bs';
-
 import { ButtonDownloadCv, ButtonLink } from '@/components/ui';
 import { ImageBlur } from '@/components/ui/image-blur';
 import { NetworksLinksVertical } from '@/components/shared/network-links-vertical';
+import { FadeUp, FadeDown } from '../animation';
 
 export const About = () => {
   return (
     <section id="about-me">
       <div className="max-w-[1200px] w-[90%] m-auto min-h-[756px] relative border border-transparent">
-        <h2 className="my-10 font-black text-center text-gray-600 uppercase text-32 dark:text-white">
-          Sobre <span className="text-main">mí</span>
-        </h2>
+        <FadeDown>
+          <h2 className="my-10 font-black text-center text-gray-600 uppercase text-32 dark:text-white">
+            Sobre <span className="text-main">mí</span>
+          </h2>
+        </FadeDown>
 
         <div className="flex flex-col h-full gap-12 md:flex-row md:justify-center">
           {/* Imagen */}
-          <div data-animation="fade-up" className="">
+          <FadeUp>
             <div className="relative max-w-md m-auto w-60 lg:w-96 group/image">
               <div className="absolute inset-0 z-0 transition-transform rounded-lg bg-opacity-40 bg-primary -rotate-6 group-hover/image:rotate-0"></div>
               <ImageBlur
@@ -25,10 +26,10 @@ export const About = () => {
                 height={700}
               />
             </div>
-          </div>
+          </FadeUp>
 
           {/* Texto y cta */}
-          <div className="">
+          <FadeUp>
             <div className="flex flex-col items-center md:items-start">
               <div className="max-w-md mb-6 leading-8 text-center text-black md:text-left dark:text-white">
                 <p className="mb-4">
@@ -67,7 +68,7 @@ export const About = () => {
                 <ButtonDownloadCv />
               </div>
             </div>
-          </div>
+          </FadeUp>
         </div>
         <NetworksLinksVertical />
       </div>

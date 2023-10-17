@@ -4,6 +4,7 @@ import { Project } from '@/interfaces';
 import { ImageBlur, TagGroupTecnologies, useCursor } from '../ui';
 import Link from 'next/link';
 import clsx from 'clsx';
+import { FadeUp } from '@/components/animation/fade-up';
 
 interface Props {
   project: Project;
@@ -14,10 +15,7 @@ export const ProjectsCard = ({ project, large = false }: Props) => {
   const { images, name, categories, tecnologies, description } = project;
   const { setMouseConfig } = useCursor();
   return (
-    <div
-      data-animation="fade-up"
-      className="flex flex-col h-full p-4 rounded-lg dark:border-gray-600 bg-primary dark:bg-background dark:bg-opacity-25 bg-opacity-10 backdrop-blur-sm"
-    >
+    <FadeUp className="flex flex-col h-full p-4 rounded-lg dark:border-gray-600 bg-primary dark:bg-background dark:bg-opacity-25 bg-opacity-10 backdrop-blur-sm">
       <Link
         href={`/projects/${project.id}`}
         onMouseOver={() => setMouseConfig({ variant: 'focus-content', content: '[ VER MÁS ]' })}
@@ -43,6 +41,6 @@ export const ProjectsCard = ({ project, large = false }: Props) => {
       <div className="h-14">
         <TagGroupTecnologies tecnologies={tecnologies} sm />
       </div>
-    </div>
+    </FadeUp>
   );
 };

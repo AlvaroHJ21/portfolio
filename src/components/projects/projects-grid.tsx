@@ -7,7 +7,7 @@ interface Props {
 }
 
 import React from 'react';
-import { ImageBlur } from '../ui';
+import { FadeDown } from '@/components/animation/fade-down';
 
 export const Filters = () => {
   return (
@@ -53,9 +53,11 @@ export const ProjectsGrid = ({ projects }: Props) => {
   return (
     <section id="projects" className="texture">
       <div className="max-w-[1200px] m-auto w-[90%]">
-        <h2 data-animation="fade-down" className="my-10 font-black text-center uppercase text-32">
-          Mis <span className="text-primary">proyectos</span>
-        </h2>
+        <FadeDown>
+          <h2 className="my-10 font-black text-center uppercase text-32">
+            Mis <span className="text-primary">proyectos</span>
+          </h2>
+        </FadeDown>
 
         {/* Results */}
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">

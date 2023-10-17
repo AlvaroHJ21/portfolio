@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { Raleway } from 'next/font/google';
 
-import { AnimationsProvider, ThemeProvider } from '@/providers';
+import { ThemeProvider } from '@/providers';
 import { Footer } from '@/components/footer';
 import { NavbarBottom } from '@/components/shared';
 import { Cursor, CursorProvider } from '@/components/ui';
@@ -14,7 +14,8 @@ const font = Raleway({
 
 export const metadata: Metadata = {
   title: 'Alvaro Huaysara Jauregui | Full Stack Web Developer | Systems Engineer',
-  description: 'Alvaro Huaysara Jauregui | Full Stack Web Developer | Systems Engineer',
+  description:
+    'Apasionado por crear soluciones web innovadoras. Experto en tecnologías front-end y back-end, estoy comprometido con la calidad, la usabilidad y la eficiencia en cada proyecto. Siempre en busca de nuevos desafíos y oportunidades para aprender y crecer en el mundo del desarrollo web.',
   icons: {
     icon: '/icon.svg',
   },
@@ -27,17 +28,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         className={`${font.className} bg-gray-50 dark:bg-background selection:bg-primary selection:text-white`}
       >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <AnimationsProvider>
-            <CursorProvider>
-              {/* <Navbar /> */}
-              <NavbarBottom />
-              {/* <div className="texture">{children}</div> */}
-              {children}
-              <Footer />
-
-              <Cursor />
-            </CursorProvider>
-          </AnimationsProvider>
+          <CursorProvider>
+            <NavbarBottom />
+            {children}
+            <Footer />
+            <Cursor />
+          </CursorProvider>
         </ThemeProvider>
       </body>
     </html>
