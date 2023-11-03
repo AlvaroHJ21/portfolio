@@ -100,6 +100,12 @@ html.light .texture::before {
 /* Daisy UI badge */
 
 @layer components {
+  .container {
+    max-width: 1200px;
+    width: 90%;
+    margin: 0 auto;
+  }
+
   .my-btn {
     @apply flex items-center justify-center gap-2 px-4 py-2 font-bold rounded-full border-2;
   }
@@ -142,6 +148,10 @@ html.light .texture::before {
 
   .badge-ghost {
     @apply text-black bg-slate-100;
+  }
+
+  .text-balance {
+    text-wrap: balance;
   }
 }
 

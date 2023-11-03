@@ -108,14 +108,24 @@ export default [
         logo: '/logos/express.png',
       },
       {
-        name: 'Codeigniter',
-        rating: 5,
-        logo: '/logos/codeigniter.svg',
+        name: 'MongoDB',
+        rating: 4,
+        logo: '/logos/mongodb.svg',
       },
       {
         name: 'NestJS',
         rating: 3,
         logo: '/logos/nestjs.svg',
+      },
+      {
+        name: 'PHP',
+        rating: 3,
+        logo: '/logos/php.svg',
+      },
+      {
+        name: 'Codeigniter',
+        rating: 5,
+        logo: '/logos/codeigniter.svg',
       },
       {
         name: 'Laravel',
@@ -133,29 +143,19 @@ export default [
         logo: '/logos/postgres.svg',
       },
       {
-        name: 'MongoDB',
-        rating: 4,
-        logo: '/logos/mongodb.svg',
-      },
-      {
-        name: 'Firebase',
-        rating: 4,
-        logo: '/logos/firebase.svg',
-      },
-      {
-        name: 'Docker',
-        rating: 3,
-        logo: '/logos/docker.svg',
-      },
-      {
         name: 'Python',
         rating: 3,
         logo: '/logos/python.svg',
       },
       {
-        name: 'PHP',
+        name: 'Flask',
         rating: 3,
-        logo: '/logos/php.svg',
+        logo: '/logos/flask.svg',
+      },
+      {
+        name: 'Firebase',
+        rating: 4,
+        logo: '/logos/firebase.svg',
       },
     ],
   },
@@ -183,25 +183,25 @@ export default [
         logo: '/logos/github.svg',
       },
       {
+        name: 'Docker',
+        rating: 3,
+        logo: '/logos/docker.svg',
+      },
+      {
+        name: 'Postman',
+        rating: 5,
+        logo: '/logos/postman.svg',
+      },
+      {
         name: 'Figma',
         rating: 6,
         logo: '/logos/figma.svg',
       },
-      // {
-      //   name: 'UX/UI',
-      //   rating: 4,
-      //   logo: '/logos/ux.svg',
-      // },
       {
         name: 'Jira',
         rating: 4,
         logo: '/logos/jira.svg',
       },
-      // {
-      //   name: 'Scrumm/Agile',
-      //   rating: 5,
-      //   logo: '/logos/scrum.svg',
-      // },
     ],
   },
 ];

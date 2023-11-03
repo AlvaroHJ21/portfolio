@@ -1,12 +1,11 @@
 import { ButtonDownloadCv, ButtonLink } from '@/components/ui';
 import { ImageBlur } from '@/components/ui/image-blur';
-import { NetworksLinksVertical } from '@/components/shared/network-links-vertical';
 import { FadeUp, FadeDown } from '../animation';
 
 export const About = () => {
   return (
     <section id="about-me">
-      <div className="max-w-[1200px] w-[90%] m-auto min-h-[756px] relative border border-transparent">
+      <div className="container min-h-[756px] relative border border-transparent">
         <FadeDown>
           <h2 className="my-10 font-black text-center text-gray-600 uppercase text-32 dark:text-white">
             Sobre <span className="text-main">mí</span>
@@ -70,7 +69,6 @@ export const About = () => {
             </div>
           </FadeUp>
         </div>
-        <NetworksLinksVertical />
       </div>
     </section>
   );

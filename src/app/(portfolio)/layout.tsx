@@ -3,7 +3,7 @@ import { Raleway } from 'next/font/google';
 
 import { ThemeProvider } from '@/providers';
 import { Footer } from '@/components/footer';
-import { NavbarBottom } from '@/components/shared';
+import { NavbarBottom, NetworksLinksVertical } from '@/components/shared';
 import { Cursor, CursorProvider } from '@/components/ui';
 import '@/styles/globals.css';
 
@@ -29,10 +29,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <CursorProvider>
-            <NavbarBottom />
             {children}
-            <Footer />
+            <NavbarBottom />
+            <NetworksLinksVertical />
             <Cursor />
+            <Footer />
           </CursorProvider>
         </ThemeProvider>
       </body>

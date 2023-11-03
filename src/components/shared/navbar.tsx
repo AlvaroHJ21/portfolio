@@ -20,7 +20,7 @@ export const Navbar = () => {
   return (
     <>
       <nav className="fixed top-0 z-50 w-full text-white backdrop-blur">
-        <div className="max-w-[1200px] flex justify-between w-[90%] m-auto item-center">
+        <div className="container flex justify-between item-center">
           {/* Icono */}
           <div className="min-h-[64px] flex items-center justify-end">
             <Link

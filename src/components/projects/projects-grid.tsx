@@ -52,7 +52,7 @@ export const ProjectsGrid = ({ projects }: Props) => {
   const filteredProjects = projects;
   return (
     <section id="projects" className="texture">
-      <div className="max-w-[1200px] m-auto w-[90%]">
+      <div className="container">
         <FadeDown>
           <h2 className="my-10 font-black text-center uppercase text-32">
             Mis <span className="text-primary">proyectos</span>

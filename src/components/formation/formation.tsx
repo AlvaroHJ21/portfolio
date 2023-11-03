@@ -49,7 +49,7 @@ const work: FormationItem[] = [
 export const Formation = () => {
   return (
     <section id="formation" className="">
-      <div className="max-w-[1200px] w-[90%] m-auto py-20">
+      <div className="container py-20">
         <FadeDown>
           <h2 className="mb-10 font-black text-center text-gray-600 uppercase text-32 dark:text-white">
             MI <span className="text-main">FORMACIÓN</span>

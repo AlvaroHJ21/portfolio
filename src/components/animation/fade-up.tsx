@@ -26,7 +26,7 @@ export const FadeUp = (props: React.HTMLAttributes<HTMLDivElement>) => {
         // markers: true,
         start: 'top 90%',
         end: 'top 20%',
-        toggleActions: 'play none play reverse',
+        toggleActions: 'play none play none',
       });
     });
 

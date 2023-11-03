@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { Raleway } from 'next/font/google';
 
-import {AuthProvider, ThemeProvider} from '@/providers';
+import { AuthProvider, ThemeProvider } from '@/providers';
 import { NavbarDashboard } from '@/components/shared';
 import '@/styles/globals.css';
 
@@ -22,13 +22,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
         <AuthProvider>
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
             <NavbarDashboard />
-            <div className="w-[90%] max-w-[1200px] py-10 m-auto">{
-            
-            
-            
-            children
-            
-            }</div>
+            <div className="container py-10">{children}</div>
           </ThemeProvider>
         </AuthProvider>
       </body>

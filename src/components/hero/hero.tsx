@@ -10,7 +10,7 @@ export const Hero = () => {
 
   return (
     <main id="home" className="texture">
-      <div className="relative w-[90%] h-screen m-auto flex flex-col items-center justify-center gap-8 text-center">
+      <div className="container relative flex flex-col items-center justify-center h-screen gap-8 text-center">
         <div className="flex flex-col items-center gap-2 texts">
           <p className="mb-4 text-gray-600 font-regular text-32 dark:text-white">Hola, soy</p>
           <ZoomOutDown className="mb-6">
@@ -34,7 +34,7 @@ export const Hero = () => {
                 strings={['Frontend', 'Backend', 'Móvil']}
               />
             </h2>
-            <p className="font-regular leading-[1.8] text-black max-w-[720px] dark:text-white mb-4">
+            <p className="font-regular leading-[1.8] text-black max-w-[800px] dark:text-white mb-4 text-balance">
               Apasionado por crear soluciones web innovadoras. Experto en tecnologías front-end y
               back-end, estoy comprometido con la calidad, la usabilidad y la eficiencia en cada
               proyecto. Siempre en busca de nuevos desafíos y oportunidades para aprender y crecer
@@ -48,8 +48,6 @@ export const Hero = () => {
           <ButtonLink href="/#projects">Ver proyectos</ButtonLink>
           <ButtonDownloadCv />
         </div>
-
-        <NetworksLinksVertical />
 
         <div className="absolute right-0 hidden sm:block bottom-28">
           <Link

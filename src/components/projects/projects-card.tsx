@@ -15,7 +15,7 @@ export const ProjectsCard = ({ project, large = false }: Props) => {
   const { images, name, categories, tecnologies, description } = project;
   const { setMouseConfig } = useCursor();
   return (
-    <FadeUp className="flex flex-col h-full p-4 rounded-lg dark:border-gray-600 bg-primary dark:bg-background dark:bg-opacity-25 bg-opacity-10 backdrop-blur-sm">
+    <FadeUp className="relative z-10 flex flex-col h-full p-4 rounded-lg dark:border-gray-600 bg-primary dark:bg-background dark:bg-opacity-25 bg-opacity-10 backdrop-blur-sm">
       <Link
         href={`/projects/${project.id}`}
         onMouseOver={() => setMouseConfig({ variant: 'focus-content', content: '[ VER MÁS ]' })}

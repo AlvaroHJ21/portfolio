@@ -21,7 +21,7 @@ export const ProjectsDetailsView = ({ project }: Props) => {
 
   return (
     <section id="proyects" className="texture">
-      <div className="max-w-[1200px] m-auto w-[90%]">
+      <div className="container">
         <div className="py-10">
           <FadeUp>
             <div className="flex justify-between mb-4">
