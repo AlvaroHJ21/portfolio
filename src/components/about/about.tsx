@@ -16,7 +16,7 @@ export const About = () => {
           {/* Imagen */}
           <FadeUp>
             <div className="relative max-w-md m-auto w-60 lg:w-96 group/image">
-              <div className="absolute inset-0 z-0 transition-transform rounded-lg bg-opacity-40 bg-primary -rotate-6 group-hover/image:rotate-0"></div>
+              <div className="absolute inset-0 z-0 transition-transform rounded-lg bg-opacity-40 bg-primary -rotate-[8deg] group-hover/image:rotate-0"></div>
               <ImageBlur
                 className="object-cover max-w-full rounded-lg"
                 src="/img/perfil.png"

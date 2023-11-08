@@ -19,3 +19,4 @@ export * from './nav-item';
 export * from './tab-group';
 export * from './tag-group';
 export * from './text-animate';
+export { default as Dropdown } from './dropdown';

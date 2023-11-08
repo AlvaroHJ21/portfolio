@@ -153,6 +153,14 @@ html.light .texture::before {
   .text-balance {
     text-wrap: balance;
   }
+
+  .badge-base {
+    @apply px-3 py-1 text-sm text-primary rounded-full bg-transparent;
+  }
+
+  .badge-main {
+    @apply px-3 py-1 text-sm text-white rounded-full bg-primary;
+  }
 }
 
 @keyframes carouselAnimationLeft {

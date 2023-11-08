@@ -1,55 +1,44 @@
-import { categories, tecnologies } from '@/data';
+'use client';
+
+import { useMemo } from 'react';
+import { tecnologies } from '@/data';
+
+import { FadeDown } from '@/components/animation/fade-down';
 import { ProjectsCard } from './projects-card';
-import { Project } from '@/interfaces';
+import { FilterTecnologies } from './tecnology-filter';
+import { useTecnologyFilter } from './tecnology-filter/useTecnologyFilter';
+import type { Project } from '@/interfaces';
 
 interface Props {
   projects: Project[];
 }
 
-import React from 'react';
-import { FadeDown } from '@/components/animation/fade-down';
-
-export const Filters = () => {
-  return (
-    <div className="flex justify-end gap-2 mb-4">
-      {/* Category */}
-      <div>
-        <label htmlFor="category" className="label">
-          Categoría
-        </label>
-        <select name="category" id="category" className="p-4 outline-none dark:bg-background-light">
-          <option value={-1}>Todos</option>
-          {categories.map((category) => (
-            <option value={category.id} key={category.id}>
-              {category.name}
-            </option>
-          ))}
-        </select>
-      </div>
-      {/* Tecnology */}
-      <div>
-        <label htmlFor="tecnology" className="label">
-          Tecnología
-        </label>
-        <select
-          name="tecnology"
-          id="tecnology"
-          className="p-4 outline-none dark:bg-background-light"
-        >
-          <option value={-1}>Todos</option>
-          {tecnologies.map((tecnology) => (
-            <option value={tecnology.id} key={tecnology.id}>
-              {tecnology.name}
-            </option>
-          ))}
-        </select>
-      </div>
-    </div>
-  );
-};
-
 export const ProjectsGrid = ({ projects }: Props) => {
-  const filteredProjects = projects;
+  const { selectTecnology, selectedTecnologies, unselectTecnology, unselectAllTecnologies } =
+    useTecnologyFilter();
+
+  const filteredProjects = useMemo(() => {
+    if (selectedTecnologies.length === 0) {
+      return projects;
+    }
+    return projects.filter((project) => {
+      
+      const match = project.tecnologies.some((tecnology) => {
+        return selectedTecnologies
+          .map((tec) => tec.name.toLowerCase())
+          .includes(tecnology.name.toLowerCase());
+      });
+
+      // console.log({
+      //   selected: selectedTecnologies.map((tec) => tec.name.toLowerCase()),
+      //   project: project.tecnologies.map((tec) => tec.name.toLowerCase()),
+      //   match,
+      // });
+
+      return match;
+    });
+  }, [projects, selectedTecnologies]);
+
   return (
     <section id="projects" className="texture">
       <div className="container">
@@ -58,6 +47,16 @@ export const ProjectsGrid = ({ projects }: Props) => {
             Mis <span className="text-primary">proyectos</span>
           </h2>
         </FadeDown>
+
+        <div className="flex justify-end mb-4">
+          <FilterTecnologies
+            tecnologies={tecnologies}
+            selectTecnology={selectTecnology}
+            selectedTecnologies={selectedTecnologies}
+            unselectTecnology={unselectTecnology}
+            unselectAllTecnologies={unselectAllTecnologies}
+          />
+        </div>
 
         {/* Results */}
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">

@@ -56,11 +56,11 @@ const tecnologies: Tecnology[] = [
     name: 'Nextjs',
     image: '/logos/nextjs.svg',
   },
-  {
-    id: 12,
-    name: 'Docker',
-    image: '/logos/docker.svg',
-  },
+  // {
+  //   id: 12,
+  //   name: 'Docker',
+  //   image: '/logos/docker.svg',
+  // },
   {
     id: 13,
     name: 'NextUI',
@@ -71,16 +71,16 @@ const tecnologies: Tecnology[] = [
     name: 'Vue',
     image: '/logos/vue.svg',
   },
-  {
-    id: 15,
-    name: 'Angular',
-    image: '/logos/angular.svg',
-  },
-  {
-    id: 16,
-    name: 'Laravel',
-    image: '/logos/laravelx.svg',
-  },
+  // {
+  //   id: 15,
+  //   name: 'Angular',
+  //   image: '/logos/angular.svg',
+  // },
+  // {
+  //   id: 16,
+  //   name: 'Laravel',
+  //   image: '/logos/laravelx.svg',
+  // },
   {
     id: 17,
     name: 'Figma',
@@ -96,16 +96,16 @@ const tecnologies: Tecnology[] = [
     name: 'Flutter',
     image: '/logos/flutter.svg',
   },
-  {
-    id: 20,
-    name: 'Git',
-    image: '/logos/git.svg',
-  },
-  {
-    id: 21,
-    name: 'GitHub',
-    image: '/logos/github.svg',
-  },
+  // {
+  //   id: 20,
+  //   name: 'Git',
+  //   image: '/logos/git.svg',
+  // },
+  // {
+  //   id: 21,
+  //   name: 'GitHub',
+  //   image: '/logos/github.svg',
+  // },
   {
     id: 22,
     name: 'MySQL',
