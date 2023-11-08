@@ -26,6 +26,7 @@ async function main() {
   await prisma.tecnologies.deleteMany();
   await prisma.tecnologies.createMany({
     data: tecnologies.map((tecnology) => {
+      // @ts-ignore
       delete tecnology.id;
       return tecnology;
     }),

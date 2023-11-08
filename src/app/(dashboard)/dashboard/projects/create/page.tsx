@@ -187,6 +187,8 @@ export default function ProjectFormPage({ params }: Props) {
         })),
         tecnologies: selectedTecnologies.map((selected) => ({
           id: selected.value,
+          image: "",
+          name: ""
         })),
       };
 
@@ -226,6 +228,8 @@ export default function ProjectFormPage({ params }: Props) {
         })),
         tecnologies: selectedTecnologies.map((selected) => ({
           id: selected.value,
+          image: "",
+          name: ""
         })),
       };
 
