@@ -19,6 +19,8 @@ export const metadata: Metadata = {
 //   return data.data;
 // }
 
+export const revalidate = 360;
+
 export default async function ProjectsPage() {
   // const categories = (await prisma.categories.findMany()) as Category[];
 
