@@ -1,7 +1,7 @@
 import prisma from '@/lib/prisma';
 import { projects as PrismaProject } from '@prisma/client';
 import { Project } from '@/interfaces';
-import { ProjectsDetailsView } from '@/components/projects/projects-details-view';
+import { ProjectsDetailsView } from '@/components/organisms/projects/projects-details-view';
 
 export async function generateStaticParams() {
   const projects = (await prisma.projects.findMany({})) as PrismaProject[];

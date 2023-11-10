@@ -3,7 +3,7 @@
 import React, { useEffect } from 'react';
 
 import { networkLinks } from '@/data';
-import { useCursor } from '../ui/cursor/CursorContext';
+import { useCursor } from '@/contexts/cursor';
 import gsap from 'gsap';
 
 export const NetworksLinksVertical = () => {

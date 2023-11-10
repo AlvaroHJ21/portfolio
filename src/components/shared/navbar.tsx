@@ -7,7 +7,7 @@ import { AiOutlineClose } from 'react-icons/ai';
 import { HiOutlineMenuAlt3 } from 'react-icons/hi';
 import clsx from 'clsx';
 
-import { ButtonMode, NavGroup } from '@/components/ui';
+import { ButtonMode, NavGroup } from '@/components/molecules';
 import navLinks from '@/data/navLinks';
 
 export const Navbar = () => {

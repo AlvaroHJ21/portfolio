@@ -1,6 +1,6 @@
 // import { Suspense } from 'react';
-import { Hero } from '@/components/hero';
-// import { Loading } from '@/components/ui';
+import Hero from '@/components/organisms/hero';
+// import { Loading } from '@/components/atoms';
 import ProjectsPage from './projects/page';
 import AboutMePage from './about-me/page';
 import ContactPage from './contact/page';
@@ -11,7 +11,7 @@ export default function Home() {
       <Hero />
       {/* Podemos usar Suspense pero como se va generar de forma estática no es necesario */}
       {/* <Suspense fallback={<Loading />}> */}
-        <ProjectsPage />
+      <ProjectsPage />
       {/* </Suspense> */}
       <AboutMePage />
       <ContactPage />

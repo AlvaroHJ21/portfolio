@@ -2,9 +2,10 @@ import type { Metadata } from 'next';
 import { Raleway } from 'next/font/google';
 
 import { ThemeProvider } from '@/providers';
-import { Footer } from '@/components/footer';
+import Footer from '@/components/shared/footer';
 import { NavbarBottom, NetworksLinksVertical } from '@/components/shared';
-import { Cursor, CursorProvider } from '@/components/ui';
+import { CursorProvider } from '@/contexts/cursor';
+import { Cursor } from '@/components/atoms';
 import '@/styles/globals.css';
 
 const font = Raleway({

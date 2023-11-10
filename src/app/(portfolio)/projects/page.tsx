@@ -5,7 +5,7 @@ import prisma from '@/lib/prisma';
 
 import { Project, Category, ApiResponse } from '@/interfaces';
 // import { ProjectsListView } from '@/components/projects';
-import { ProjectsGrid } from '@/components/projects/projects-grid';
+import { ProjectsGrid } from '@/components/organisms/projects/projects-grid';
 import http from '@/lib/http';
 
 export const metadata: Metadata = {

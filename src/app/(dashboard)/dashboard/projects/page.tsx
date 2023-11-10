@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { FaPlus } from 'react-icons/fa';
 
 import { useProjects } from '@/hooks/useProjects';
-import { ProjectsTable } from '@/components/projects';
+import { ProjectsTable } from '@/components/organisms/projects';
 
 export default function ProjectPage() {
   const { projects, isLoading } = useProjects();

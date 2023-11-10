@@ -8,13 +8,13 @@ import { FaArrowLeft, FaTrash } from 'react-icons/fa';
 import { TbPhotoPlus } from 'react-icons/tb';
 import Swal from 'sweetalert2';
 
-
 import uploadImage from '@/helpers/uploadImage';
 import { useCategories } from '@/hooks/useCategories';
 import { useTecnologies } from '@/hooks/useTecnologies';
 import { useProjects } from '@/hooks/useProjects';
 import { Project } from '@/interfaces';
-import { Multiselect, Option } from '@/components/ui';
+import { MultiSelect } from '@/components/atoms';
+import { Option } from '@/components/atoms/multiselect';
 
 interface Image {
   id?: string;
@@ -187,8 +187,8 @@ export default function ProjectFormPage({ params }: Props) {
         })),
         tecnologies: selectedTecnologies.map((selected) => ({
           id: selected.value,
-          image: "",
-          name: ""
+          image: '',
+          name: '',
         })),
       };
 
@@ -228,8 +228,8 @@ export default function ProjectFormPage({ params }: Props) {
         })),
         tecnologies: selectedTecnologies.map((selected) => ({
           id: selected.value,
-          image: "",
-          name: ""
+          image: '',
+          name: '',
         })),
       };
 
@@ -352,7 +352,7 @@ export default function ProjectFormPage({ params }: Props) {
               <label htmlFor="" className="label">
                 Categorías
               </label>
-              <Multiselect
+              <MultiSelect
                 options={categoryOptions}
                 selected={selectedCategories}
                 setSelected={setSelectedCategories}
@@ -362,7 +362,7 @@ export default function ProjectFormPage({ params }: Props) {
               <label htmlFor="" className="label">
                 Tecnologías
               </label>
-              <Multiselect
+              <MultiSelect
                 options={tecnologyOptions.sort((a, b) => a.label.localeCompare(b.label))}
                 selected={selectedTecnologies}
                 setSelected={setSelectedTecnologies}

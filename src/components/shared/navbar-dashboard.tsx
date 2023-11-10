@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { ButtonLogout } from '@/components/ui';
+import { ButtonLogout } from '@/components/molecules';
 
 export const NavbarDashboard = () => {
   const links = [

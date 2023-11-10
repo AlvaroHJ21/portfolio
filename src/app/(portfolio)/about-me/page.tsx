@@ -1,8 +1,8 @@
 import { Metadata } from 'next';
 
-import { About } from '@/components/about';
-import { Formation } from '@/components/formation';
-import { Skills } from '@/components/skills';
+import About from '@/components/organisms/about';
+import Formation from '@/components/organisms/formation';
+import Skills from '@/components/organisms/skills';
 
 export const metadata: Metadata = {
   title: 'Sobre mí | Alvaro Huaysara Jauregui | Full Stack Web Developer | Systems Engineer',

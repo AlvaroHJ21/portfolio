@@ -7,7 +7,7 @@ import { FaBook, FaHome, FaUser } from 'react-icons/fa';
 import { MdMail } from 'react-icons/md';
 import clsx from 'clsx';
 
-import { ButtonMode } from '@/components/ui';
+import { ButtonMode } from '@/components/molecules';
 
 export const NavbarBottom = () => {
   const pathname = usePathname();
