@@ -48,7 +48,7 @@ export const ProjectsGrid = ({ projects }: Props) => {
           </h2>
         </FadeDown>
 
-        <div className="flex justify-end mb-4">
+        {/* <div className="flex justify-end mb-4">
           <FilterTecnologies
             tecnologies={tecnologies}
             selectTecnology={selectTecnology}
@@ -56,7 +56,7 @@ export const ProjectsGrid = ({ projects }: Props) => {
             unselectTecnology={unselectTecnology}
             unselectAllTecnologies={unselectAllTecnologies}
           />
-        </div>
+        </div> */}
 
         {/* Results */}
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
