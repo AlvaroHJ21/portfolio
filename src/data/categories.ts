@@ -17,6 +17,10 @@ const categories: Category[] = [
     id: 4,
     name: 'App Móvil',
   },
+  {
+    id: 5,
+    name: 'Blog',
+  },
 ];
 
 export default categories;
