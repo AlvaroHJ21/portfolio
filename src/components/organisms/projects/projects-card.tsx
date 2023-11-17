@@ -39,9 +39,14 @@ export const ProjectsCard = ({ project, large = false }: Props) => {
         />
       </Link>
       <h3 className="my-2 text-xl">{name}</h3>
-      {large && <p className="hidden mb-4 md:auto md:line-clamp-3">{description}</p>}
+      {large && (
+        <p
+          className="hidden mb-4 md:auto md:line-clamp-3"
+          dangerouslySetInnerHTML={{ __html: description ?? '' }}
+        ></p>
+      )}
       <div className="h-14">
-        <TagGroup tecnologies={tecnologies} sm showAll={false}/>
+        <TagGroup tecnologies={tecnologies} sm showAll={false} />
       </div>
     </FadeUp>
   );

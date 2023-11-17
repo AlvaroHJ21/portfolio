@@ -57,11 +57,10 @@ export const ProjectsDetailsView = ({ project }: Props) => {
               {project.url && <LinkViewDemo url={project.url!} />}
             </div>
             <TagGroup tecnologies={project?.tecnologies as Tecnology[]} />
-            <div>
-              <p className="mt-4 text-lg text-gray-600 dark:text-gray-300">
-                {project?.description}
-              </p>
-            </div>
+            <div
+              className="mt-4 text-lg text-gray-600 project-description dark:text-gray-300"
+              dangerouslySetInnerHTML={{ __html: project?.description ?? '' }}
+            ></div>
           </FadeUp>
         </div>
       </div>

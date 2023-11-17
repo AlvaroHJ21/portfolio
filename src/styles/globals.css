@@ -126,21 +126,9 @@ html.light .texture::before {
     @apply block mb-2 text-sm font-medium text-gray-400;
   }
 
-  /* .badge {
-    @apply inline-block px-2 py-1 text-sm font-bold rounded;
+  .project-description p{
+    @apply mb-4
   }
-
-  .badge-sm {
-    @apply inline-block px-2 py-1 text-xs font-bold rounded;
-  }
-
-  .badge-primary {
-    @apply text-white bg-primary;
-  }
-
-  .badge-outline {
-    @apply border;
-  } */
 
   html.dark .badge-ghost {
     @apply text-white bg-background bg-opacity-50;
