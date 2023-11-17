@@ -29,7 +29,7 @@ export default function Cursor() {
     <div
       ref={cursor}
       className={clsx(
-        'fixed top-0 left-0 z-20 w-20 h-20 -ml-10 -mt-10 rounded-full pointer-events-none transition-transform duration-300 grid place-items-center p-4',
+        'fixed hidden md:grid top-0 left-0 z-20 w-20 h-20 -ml-10 -mt-10 rounded-full pointer-events-none transition-transform duration-300 place-items-center p-4',
         {
           'scale-[0.15] bg-opacity-100 bg-primary': mouseConfig.variant === 'default',
           'scale-[2] bg-opacity-25 bg-primary': mouseConfig.variant === 'zoom-transparent',

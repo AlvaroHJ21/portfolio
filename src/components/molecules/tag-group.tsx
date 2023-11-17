@@ -42,7 +42,9 @@ export default function TagGroupTecnologies(props: Props) {
           </span>
         );
       })}
-      {!showAll && lentgh > 5 && <span className='h-6 border-none badge badge-ghost'>More...</span>}
+      {!showAll && lentgh > 5 && (
+        <span className="h-6 border-none badge badge-ghost">+ {lentgh - 5} More...</span>
+      )}
     </div>
   );
 }
