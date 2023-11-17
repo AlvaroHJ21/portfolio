@@ -5,6 +5,8 @@ import ProjectsPage from './projects/page';
 import AboutMePage from './about-me/page';
 import ContactPage from './contact/page';
 
+export const revalidate = 360;
+
 export default function Home() {
   return (
     <>
