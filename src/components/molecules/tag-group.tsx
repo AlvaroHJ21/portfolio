@@ -13,7 +13,9 @@ export default function TagGroupTecnologies(props: Props) {
 
   const lentgh = tecnologies.length;
 
-  const filtered = !showAll && lentgh > 5 ? tecnologies.slice(0, 5) : tecnologies;
+  const max = sm ? 5 : 8;
+
+  const filtered = !showAll && lentgh > max + 1 ? tecnologies.slice(0, max) : tecnologies;
 
   return (
     <div className="flex flex-wrap gap-2">
@@ -42,7 +44,7 @@ export default function TagGroupTecnologies(props: Props) {
           </span>
         );
       })}
-      {!showAll && lentgh > 5 && (
+      {!showAll && lentgh > max + 1 && (
         <span className="h-6 border-none badge badge-ghost">+ {lentgh - 5} More...</span>
       )}
     </div>

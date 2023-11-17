@@ -31,7 +31,7 @@ export default function Dropdown(props: Props) {
 
   return (
     <div ref={dropdownRef} className="relative">
-      <button onClick={() => setIsOpen(!isOpen)} className='p-4 text-white rounded-full bg-primary'>
+      <button onClick={() => setIsOpen(!isOpen)} className='p-4 text-white rounded-full bg-primary' aria-label='button dropdown'>
         {text} {icon}
       </button>
       {isOpen && (
