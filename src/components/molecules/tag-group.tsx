@@ -5,13 +5,19 @@ import clsx from 'clsx';
 interface Props {
   sm?: boolean;
   tecnologies: Tecnology[];
+  showAll?: boolean;
 }
 
 export default function TagGroupTecnologies(props: Props) {
-  const { tecnologies, sm = false } = props;
+  const { tecnologies, sm = false, showAll = true } = props;
+
+  const lentgh = tecnologies.length;
+
+  const filtered = !showAll && lentgh > 5 ? tecnologies.slice(0, 5) : tecnologies;
+
   return (
     <div className="flex flex-wrap gap-2">
-      {tecnologies.map((tecnology) => {
+      {filtered.map((tecnology) => {
         return (
           <span
             key={tecnology.id}
@@ -36,6 +42,7 @@ export default function TagGroupTecnologies(props: Props) {
           </span>
         );
       })}
+      {!showAll && lentgh > 5 && <span className='h-6 border-none badge badge-ghost'>More...</span>}
     </div>
   );
 }

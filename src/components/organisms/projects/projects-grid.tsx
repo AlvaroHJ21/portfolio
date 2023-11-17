@@ -1,6 +1,6 @@
 'use client';
 
-import { useMemo } from 'react';
+import { useEffect, useMemo } from 'react';
 import { tecnologies } from '@/data';
 
 import { FadeDown } from '@/components/animation/fade-down';
@@ -8,6 +8,7 @@ import { ProjectsCard } from './projects-card';
 import { FilterTecnologies } from './tecnology-filter';
 import { useTecnologyFilter } from './tecnology-filter/useTecnologyFilter';
 import type { Project } from '@/interfaces';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 interface Props {
   projects: Project[];
@@ -21,8 +22,8 @@ export const ProjectsGrid = ({ projects }: Props) => {
     if (selectedTecnologies.length === 0) {
       return projects;
     }
+
     return projects.filter((project) => {
-      
       const match = project.tecnologies.some((tecnology) => {
         return selectedTecnologies
           .map((tec) => tec.name.toLowerCase())
@@ -39,6 +40,10 @@ export const ProjectsGrid = ({ projects }: Props) => {
     });
   }, [projects, selectedTecnologies]);
 
+  useEffect(() => {
+    ScrollTrigger.refresh();
+  }, [filteredProjects]);
+
   return (
     <section id="projects" className="texture">
       <div className="container">
@@ -48,7 +53,7 @@ export const ProjectsGrid = ({ projects }: Props) => {
           </h2>
         </FadeDown>
 
-        {/* <div className="flex justify-end mb-4">
+        <div className="flex justify-end mb-4">
           <FilterTecnologies
             tecnologies={tecnologies}
             selectTecnology={selectTecnology}
@@ -56,7 +61,7 @@ export const ProjectsGrid = ({ projects }: Props) => {
             unselectTecnology={unselectTecnology}
             unselectAllTecnologies={unselectAllTecnologies}
           />
-        </div> */}
+        </div>
 
         {/* Results */}
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">

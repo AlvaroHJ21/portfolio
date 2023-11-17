@@ -24,8 +24,8 @@ export const FilterTecnologies = (props: Props) => {
 
   return (
     <div className="relative">
-      <Dropdown icon={<BsFilter />} className="w-screen max-w-sm">
-        <div className="absolute right-0 z-20 flex flex-row flex-wrap gap-2 p-4 bg-background-light">
+      <Dropdown icon={<BsFilter />} className="w-screen max-w-md">
+        <div className="absolute right-0 z-20 flex flex-row flex-wrap gap-2 p-4 mt-4 bg-gray-100 rounded-lg shadow-md dark:bg-background-light">
           <div
             onClick={unselectAllTecnologies}
             className={cn(selectedAll ? 'badge-main' : 'badge-base')}

@@ -41,7 +41,7 @@ export const ProjectsCard = ({ project, large = false }: Props) => {
       <h3 className="my-2 text-xl">{name}</h3>
       {large && <p className="hidden mb-4 md:auto md:line-clamp-3">{description}</p>}
       <div className="h-14">
-        <TagGroup tecnologies={tecnologies} sm />
+        <TagGroup tecnologies={tecnologies} sm showAll={false}/>
       </div>
     </FadeUp>
   );

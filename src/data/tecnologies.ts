@@ -16,21 +16,21 @@ const tecnologies: Tecnology[] = [
     name: 'CSS',
     image: '/logos/css.svg',
   },
-  {
-    id: 4,
-    name: 'Bootstrap',
-    image: '/logos/bootstrap.svg',
-  },
+  // {
+  //   id: 4,
+  //   name: 'Bootstrap',
+  //   image: '/logos/bootstrap.svg',
+  // },
   {
     id: 5,
     name: 'Express',
     image: '/logos/express.png',
   },
-  {
-    id: 6,
-    name: 'JavaScript',
-    image: '/logos/javascript.svg',
-  },
+  // {
+  //   id: 6,
+  //   name: 'JavaScript',
+  //   image: '/logos/javascript.svg',
+  // },
   {
     id: 7,
     name: 'MongoDB',
@@ -76,16 +76,16 @@ const tecnologies: Tecnology[] = [
   //   name: 'Angular',
   //   image: '/logos/angular.svg',
   // },
-  // {
-  //   id: 16,
-  //   name: 'Laravel',
-  //   image: '/logos/laravelx.svg',
-  // },
   {
-    id: 17,
-    name: 'Figma',
-    image: '/logos/figma.svg',
+    id: 16,
+    name: 'Laravel',
+    image: '/logos/laravel.svg',
   },
+  // {
+  //   id: 17,
+  //   name: 'Figma',
+  //   image: '/logos/figma.svg',
+  // },
   {
     id: 18,
     name: 'Firebase',
