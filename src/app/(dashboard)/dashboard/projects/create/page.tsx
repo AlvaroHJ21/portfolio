@@ -13,7 +13,14 @@ import { useCategories } from '@/hooks/useCategories';
 import { useTecnologies } from '@/hooks/useTecnologies';
 import { useProjects } from '@/hooks/useProjects';
 import { Project } from '@/interfaces';
-import { InputEditor, MultiSelect } from '@/components/atoms';
+import { MultiSelect } from '@/components/atoms';
+
+import dynamic from 'next/dynamic';
+
+const InputEditor = dynamic(() => import('@/components/atoms/input-editor'), {
+  ssr: false,
+});
+
 import { Option } from '@/components/atoms/multiselect';
 
 interface Image {

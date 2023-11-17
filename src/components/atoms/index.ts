@@ -4,7 +4,6 @@ export { default as Cursor } from './cursor';
 export { default as CustomLink } from './text-link';
 export { default as Dropdown } from './dropdown';
 export { default as ImageBlur } from './image-blur';
-export { default as InputEditor } from './input-editor';
 export { default as InputText } from './input-text';
 export { default as Loading } from './loading';
 export { default as Logo } from './logo';
