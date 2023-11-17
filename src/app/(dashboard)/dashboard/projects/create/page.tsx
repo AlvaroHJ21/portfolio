@@ -13,7 +13,7 @@ import { useCategories } from '@/hooks/useCategories';
 import { useTecnologies } from '@/hooks/useTecnologies';
 import { useProjects } from '@/hooks/useProjects';
 import { Project } from '@/interfaces';
-import { MultiSelect } from '@/components/atoms';
+import { InputEditor, MultiSelect } from '@/components/atoms';
 import { Option } from '@/components/atoms/multiselect';
 
 interface Image {
@@ -288,11 +288,12 @@ export default function ProjectFormPage({ params }: Props) {
               <label htmlFor="" className="label">
                 Descripción
               </label>
-              <textarea
+              {/* <textarea
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}
                 className="textarea textarea-bordered"
-              ></textarea>
+              ></textarea> */}
+              <InputEditor value={description} onChange={(value) => setDescription(value)} />
             </div>
             <div className="mb-4 form-control">
               <label htmlFor="" className="label">
