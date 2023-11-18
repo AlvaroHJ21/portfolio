@@ -6,9 +6,9 @@ export default function Skills() {
   return (
     <section id="skills" className="">
       <div className="container min-h-[756px] py-20">
-        <div className="flex flex-col items-center justify-center gap-8 md:justify-start item-center">
+        <div className="">
           <FadeDown>
-            <h2 className="font-black text-gray-600 uppercase text-32 dark:text-white">
+            <h2 className="mb-8 font-black text-center text-gray-600 uppercase text-32 dark:text-white">
               Mis <span className="text-main">habilidades</span>
             </h2>
           </FadeDown>
@@ -17,10 +17,10 @@ export default function Skills() {
             {skills.map((block) => {
               return (
                 <div key={block.category}>
-                  <h3 className="mb-4 text-2xl font-black text-gray-600 text-20 dark:text-white">
+                  <h3 className="mb-6 text-2xl font-black text-gray-600 text-20 dark:text-white">
                     {block.category}
                   </h3>
-                  <div className="grid grid-cols-4 gap-8">
+                  <div className="grid grid-cols-4 gap-8 place-items-center">
                     {block.items.map((item, index) => (
                       <TecnologyItem key={item.name} item={item} />
                     ))}

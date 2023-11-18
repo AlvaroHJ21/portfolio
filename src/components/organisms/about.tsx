@@ -12,9 +12,9 @@ export default function About() {
           </h2>
         </FadeDown>
 
-        <div className="flex flex-col h-full gap-12 md:flex-row md:justify-center">
+        <div className="flex flex-col h-full md:flex-row md:justify-center">
           {/* Imagen */}
-          <FadeUp>
+          <FadeUp className='flex-1'>
             <div className="relative max-w-md m-auto w-60 lg:w-96 group/image">
               <div className="absolute inset-0 z-0 transition-transform rounded-lg bg-opacity-40 bg-primary -rotate-[8deg] group-hover/image:rotate-0"></div>
               <ImageBlur
@@ -28,9 +28,9 @@ export default function About() {
           </FadeUp>
 
           {/* Texto y cta */}
-          <FadeUp>
+          <FadeUp className='flex-1'>
             <div className="flex flex-col items-center md:items-start">
-              <div className="max-w-md mb-6 leading-8 text-center text-black md:text-left dark:text-white">
+              <div className="mb-6 leading-8 text-center text-black md:text-left dark:text-white">
                 <p className="mb-4">
                   ¡Hola! Soy un desarrollador web con experiencia en frontend, backend y desarrollo
                   móvil. Me apasiona crear soluciones tecnológicas innovadoras y eficientes. Mi

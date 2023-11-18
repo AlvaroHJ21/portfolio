@@ -92,6 +92,11 @@ export default [
         rating: 3,
         logo: '/logos/wordpress.svg',
       },
+      {
+        name: 'Gsap',
+        rating: 3,
+        logo: '/logos/gsap.svg',
+      },
     ],
   },
   {
@@ -201,6 +206,11 @@ export default [
         name: 'Jira',
         rating: 4,
         logo: '/logos/jira.svg',
+      },
+      {
+        name: 'Cpanel',
+        rating: 4,
+        logo: '/logos/cpanel.svg',
       },
     ],
   },
