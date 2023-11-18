@@ -102,7 +102,7 @@ html.light .texture::before {
 @layer components {
   .container {
     max-width: 1200px;
-    width: 90%;
+    width: 80%;
     margin: 0 auto;
   }
 

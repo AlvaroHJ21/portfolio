@@ -12,7 +12,7 @@ export default function About() {
           </h2>
         </FadeDown>
 
-        <div className="flex flex-col h-full md:flex-row md:justify-center">
+        <div className="flex flex-col h-full gap-8 md:gap-0 md:flex-row md:justify-center">
           {/* Imagen */}
           <FadeUp className='flex-1'>
             <div className="relative max-w-md m-auto w-60 lg:w-96 group/image">
