@@ -37,9 +37,9 @@ export default function Contact() {
           </h2>
         </FadeDown>
 
-        <div className="flex flex-col gap-12 md:justify-center md:flex-row md:gap-12">
+        <div className="flex flex-col gap-12 md:flex-row md:gap-20">
           {/* Texts */}
-          <div className="space-y-4 md:flex md:flex-col md:justify-between md:max-w-sm">
+          <div className="flex-1 space-y-4 md:flex md:flex-col md:justify-between md:max-w-sm">
             <FadeUp>
               <p className="text-center text-black md:text-left dark:text-white">
                 No dudes en contactarme si necesitas un desarrollador con experiencia para llevar tu
@@ -65,7 +65,7 @@ export default function Contact() {
           </div>
 
           {/* Form */}
-          <div className="w-full md:max-w-lg">
+          <div className="flex-1">
             <form onSubmit={handleSubmit} action="" className="flex flex-col gap-4">
               <FadeUp>
                 <label className="block mb-2 ml-2 text-black dark:text-white" htmlFor="name">
