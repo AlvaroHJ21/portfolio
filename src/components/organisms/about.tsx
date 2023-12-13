@@ -32,7 +32,7 @@ export default function About() {
             <div className="flex flex-col items-center md:items-start">
               <div className="mb-6 leading-8 text-center text-black md:text-left dark:text-white">
                 <p className="mb-4">
-                  ¡Hola! Soy un desarrollador web con experiencia en frontend, backend y desarrollo
+                  Soy un desarrollador web con experiencia en frontend, backend y desarrollo
                   móvil. Me apasiona crear soluciones tecnológicas innovadoras y eficientes. Mi
                   enfoque es siempre centrado en el usuario y en la calidad del código.
                 </p>
